@@ -59,6 +59,7 @@ local function createPlugin()
     file:write(APOSTROPHE .. '.source.lua' .. APOSTROPHE .. COLON .. LINE_BREAK);
 
     -- Generate snippets for LÖVE callback functions.
+    print('  Writing callbacks');
     for i, f in ipairs(api.callbacks) do
         -- Create snippet header.
         file:write(TAB .. APOSTROPHE .. 'love.' .. f.name .. APOSTROPHE .. COLON .. LINE_BREAK);
@@ -75,7 +76,9 @@ local function createPlugin()
     end
 
     -- Generate the snippets for all LÖVE modules.
+    print(TAB .. 'Writing Modules');
     for _, module in ipairs(api.modules) do
+        print(TAB .. TAB .. module.name);
         file:write('\n# ' .. string.upper(module.name) .. LINE_BREAK);
 
         for _, f in ipairs(module.functions) do
