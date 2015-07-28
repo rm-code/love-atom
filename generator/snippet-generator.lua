@@ -9,7 +9,7 @@ local PARAM  = '${%d:%s (%s)}';
 
 local OUTPUT_FILE = 'love-snippets.cson';
 
-function createPlugin()
+local function createPlugin()
     print('Generating LOVE snippets ... ');
 
     local file = io.open(OUTPUT_FILE, 'w');
