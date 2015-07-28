@@ -1,3 +1,7 @@
+-- ------------------------------------------------
+-- Constants
+-- ------------------------------------------------
+
 local APOSTROPHE = '\''
 local COLON      =  ':'
 local LINE_BREAK = '\n'
@@ -9,13 +13,22 @@ local PARAM  = '${%d:%s (%s)}';
 
 local OUTPUT_FILE = 'love-snippets.cson';
 
+-- ------------------------------------------------
+-- Local Functions
+-- ------------------------------------------------
+
+---
+-- Generates the arguments string for a function.
+-- Each argument will use the format ${index:name (type)}. This will be used by
+-- Atom to automatically generate arguments when the snippet-code is generated
+-- in the user's file.
+-- The user can then replace each of the pre-generated arguments with a specific
+-- value and jump to the next argument in line by pressing TAB.
+--
 local function generateArguments(arguments)
     local params = '';
     if arguments then
         for i, args in ipairs(arguments) do
-            -- Generate a parameter in the format ${index:name (type)}. This will be
-            -- used by atom to automatically mark parameters and allows the user to
-            -- insert his custom parameters and switch to the next one by pressing TAB.
             params = params .. string.format(PARAM, i, args.name, args.type);
 
             -- Add a separator unless we are dealing with the last argument of the function.
@@ -27,6 +40,11 @@ local function generateArguments(arguments)
     return params;
 end
 
+---
+-- The main function which generates the snippet file used in the atom package.
+-- It will create a new .cson file (OUTPUT_FILE) and automatically fill it with
+-- the snippet-code needed by Atom.
+--
 local function createPlugin()
     print('Generating LOVE snippets ... ');
 
