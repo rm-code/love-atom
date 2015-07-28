@@ -1,0 +1,794 @@
+# Make the love snippets available for all .lua files.
+'.source.lua':
+  'love.draw':
+    'prefix': 'lovedraw'
+    'body':   'love.draw()'
+  'love.errhand':
+    'prefix': 'loveerrhand'
+    'body':   'love.errhand(${1:msg (string)})'
+  'love.focus':
+    'prefix': 'lovefocus'
+    'body':   'love.focus(${1:f (boolean)})'
+  'love.gamepadaxis':
+    'prefix': 'lovegamepadaxis'
+    'body':   'love.gamepadaxis(${1:joystick (Joystick)}, ${2:axis (GamepadAxis)})'
+  'love.gamepadpressed':
+    'prefix': 'lovegamepadpressed'
+    'body':   'love.gamepadpressed(${1:joystick (Joystick)}, ${2:button (GamepadButton)})'
+  'love.gamepadreleased':
+    'prefix': 'lovegamepadreleased'
+    'body':   'love.gamepadreleased(${1:joystick (Joystick)}, ${2:button (GamepadButton)})'
+  'love.joystickadded':
+    'prefix': 'lovejoystickadded'
+    'body':   'love.joystickadded(${1:joystick (Joystick)})'
+  'love.joystickaxis':
+    'prefix': 'lovejoystickaxis'
+    'body':   'love.joystickaxis(${1:joystick (Joystick)}, ${2:axis (number)}, ${3:value (number)})'
+  'love.joystickhat':
+    'prefix': 'lovejoystickhat'
+    'body':   'love.joystickhat(${1:joystick (Joystick)}, ${2:hat (number)}, ${3:direction (JoystickHat)})'
+  'love.joystickpressed':
+    'prefix': 'lovejoystickpressed'
+    'body':   'love.joystickpressed(${1:joystick (number)}, ${2:button (number)})'
+  'love.joystickreleased':
+    'prefix': 'lovejoystickreleased'
+    'body':   'love.joystickreleased(${1:joystick (number)}, ${2:button (number)})'
+  'love.joystickremoved':
+    'prefix': 'lovejoystickremoved'
+    'body':   'love.joystickremoved(${1:joystick (Joystick)})'
+  'love.keypressed':
+    'prefix': 'lovekeypressed'
+    'body':   'love.keypressed(${1:key (KeyConstant)}, ${2:isrepeat (boolean)})'
+  'love.keyreleased':
+    'prefix': 'lovekeyreleased'
+    'body':   'love.keyreleased(${1:key (KeyConstant)})'
+  'love.load':
+    'prefix': 'loveload'
+    'body':   'love.load(${1:arg (table)})'
+  'love.mousefocus':
+    'prefix': 'lovemousefocus'
+    'body':   'love.mousefocus(${1:f (boolean)})'
+  'love.mousemoved':
+    'prefix': 'lovemousemoved'
+    'body':   'love.mousemoved(${1:x (number)}, ${2:y (number)}, ${3:dx (number)}, ${4:dy (number)})'
+  'love.mousepressed':
+    'prefix': 'lovemousepressed'
+    'body':   'love.mousepressed(${1:x (number)}, ${2:y (number)}, ${3:button (MouseConstant)})'
+  'love.mousereleased':
+    'prefix': 'lovemousereleased'
+    'body':   'love.mousereleased(${1:x (number)}, ${2:y (number)}, ${3:button (MouseConstant)})'
+  'love.quit':
+    'prefix': 'lovequit'
+    'body':   'love.quit()'
+  'love.resize':
+    'prefix': 'loveresize'
+    'body':   'love.resize(${1:w (number)}, ${2:h (number)})'
+  'love.run':
+    'prefix': 'loverun'
+    'body':   'love.run()'
+  'love.textinput':
+    'prefix': 'lovetextinput'
+    'body':   'love.textinput(${1:text (string)})'
+  'love.threaderror':
+    'prefix': 'lovethreaderror'
+    'body':   'love.threaderror(${1:thread (Thread)}, ${2:errorstr (string)})'
+  'love.update':
+    'prefix': 'loveupdate'
+    'body':   'love.update(${1:dt (number)})'
+  'love.visible':
+    'prefix': 'lovevisible'
+    'body':   'love.visible(${1:v (boolean)})'
+
+# AUDIO
+  'love.audio.getDistanceModel':
+    'prefix': 'loveaudiogetDistanceModel'
+    'body':   'love.audio.getDistanceModel()'
+  'love.audio.getDopplerScale':
+    'prefix': 'loveaudiogetDopplerScale'
+    'body':   'love.audio.getDopplerScale()'
+  'love.audio.getSourceCount':
+    'prefix': 'loveaudiogetSourceCount'
+    'body':   'love.audio.getSourceCount()'
+  'love.audio.getOrientation':
+    'prefix': 'loveaudiogetOrientation'
+    'body':   'love.audio.getOrientation()'
+  'love.audio.getPosition':
+    'prefix': 'loveaudiogetPosition'
+    'body':   'love.audio.getPosition()'
+  'love.audio.getVelocity':
+    'prefix': 'loveaudiogetVelocity'
+    'body':   'love.audio.getVelocity()'
+  'love.audio.getVolume':
+    'prefix': 'loveaudiogetVolume'
+    'body':   'love.audio.getVolume()'
+  'love.audio.newSource':
+    'prefix': 'loveaudionewSource'
+    'body':   'love.audio.newSource(${1:filename (string)}, ${2:type (SourceType)})'
+  'love.audio.pause':
+    'prefix': 'loveaudiopause'
+    'body':   'love.audio.pause()'
+  'love.audio.play':
+    'prefix': 'loveaudioplay'
+    'body':   'love.audio.play(${1:source (Source)})'
+  'love.audio.resume':
+    'prefix': 'loveaudioresume'
+    'body':   'love.audio.resume()'
+  'love.audio.rewind':
+    'prefix': 'loveaudiorewind'
+    'body':   'love.audio.rewind()'
+  'love.audio.setDistanceModel':
+    'prefix': 'loveaudiosetDistanceModel'
+    'body':   'love.audio.setDistanceModel(${1:model (DistanceModel)})'
+  'love.audio.setDopplerScale':
+    'prefix': 'loveaudiosetDopplerScale'
+    'body':   'love.audio.setDopplerScale(${1:scale (number)})'
+  'love.audio.setOrientation':
+    'prefix': 'loveaudiosetOrientation'
+    'body':   'love.audio.setOrientation(${1:fx (number)}, ${2:fy (number)}, ${3:fz (number)}, ${4:ux (number)}, ${5:uy (number)}, ${6:uz (number)})'
+  'love.audio.setPosition':
+    'prefix': 'loveaudiosetPosition'
+    'body':   'love.audio.setPosition(${1:x (number)}, ${2:y (number)}, ${3:z (number)})'
+  'love.audio.setVelocity':
+    'prefix': 'loveaudiosetVelocity'
+    'body':   'love.audio.setVelocity(${1:x (number)}, ${2:y (number)}, ${3:z (number)})'
+  'love.audio.setVolume':
+    'prefix': 'loveaudiosetVolume'
+    'body':   'love.audio.setVolume(${1:volume (number)})'
+  'love.audio.stop':
+    'prefix': 'loveaudiostop'
+    'body':   'love.audio.stop()'
+
+# EVENT
+  'love.event.clear':
+    'prefix': 'loveeventclear'
+    'body':   'love.event.clear()'
+  'love.event.poll':
+    'prefix': 'loveeventpoll'
+    'body':   'love.event.poll()'
+  'love.event.pump':
+    'prefix': 'loveeventpump'
+    'body':   'love.event.pump()'
+  'love.event.push':
+    'prefix': 'loveeventpush'
+    'body':   'love.event.push(${1:e (Event)}, ${2:a (mixed)}, ${3:b (mixed)}, ${4:c (mixed)}, ${5:d (mixed)})'
+  'love.event.quit':
+    'prefix': 'loveeventquit'
+    'body':   'love.event.quit()'
+  'love.event.wait':
+    'prefix': 'loveeventwait'
+    'body':   'love.event.wait()'
+
+# FILESYSTEM
+  'love.filesystem.append':
+    'prefix': 'lovefilesystemappend'
+    'body':   'love.filesystem.append(${1:name (string)}, ${2:data (string)}, ${3:size (number)})'
+  'love.filesystem.areSymlinksEnabled':
+    'prefix': 'lovefilesystemareSymlinksEnabled'
+    'body':   'love.filesystem.areSymlinksEnabled()'
+  'love.filesystem.createDirectory':
+    'prefix': 'lovefilesystemcreateDirectory'
+    'body':   'love.filesystem.createDirectory(${1:name (string)})'
+  'love.filesystem.getAppdataDirectory':
+    'prefix': 'lovefilesystemgetAppdataDirectory'
+    'body':   'love.filesystem.getAppdataDirectory()'
+  'love.filesystem.getDirectoryItems':
+    'prefix': 'lovefilesystemgetDirectoryItems'
+    'body':   'love.filesystem.getDirectoryItems(${1:dir (string)})'
+  'love.filesystem.getIdentity':
+    'prefix': 'lovefilesystemgetIdentity'
+    'body':   'love.filesystem.getIdentity(${1:name (string)})'
+  'love.filesystem.getLastModified':
+    'prefix': 'lovefilesystemgetLastModified'
+    'body':   'love.filesystem.getLastModified(${1:filename (string)})'
+  'love.filesystem.getRealDirectory':
+    'prefix': 'lovefilesystemgetRealDirectory'
+    'body':   'love.filesystem.getRealDirectory(${1:filepath (string)})'
+  'love.filesystem.getSaveDirectory':
+    'prefix': 'lovefilesystemgetSaveDirectory'
+    'body':   'love.filesystem.getSaveDirectory()'
+  'love.filesystem.getSize':
+    'prefix': 'lovefilesystemgetSize'
+    'body':   'love.filesystem.getSize(${1:filename (string)})'
+  'love.filesystem.getSourceBaseDirectory':
+    'prefix': 'lovefilesystemgetSourceBaseDirectory'
+    'body':   'love.filesystem.getSourceBaseDirectory()'
+  'love.filesystem.getUserDirectory':
+    'prefix': 'lovefilesystemgetUserDirectory'
+    'body':   'love.filesystem.getUserDirectory()'
+  'love.filesystem.getWorkingDirectory':
+    'prefix': 'lovefilesystemgetWorkingDirectory'
+    'body':   'love.filesystem.getWorkingDirectory()'
+  'love.filesystem.isDirectory':
+    'prefix': 'lovefilesystemisDirectory'
+    'body':   'love.filesystem.isDirectory(${1:path (string)})'
+  'love.filesystem.isFile':
+    'prefix': 'lovefilesystemisFile'
+    'body':   'love.filesystem.isFile(${1:path (string)})'
+  'love.filesystem.isFused':
+    'prefix': 'lovefilesystemisFused'
+    'body':   'love.filesystem.isFused()'
+  'love.filesystem.isSymlink':
+    'prefix': 'lovefilesystemisSymlink'
+    'body':   'love.filesystem.isSymlink(${1:path (string)})'
+  'love.filesystem.lines':
+    'prefix': 'lovefilesystemlines'
+    'body':   'love.filesystem.lines(${1:name (string)})'
+  'love.filesystem.load':
+    'prefix': 'lovefilesystemload'
+    'body':   'love.filesystem.load(${1:name (string)})'
+  'love.filesystem.mount':
+    'prefix': 'lovefilesystemmount'
+    'body':   'love.filesystem.mount(${1:archive (string)}, ${2:mountpoint (string)})'
+  'love.filesystem.newFile':
+    'prefix': 'lovefilesystemnewFile'
+    'body':   'love.filesystem.newFile(${1:filename (string)}, ${2:mode (FileMode)})'
+  'love.filesystem.newFileData':
+    'prefix': 'lovefilesystemnewFileData'
+    'body':   'love.filesystem.newFileData(${1:contents (string)}, ${2:name (string)}, ${3:decoder (FileDecoder)})'
+  'love.filesystem.read':
+    'prefix': 'lovefilesystemread'
+    'body':   'love.filesystem.read(${1:name (string)}, ${2:bytes (number)})'
+  'love.filesystem.remove':
+    'prefix': 'lovefilesystemremove'
+    'body':   'love.filesystem.remove(${1:name (string)})'
+  'love.filesystem.setIdentity':
+    'prefix': 'lovefilesystemsetIdentity'
+    'body':   'love.filesystem.setIdentity(${1:name (string)}, ${2:searchorder (SearchOrder)})'
+  'love.filesystem.setSource':
+    'prefix': 'lovefilesystemsetSource'
+    'body':   'love.filesystem.setSource(${1:path (string)})'
+  'love.filesystem.setSymlinksEnabled':
+    'prefix': 'lovefilesystemsetSymlinksEnabled'
+    'body':   'love.filesystem.setSymlinksEnabled(${1:enable (boolean)})'
+  'love.filesystem.unmount':
+    'prefix': 'lovefilesystemunmount'
+    'body':   'love.filesystem.unmount(${1:archive (string)})'
+  'love.filesystem.write':
+    'prefix': 'lovefilesystemwrite'
+    'body':   'love.filesystem.write(${1:name (string)}, ${2:data (string)}, ${3:size (number)})'
+
+# GRAPHICS
+  'love.graphics.arc':
+    'prefix': 'lovegraphicsarc'
+    'body':   'love.graphics.arc(${1:mode (DrawMode)}, ${2:x (number)}, ${3:y (number)}, ${4:radius (number)}, ${5:angle1 (number)}, ${6:angle2 (number)}, ${7:segments (number)})'
+  'love.graphics.circle':
+    'prefix': 'lovegraphicscircle'
+    'body':   'love.graphics.circle(${1:mode (DrawMode)}, ${2:x (number)}, ${3:y (number)}, ${4:radius (number)}, ${5:segments (number)})'
+  'love.graphics.clear':
+    'prefix': 'lovegraphicsclear'
+    'body':   'love.graphics.clear()'
+  'love.graphics.draw':
+    'prefix': 'lovegraphicsdraw'
+    'body':   'love.graphics.draw(${1:drawable (Drawable)}, ${2:x (number)}, ${3:y (number)}, ${4:r (number)}, ${5:sx (number)}, ${6:sy (number)}, ${7:ox (number)}, ${8:oy (number)}, ${9:kx (number)}, ${10:ky (number)})'
+  'love.graphics.getBackgroundColor':
+    'prefix': 'lovegraphicsgetBackgroundColor'
+    'body':   'love.graphics.getBackgroundColor()'
+  'love.graphics.getBlendMode':
+    'prefix': 'lovegraphicsgetBlendMode'
+    'body':   'love.graphics.getBlendMode()'
+  'love.graphics.getCanvas':
+    'prefix': 'lovegraphicsgetCanvas'
+    'body':   'love.graphics.getCanvas()'
+  'love.graphics.getCanvasFormats':
+    'prefix': 'lovegraphicsgetCanvasFormats'
+    'body':   'love.graphics.getCanvasFormats()'
+  'love.graphics.getColor':
+    'prefix': 'lovegraphicsgetColor'
+    'body':   'love.graphics.getColor()'
+  'love.graphics.getColorMask':
+    'prefix': 'lovegraphicsgetColorMask'
+    'body':   'love.graphics.getColorMask()'
+  'love.graphics.getCompressedImageFormats':
+    'prefix': 'lovegraphicsgetCompressedImageFormats'
+    'body':   'love.graphics.getCompressedImageFormats()'
+  'love.graphics.getDefaultFilter':
+    'prefix': 'lovegraphicsgetDefaultFilter'
+    'body':   'love.graphics.getDefaultFilter()'
+  'love.graphics.getDimensions':
+    'prefix': 'lovegraphicsgetDimensions'
+    'body':   'love.graphics.getDimensions()'
+  'love.graphics.getFSAA':
+    'prefix': 'lovegraphicsgetFSAA'
+    'body':   'love.graphics.getFSAA()'
+  'love.graphics.getFont':
+    'prefix': 'lovegraphicsgetFont'
+    'body':   'love.graphics.getFont()'
+  'love.graphics.getHeight':
+    'prefix': 'lovegraphicsgetHeight'
+    'body':   'love.graphics.getHeight()'
+  'love.graphics.getLineJoin':
+    'prefix': 'lovegraphicsgetLineJoin'
+    'body':   'love.graphics.getLineJoin()'
+  'love.graphics.getLineStyle':
+    'prefix': 'lovegraphicsgetLineStyle'
+    'body':   'love.graphics.getLineStyle()'
+  'love.graphics.getLineWidth':
+    'prefix': 'lovegraphicsgetLineWidth'
+    'body':   'love.graphics.getLineWidth()'
+  'love.graphics.getFullscreenModes':
+    'prefix': 'lovegraphicsgetFullscreenModes'
+    'body':   'love.graphics.getFullscreenModes()'
+  'love.graphics.getShader':
+    'prefix': 'lovegraphicsgetShader'
+    'body':   'love.graphics.getShader()'
+  'love.graphics.getStats':
+    'prefix': 'lovegraphicsgetStats'
+    'body':   'love.graphics.getStats()'
+  'love.graphics.getPointSize':
+    'prefix': 'lovegraphicsgetPointSize'
+    'body':   'love.graphics.getPointSize()'
+  'love.graphics.getRendererInfo':
+    'prefix': 'lovegraphicsgetRendererInfo'
+    'body':   'love.graphics.getRendererInfo()'
+  'love.graphics.getScissor':
+    'prefix': 'lovegraphicsgetScissor'
+    'body':   'love.graphics.getScissor()'
+  'love.graphics.getWidth':
+    'prefix': 'lovegraphicsgetWidth'
+    'body':   'love.graphics.getWidth()'
+  'love.graphics.isWireframe':
+    'prefix': 'lovegraphicsisWireframe'
+    'body':   'love.graphics.isWireframe()'
+  'love.graphics.line':
+    'prefix': 'lovegraphicsline'
+    'body':   'love.graphics.line(${1:x1 (number)}, ${2:y1 (number)}, ${3:x2 (number)}, ${4:y2 (number)}, ${5:... (number)})'
+  'love.graphics.newCanvas':
+    'prefix': 'lovegraphicsnewCanvas'
+    'body':   'love.graphics.newCanvas(${1:width (number)}, ${2:height (number)}, ${3:texture_type (TextureFormat)}, ${4:fsaa (number)})'
+  'love.graphics.newFont':
+    'prefix': 'lovegraphicsnewFont'
+    'body':   'love.graphics.newFont(${1:filename (string)}, ${2:size (number)})'
+  'love.graphics.newMesh':
+    'prefix': 'lovegraphicsnewMesh'
+    'body':   'love.graphics.newMesh(${1:vertices (table)}, ${2:texture (Texture)}, ${3:mode (MeshDrawMode)})'
+  'love.graphics.newImage':
+    'prefix': 'lovegraphicsnewImage'
+    'body':   'love.graphics.newImage(${1:filename (string)}, ${2:format (TextureFormat)})'
+  'love.graphics.newImageFont':
+    'prefix': 'lovegraphicsnewImageFont'
+    'body':   'love.graphics.newImageFont(${1:filename (string)}, ${2:glyphs (string)})'
+  'love.graphics.newParticleSystem':
+    'prefix': 'lovegraphicsnewParticleSystem'
+    'body':   'love.graphics.newParticleSystem(${1:texture (Texture)}, ${2:buffer (number)})'
+  'love.graphics.newShader':
+    'prefix': 'lovegraphicsnewShader'
+    'body':   'love.graphics.newShader(${1:code (string)})'
+  'love.graphics.newQuad':
+    'prefix': 'lovegraphicsnewQuad'
+    'body':   'love.graphics.newQuad(${1:x (number)}, ${2:y (number)}, ${3:width (number)}, ${4:height (number)}, ${5:sw (number)}, ${6:sh (number)})'
+  'love.graphics.newScreenshot':
+    'prefix': 'lovegraphicsnewScreenshot'
+    'body':   'love.graphics.newScreenshot()'
+  'love.graphics.newSpriteBatch':
+    'prefix': 'lovegraphicsnewSpriteBatch'
+    'body':   'love.graphics.newSpriteBatch(${1:texture (Texture)}, ${2:size (number)}, ${3:usage (SpriteBatchUsage)})'
+  'love.graphics.origin':
+    'prefix': 'lovegraphicsorigin'
+    'body':   'love.graphics.origin()'
+  'love.graphics.point':
+    'prefix': 'lovegraphicspoint'
+    'body':   'love.graphics.point(${1:x (number)}, ${2:y (number)})'
+  'love.graphics.polygon':
+    'prefix': 'lovegraphicspolygon'
+    'body':   'love.graphics.polygon(${1:mode (DrawMode)}, ${2:... (number)})'
+  'love.graphics.pop':
+    'prefix': 'lovegraphicspop'
+    'body':   'love.graphics.pop()'
+  'love.graphics.present':
+    'prefix': 'lovegraphicspresent'
+    'body':   'love.graphics.present()'
+  'love.graphics.print':
+    'prefix': 'lovegraphicsprint'
+    'body':   'love.graphics.print(${1:text (string)}, ${2:x (number)}, ${3:y (number)}, ${4:r (number)}, ${5:sx (number)}, ${6:sy (number)}, ${7:ox (number)}, ${8:oy (number)}, ${9:kx (number)}, ${10:ky (number)})'
+  'love.graphics.printf':
+    'prefix': 'lovegraphicsprintf'
+    'body':   'love.graphics.printf(${1:text (string)}, ${2:x (number)}, ${3:y (number)}, ${4:limit (number)}, ${5:align (AlignMode)}, ${6:r (number)}, ${7:sx (number)}, ${8:sy (number)}, ${9:ox (number)}, ${10:oy (number)}, ${11:kx (number)}, ${12:ky (number)})'
+  'love.graphics.push':
+    'prefix': 'lovegraphicspush'
+    'body':   'love.graphics.push()'
+  'love.graphics.rectangle':
+    'prefix': 'lovegraphicsrectangle'
+    'body':   'love.graphics.rectangle(${1:mode (DrawMode)}, ${2:x (number)}, ${3:y (number)}, ${4:width (number)}, ${5:height (number)})'
+  'love.graphics.reset':
+    'prefix': 'lovegraphicsreset'
+    'body':   'love.graphics.reset()'
+  'love.graphics.rotate':
+    'prefix': 'lovegraphicsrotate'
+    'body':   'love.graphics.rotate(${1:angle (number)})'
+  'love.graphics.scale':
+    'prefix': 'lovegraphicsscale'
+    'body':   'love.graphics.scale(${1:sx (number)}, ${2:sy (number)})'
+  'love.graphics.setBackgroundColor':
+    'prefix': 'lovegraphicssetBackgroundColor'
+    'body':   'love.graphics.setBackgroundColor(${1:r (number)}, ${2:g (number)}, ${3:b (number)}, ${4:a (number)})'
+  'love.graphics.setBlendMode':
+    'prefix': 'lovegraphicssetBlendMode'
+    'body':   'love.graphics.setBlendMode(${1:mode (BlendMode)})'
+  'love.graphics.setCanvas':
+    'prefix': 'lovegraphicssetCanvas'
+    'body':   'love.graphics.setCanvas()'
+  'love.graphics.setColor':
+    'prefix': 'lovegraphicssetColor'
+    'body':   'love.graphics.setColor(${1:red (number)}, ${2:green (number)}, ${3:blue (number)}, ${4:alpha (number)})'
+  'love.graphics.setColorMask':
+    'prefix': 'lovegraphicssetColorMask'
+    'body':   'love.graphics.setColorMask()'
+  'love.graphics.setDefaultFilter':
+    'prefix': 'lovegraphicssetDefaultFilter'
+    'body':   'love.graphics.setDefaultFilter(${1:min (FilterMode)}, ${2:mag (FilterMode)}, ${3:anisotropy (number)})'
+  'love.graphics.setFont':
+    'prefix': 'lovegraphicssetFont'
+    'body':   'love.graphics.setFont(${1:font (Font)})'
+  'love.graphics.setInvertedStencil':
+    'prefix': 'lovegraphicssetInvertedStencil'
+    'body':   'love.graphics.setInvertedStencil()'
+  'love.graphics.setLineJoin':
+    'prefix': 'lovegraphicssetLineJoin'
+    'body':   'love.graphics.setLineJoin(${1:join (LineJoin)})'
+  'love.graphics.setLineStyle':
+    'prefix': 'lovegraphicssetLineStyle'
+    'body':   'love.graphics.setLineStyle(${1:style (LineStyle)})'
+  'love.graphics.setLineWidth':
+    'prefix': 'lovegraphicssetLineWidth'
+    'body':   'love.graphics.setLineWidth(${1:width (number)})'
+  'love.graphics.setNewFont':
+    'prefix': 'lovegraphicssetNewFont'
+    'body':   'love.graphics.setNewFont(${1:size (number)})'
+  'love.graphics.setShader':
+    'prefix': 'lovegraphicssetShader'
+    'body':   'love.graphics.setShader()'
+  'love.graphics.setPointSize':
+    'prefix': 'lovegraphicssetPointSize'
+    'body':   'love.graphics.setPointSize(${1:size (number)})'
+  'love.graphics.setScissor':
+    'prefix': 'lovegraphicssetScissor'
+    'body':   'love.graphics.setScissor()'
+  'love.graphics.setWireframe':
+    'prefix': 'lovegraphicssetWireframe'
+    'body':   'love.graphics.setWireframe(${1:enable (boolean)})'
+  'love.graphics.shear':
+    'prefix': 'lovegraphicsshear'
+    'body':   'love.graphics.shear(${1:kx (number)}, ${2:ky (number)})'
+  'love.graphics.translate':
+    'prefix': 'lovegraphicstranslate'
+    'body':   'love.graphics.translate(${1:dx (number)}, ${2:dy (number)})'
+
+# IMAGE
+  'love.image.isCompressed':
+    'prefix': 'loveimageisCompressed'
+    'body':   'love.image.isCompressed(${1:filename (string)})'
+  'love.image.newCompressedData':
+    'prefix': 'loveimagenewCompressedData'
+    'body':   'love.image.newCompressedData(${1:filename (string)})'
+  'love.image.newImageData':
+    'prefix': 'loveimagenewImageData'
+    'body':   'love.image.newImageData(${1:width (number)}, ${2:height (number)})'
+
+# JOYSTICK
+  'love.joystick.getJoystickCount':
+    'prefix': 'lovejoystickgetJoystickCount'
+    'body':   'love.joystick.getJoystickCount()'
+  'love.joystick.getJoysticks':
+    'prefix': 'lovejoystickgetJoysticks'
+    'body':   'love.joystick.getJoysticks()'
+  'love.joystick.loadGamepadMappings':
+    'prefix': 'lovejoystickloadGamepadMappings'
+    'body':   'love.joystick.loadGamepadMappings(${1:filename (string)})'
+  'love.joystick.saveGamepadMappings':
+    'prefix': 'lovejoysticksaveGamepadMappings'
+    'body':   'love.joystick.saveGamepadMappings(${1:filename (string)})'
+  'love.joystick.setGamepadMapping':
+    'prefix': 'lovejoysticksetGamepadMapping'
+    'body':   'love.joystick.setGamepadMapping(${1:guid (string)}, ${2:button (GamepadButton)}, ${3:inputtype (JoystickInputType)}, ${4:inputindex (number)}, ${5:hatdirection (JoystickHat)})'
+
+# KEYBOARD
+  'love.keyboard.getKeyFromScancode':
+    'prefix': 'lovekeyboardgetKeyFromScancode'
+    'body':   'love.keyboard.getKeyFromScancode(${1:scancode (Scancode)})'
+  'love.keyboard.getScancodeFromKey':
+    'prefix': 'lovekeyboardgetScancodeFromKey'
+    'body':   'love.keyboard.getScancodeFromKey(${1:key (KeyConstant)})'
+  'love.keyboard.hasKeyRepeat':
+    'prefix': 'lovekeyboardhasKeyRepeat'
+    'body':   'love.keyboard.hasKeyRepeat()'
+  'love.keyboard.hasTextInput':
+    'prefix': 'lovekeyboardhasTextInput'
+    'body':   'love.keyboard.hasTextInput()'
+  'love.keyboard.isDown':
+    'prefix': 'lovekeyboardisDown'
+    'body':   'love.keyboard.isDown(${1:key (KeyConstant)})'
+  'love.keyboard.setKeyRepeat':
+    'prefix': 'lovekeyboardsetKeyRepeat'
+    'body':   'love.keyboard.setKeyRepeat(${1:enable (boolean)})'
+  'love.keyboard.setTextInput':
+    'prefix': 'lovekeyboardsetTextInput'
+    'body':   'love.keyboard.setTextInput(${1:enable (boolean)})'
+
+# MATH
+  'love.math.gammaToLinear':
+    'prefix': 'lovemathgammaToLinear'
+    'body':   'love.math.gammaToLinear(${1:r (number)}, ${2:g (number)}, ${3:b (number)})'
+  'love.math.getRandomSeed':
+    'prefix': 'lovemathgetRandomSeed'
+    'body':   'love.math.getRandomSeed()'
+  'love.math.getRandomState':
+    'prefix': 'lovemathgetRandomState'
+    'body':   'love.math.getRandomState()'
+  'love.math.isConvex':
+    'prefix': 'lovemathisConvex'
+    'body':   'love.math.isConvex(${1:vertices (table)})'
+  'love.math.linearToGamma':
+    'prefix': 'lovemathlinearToGamma'
+    'body':   'love.math.linearToGamma(${1:lr (number)}, ${2:lg (number)}, ${3:lb (number)})'
+  'love.math.newBezierCurve':
+    'prefix': 'lovemathnewBezierCurve'
+    'body':   'love.math.newBezierCurve(${1:vertices (table)})'
+  'love.math.newRandomGenerator':
+    'prefix': 'lovemathnewRandomGenerator'
+    'body':   'love.math.newRandomGenerator()'
+  'love.math.noise':
+    'prefix': 'lovemathnoise'
+    'body':   'love.math.noise(${1:x (number)})'
+  'love.math.random':
+    'prefix': 'lovemathrandom'
+    'body':   'love.math.random()'
+  'love.math.randomNormal':
+    'prefix': 'lovemathrandomNormal'
+    'body':   'love.math.randomNormal(${1:stddev (number)}, ${2:mean (number)})'
+  'love.math.setRandomSeed':
+    'prefix': 'lovemathsetRandomSeed'
+    'body':   'love.math.setRandomSeed(${1:seed (number)})'
+  'love.math.setRandomState':
+    'prefix': 'lovemathsetRandomState'
+    'body':   'love.math.setRandomState(${1:state (string)})'
+  'love.math.triangulate':
+    'prefix': 'lovemathtriangulate'
+    'body':   'love.math.triangulate(${1:polygon (table)})'
+
+# MOUSE
+  'love.mouse.getCursor':
+    'prefix': 'lovemousegetCursor'
+    'body':   'love.mouse.getCursor()'
+  'love.mouse.getPosition':
+    'prefix': 'lovemousegetPosition'
+    'body':   'love.mouse.getPosition()'
+  'love.mouse.getRelativeMode':
+    'prefix': 'lovemousegetRelativeMode'
+    'body':   'love.mouse.getRelativeMode()'
+  'love.mouse.getSystemCursor':
+    'prefix': 'lovemousegetSystemCursor'
+    'body':   'love.mouse.getSystemCursor(${1:ctype (CursorType)})'
+  'love.mouse.getX':
+    'prefix': 'lovemousegetX'
+    'body':   'love.mouse.getX()'
+  'love.mouse.getY':
+    'prefix': 'lovemousegetY'
+    'body':   'love.mouse.getY()'
+  'love.mouse.isDown':
+    'prefix': 'lovemouseisDown'
+    'body':   'love.mouse.isDown(${1:button (MouseConstant)})'
+  'love.mouse.isGrabbed':
+    'prefix': 'lovemouseisGrabbed'
+    'body':   'love.mouse.isGrabbed()'
+  'love.mouse.isVisible':
+    'prefix': 'lovemouseisVisible'
+    'body':   'love.mouse.isVisible()'
+  'love.mouse.newCursor':
+    'prefix': 'lovemousenewCursor'
+    'body':   'love.mouse.newCursor(${1:imageData (ImageData)}, ${2:hotx (number)}, ${3:hoty (number)})'
+  'love.mouse.setCursor':
+    'prefix': 'lovemousesetCursor'
+    'body':   'love.mouse.setCursor()'
+  'love.mouse.setGrabbed':
+    'prefix': 'lovemousesetGrabbed'
+    'body':   'love.mouse.setGrabbed(${1:grab (boolean)})'
+  'love.mouse.setPosition':
+    'prefix': 'lovemousesetPosition'
+    'body':   'love.mouse.setPosition(${1:x (number)}, ${2:y (number)})'
+  'love.mouse.setRelativeMode':
+    'prefix': 'lovemousesetRelativeMode'
+    'body':   'love.mouse.setRelativeMode(${1:enable (boolean)})'
+  'love.mouse.setVisible':
+    'prefix': 'lovemousesetVisible'
+    'body':   'love.mouse.setVisible(${1:visible (boolean)})'
+  'love.mouse.setX':
+    'prefix': 'lovemousesetX'
+    'body':   'love.mouse.setX(${1:x (number)})'
+  'love.mouse.setY':
+    'prefix': 'lovemousesetY'
+    'body':   'love.mouse.setY(${1:y (number)})'
+
+# PHYSICS
+  'love.physics.getDistance':
+    'prefix': 'lovephysicsgetDistance'
+    'body':   'love.physics.getDistance(${1:fixture1 (Fixture)}, ${2:fixture2 (Fixture)})'
+  'love.physics.getMeter':
+    'prefix': 'lovephysicsgetMeter'
+    'body':   'love.physics.getMeter()'
+  'love.physics.newBody':
+    'prefix': 'lovephysicsnewBody'
+    'body':   'love.physics.newBody(${1:world (World)}, ${2:x (number)}, ${3:y (number)}, ${4:type (BodyType)})'
+  'love.physics.newChainShape':
+    'prefix': 'lovephysicsnewChainShape'
+    'body':   'love.physics.newChainShape(${1:loop (boolean)}, ${2:x1 (number)}, ${3:y1 (number)}, ${4:x2 (number)}, ${5:y2 (number)})'
+  'love.physics.newCircleShape':
+    'prefix': 'lovephysicsnewCircleShape'
+    'body':   'love.physics.newCircleShape(${1:body (Body)}, ${2:x (number)}, ${3:y (number)}, ${4:radius (number)})'
+  'love.physics.newDistanceJoint':
+    'prefix': 'lovephysicsnewDistanceJoint'
+    'body':   'love.physics.newDistanceJoint(${1:body1 (Body)}, ${2:body2 (Body)}, ${3:x1 (number)}, ${4:y1 (number)}, ${5:x2 (number)}, ${6:y2 (number)}, ${7:collideConnected (boolean)})'
+  'love.physics.newEdgeShape':
+    'prefix': 'lovephysicsnewEdgeShape'
+    'body':   'love.physics.newEdgeShape(${1:x1 (number)}, ${2:y1 (number)}, ${3:x2 (number)}, ${4:y2 (number)})'
+  'love.physics.newFixture':
+    'prefix': 'lovephysicsnewFixture'
+    'body':   'love.physics.newFixture(${1:body (Body)}, ${2:shape (Shape)}, ${3:density (number)})'
+  'love.physics.newFrictionJoint':
+    'prefix': 'lovephysicsnewFrictionJoint'
+    'body':   'love.physics.newFrictionJoint(${1:body1 (Body)}, ${2:body2 (Body)}, ${3:x (number)}, ${4:y (number)}, ${5:collideConnected (boolean)})'
+  'love.physics.newGearJoint':
+    'prefix': 'lovephysicsnewGearJoint'
+    'body':   'love.physics.newGearJoint(${1:joint1 (Joint)}, ${2:joint2 (Joint)}, ${3:ratio (number)}, ${4:collideConnected (boolean)})'
+  'love.physics.newMouseJoint':
+    'prefix': 'lovephysicsnewMouseJoint'
+    'body':   'love.physics.newMouseJoint(${1:body (Body)}, ${2:x (number)}, ${3:y (number)})'
+  'love.physics.newPolygonShape':
+    'prefix': 'lovephysicsnewPolygonShape'
+    'body':   'love.physics.newPolygonShape(${1:body (Body)}, ${2:... (number)})'
+  'love.physics.newPrismaticJoint':
+    'prefix': 'lovephysicsnewPrismaticJoint'
+    'body':   'love.physics.newPrismaticJoint(${1:body1 (Body)}, ${2:body2 (Body)}, ${3:x (number)}, ${4:y (number)}, ${5:ax (number)}, ${6:ay (number)}, ${7:collideConnected (boolean)})'
+  'love.physics.newPulleyJoint':
+    'prefix': 'lovephysicsnewPulleyJoint'
+    'body':   'love.physics.newPulleyJoint(${1:body1 (Body)}, ${2:body2 (Body)}, ${3:gx1 (number)}, ${4:gy1 (number)}, ${5:gx2 (number)}, ${6:gy2 (number)}, ${7:x1 (number)}, ${8:y1 (number)}, ${9:x2 (number)}, ${10:y2 (number)}, ${11:ratio (number)}, ${12:collideConnected (boolean)})'
+  'love.physics.newRectangleShape':
+    'prefix': 'lovephysicsnewRectangleShape'
+    'body':   'love.physics.newRectangleShape(${1:body (Body)}, ${2:x (number)}, ${3:y (number)}, ${4:width (number)}, ${5:height (number)}, ${6:angle (number)})'
+  'love.physics.newRevoluteJoint':
+    'prefix': 'lovephysicsnewRevoluteJoint'
+    'body':   'love.physics.newRevoluteJoint(${1:body1 (Body)}, ${2:body2 (Body)}, ${3:x (number)}, ${4:y (number)}, ${5:collideConnected (number)})'
+  'love.physics.newRopeJoint':
+    'prefix': 'lovephysicsnewRopeJoint'
+    'body':   'love.physics.newRopeJoint(${1:body1 (Body)}, ${2:body2 (Body)}, ${3:x1 (number)}, ${4:y1 (number)}, ${5:x2 (number)}, ${6:y2 (number)}, ${7:maxLength (number)}, ${8:collideConnected (boolean)})'
+  'love.physics.newWeldJoint':
+    'prefix': 'lovephysicsnewWeldJoint'
+    'body':   'love.physics.newWeldJoint(${1:body1 (Body)}, ${2:body2 (Body)}, ${3:x (number)}, ${4:y (number)}, ${5:collideConnected (boolean)})'
+  'love.physics.newWheelJoint':
+    'prefix': 'lovephysicsnewWheelJoint'
+    'body':   'love.physics.newWheelJoint(${1:body1 (Body)}, ${2:body2 (Body)}, ${3:x (number)}, ${4:y (number)}, ${5:ax (number)}, ${6:ay (number)}, ${7:collideConnected (boolean)})'
+  'love.physics.newWorld':
+    'prefix': 'lovephysicsnewWorld'
+    'body':   'love.physics.newWorld(${1:xg (number)}, ${2:yg (number)}, ${3:sleep (boolean)})'
+  'love.physics.setMeter':
+    'prefix': 'lovephysicssetMeter'
+    'body':   'love.physics.setMeter(${1:scale (number)})'
+
+# SOUND
+  'love.sound.newSoundData':
+    'prefix': 'lovesoundnewSoundData'
+    'body':   'love.sound.newSoundData(${1:filename (string)})'
+
+# SYSTEM
+  'love.system.getClipboardText':
+    'prefix': 'lovesystemgetClipboardText'
+    'body':   'love.system.getClipboardText()'
+  'love.system.getOS':
+    'prefix': 'lovesystemgetOS'
+    'body':   'love.system.getOS()'
+  'love.system.getPowerInfo':
+    'prefix': 'lovesystemgetPowerInfo'
+    'body':   'love.system.getPowerInfo()'
+  'love.system.getProcessorCount':
+    'prefix': 'lovesystemgetProcessorCount'
+    'body':   'love.system.getProcessorCount()'
+  'love.system.openURL':
+    'prefix': 'lovesystemopenURL'
+    'body':   'love.system.openURL(${1:url (string)})'
+  'love.system.setClipboardText':
+    'prefix': 'lovesystemsetClipboardText'
+    'body':   'love.system.setClipboardText(${1:text (string)})'
+
+# THREAD
+  'love.thread.getChannel':
+    'prefix': 'lovethreadgetChannel'
+    'body':   'love.thread.getChannel(${1:name (string)})'
+  'love.thread.newChannel':
+    'prefix': 'lovethreadnewChannel'
+    'body':   'love.thread.newChannel()'
+  'love.thread.newThread':
+    'prefix': 'lovethreadnewThread'
+    'body':   'love.thread.newThread(${1:filename (string)})'
+
+# TIMER
+  'love.timer.getAverageDelta':
+    'prefix': 'lovetimergetAverageDelta'
+    'body':   'love.timer.getAverageDelta()'
+  'love.timer.getDelta':
+    'prefix': 'lovetimergetDelta'
+    'body':   'love.timer.getDelta()'
+  'love.timer.getFPS':
+    'prefix': 'lovetimergetFPS'
+    'body':   'love.timer.getFPS()'
+  'love.timer.getTime':
+    'prefix': 'lovetimergetTime'
+    'body':   'love.timer.getTime()'
+  'love.timer.sleep':
+    'prefix': 'lovetimersleep'
+    'body':   'love.timer.sleep(${1:s (number)})'
+  'love.timer.step':
+    'prefix': 'lovetimerstep'
+    'body':   'love.timer.step()'
+
+# WINDOW
+  'love.window.fromPixels':
+    'prefix': 'lovewindowfromPixels'
+    'body':   'love.window.fromPixels(${1:pixelvalue (number)})'
+  'love.window.getDimensions':
+    'prefix': 'lovewindowgetDimensions'
+    'body':   'love.window.getDimensions()'
+  'love.window.getDisplayName':
+    'prefix': 'lovewindowgetDisplayName'
+    'body':   'love.window.getDisplayName(${1:displayindex (number)})'
+  'love.window.getFullscreen':
+    'prefix': 'lovewindowgetFullscreen'
+    'body':   'love.window.getFullscreen()'
+  'love.window.getFullscreenModes':
+    'prefix': 'lovewindowgetFullscreenModes'
+    'body':   'love.window.getFullscreenModes(${1:display (number)})'
+  'love.window.getHeight':
+    'prefix': 'lovewindowgetHeight'
+    'body':   'love.window.getHeight()'
+  'love.window.getIcon':
+    'prefix': 'lovewindowgetIcon'
+    'body':   'love.window.getIcon()'
+  'love.window.getMode':
+    'prefix': 'lovewindowgetMode'
+    'body':   'love.window.getMode()'
+  'love.window.getPixelScale':
+    'prefix': 'lovewindowgetPixelScale'
+    'body':   'love.window.getPixelScale()'
+  'love.window.getPosition':
+    'prefix': 'lovewindowgetPosition'
+    'body':   'love.window.getPosition()'
+  'love.window.getTitle':
+    'prefix': 'lovewindowgetTitle'
+    'body':   'love.window.getTitle()'
+  'love.window.getWidth':
+    'prefix': 'lovewindowgetWidth'
+    'body':   'love.window.getWidth()'
+  'love.window.hasFocus':
+    'prefix': 'lovewindowhasFocus'
+    'body':   'love.window.hasFocus()'
+  'love.window.hasMouseFocus':
+    'prefix': 'lovewindowhasMouseFocus'
+    'body':   'love.window.hasMouseFocus()'
+  'love.window.isCreated':
+    'prefix': 'lovewindowisCreated'
+    'body':   'love.window.isCreated()'
+  'love.window.isVisible':
+    'prefix': 'lovewindowisVisible'
+    'body':   'love.window.isVisible()'
+  'love.window.minimize':
+    'prefix': 'lovewindowminimize'
+    'body':   'love.window.minimize()'
+  'love.window.setFullscreen':
+    'prefix': 'lovewindowsetFullscreen'
+    'body':   'love.window.setFullscreen(${1:fullscreen (boolean)})'
+  'love.window.setIcon':
+    'prefix': 'lovewindowsetIcon'
+    'body':   'love.window.setIcon(${1:imagedata (ImageData)})'
+  'love.window.setMode':
+    'prefix': 'lovewindowsetMode'
+    'body':   'love.window.setMode(${1:width (number)}, ${2:height (number)}, ${3:flags (table)})'
+  'love.window.setPosition':
+    'prefix': 'lovewindowsetPosition'
+    'body':   'love.window.setPosition(${1:x (number)}, ${2:y (number)}, ${3:display (number)})'
+  'love.window.setTitle':
+    'prefix': 'lovewindowsetTitle'
+    'body':   'love.window.setTitle(${1:title (string)})'
+  'love.window.showMessageBox':
+    'prefix': 'lovewindowshowMessageBox'
+    'body':   'love.window.showMessageBox(${1:title (string)}, ${2:message (string)}, ${3:type ("info") (MessageBoxType)}, ${4:attachtowindow (true) (boolean)})'
+  'love.window.toPixels':
+    'prefix': 'lovewindowtoPixels'
+    'body':   'love.window.toPixels(${1:value (number)})'
