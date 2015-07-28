@@ -49,6 +49,7 @@ local function createPlugin()
     print('Generating LOVE snippets ... ');
 
     local file = io.open(OUTPUT_FILE, 'w');
+    assert(file, "ERROR: Can't write file: " .. OUTPUT_FILE);
 
     -- Load the LÖVE api files.
     local api = require('love_api');
