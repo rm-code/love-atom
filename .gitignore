@@ -45,3 +45,8 @@ modules/*
 
 # Snippet output
 snippet.cson
+
+# Atom packages
+.DS_Store
+npm-debug.log
+node_modules
