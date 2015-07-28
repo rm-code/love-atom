@@ -39,12 +39,10 @@ luac.out
 *.x86_64
 *.hex
 
-# LÖVE api files
-love_api.lua
-modules/*
-
-# Snippet output
-snippet.cson
+# Lua files for generating the snippets
+generator/love_api.lua
+generator/modules/*
+generator/love-snippets.cson
 
 # Atom packages
 .DS_Store
