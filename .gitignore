@@ -39,3 +39,9 @@ luac.out
 *.x86_64
 *.hex
 
+# LÖVE api files
+love_api.lua
+modules/*
+
+# Snippet output
+snippet.cson
