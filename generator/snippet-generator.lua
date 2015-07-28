@@ -9,6 +9,24 @@ local PARAM  = '${%d:%s (%s)}';
 
 local OUTPUT_FILE = 'love-snippets.cson';
 
+local function generateArguments(arguments)
+    local params = '';
+    if arguments then
+        for i, args in ipairs(arguments) do
+            -- Generate a parameter in the format ${index:name (type)}. This will be
+            -- used by atom to automatically mark parameters and allows the user to
+            -- insert his custom parameters and switch to the next one by pressing TAB.
+            params = params .. string.format(PARAM, i, args.name, args.type);
+
+            -- Add a separator unless we are dealing with the last argument of the function.
+            if i ~= #arguments then
+                params = params .. ', ';
+            end
+        end
+    end
+    return params;
+end
+
 local function createPlugin()
     print('Generating LOVE snippets ... ');
 
@@ -33,22 +51,8 @@ local function createPlugin()
         file:write(TAB .. TAB .. BODY);
         -- Generate the arguments.
         -- Here we generate a list of parameters in the format ${index:name (type)}.
-        local arguments = f.variants[1].arguments; -- Only use the first variant.
-        local params = '';
-        if arguments then
-            for i, args in ipairs(arguments) do
-                -- Generate a parameter in the format ${index:name (type)}. This will be
-                -- used by atom to automatically mark parameters and allows the user to
-                -- insert his custom parameters and switch to the next one by pressing TAB.
-                params = params .. string.format(PARAM, i, args.name, args.type);
-
-                -- Add a separator unless we are dealing with the last argument of the function.
-                if i ~= #arguments then
-                    params = params .. ', ';
-                end
-            end
-        end
-        file:write(APOSTROPHE .. 'love.' .. string.format(f.name .. '(%s)', params) .. APOSTROPHE .. LINE_BREAK)
+        local arguments = generateArguments(f.variants[1].arguments);
+        file:write(APOSTROPHE .. 'love.' .. string.format(f.name .. '(%s)', arguments) .. APOSTROPHE .. LINE_BREAK)
     end
 
     -- Generate the snippets for all LÖVE modules.
@@ -71,24 +75,8 @@ local function createPlugin()
 
             -- Generate the arguments.
             -- Here we generate a list of parameters in the format ${index:name (type)}.
-            local arguments = f.variants[1].arguments; -- Only use the first variant.
-            local params = '';
-            if arguments then
-                for i, args in ipairs(arguments) do
-                    -- Generate a parameter in the format ${index:name (type)}. This will be
-                    -- used by atom to automatically mark parameters and allows the user to
-                    -- insert his custom parameters and switch to the next one by pressing TAB.
-                    params = params .. string.format(PARAM, i, args.name, args.type);
-
-                    -- Add a separator unless we are dealing with the last argument of the function.
-                    if i ~= #arguments then
-                        params = params .. ', ';
-                    end
-                end
-            end
-
-            -- Write the function body to the snippet file.
-            file:write(APOSTROPHE .. string.format(realName .. '(%s)', params) .. APOSTROPHE .. LINE_BREAK);
+            local arguments = generateArguments(f.variants[1].arguments);
+            file:write(APOSTROPHE .. string.format(realName .. '(%s)', arguments) .. APOSTROPHE .. LINE_BREAK);
         end
     end
 
