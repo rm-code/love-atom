@@ -27,6 +27,7 @@ local OUTPUT_FILE = 'love-snippets.cson';
 --
 local function generateArguments(arguments)
     local params = '';
+    local index = 0;
     if arguments then
         for i, args in ipairs(arguments) do
             params = params .. string.format(PARAM, i, args.name, args.type);
@@ -36,8 +37,9 @@ local function generateArguments(arguments)
                 params = params .. ', ';
             end
         end
+        index = #arguments;
     end
-    return params;
+    return params, index;
 end
 
 ---
@@ -71,8 +73,9 @@ local function createPlugin()
         file:write(TAB .. TAB .. BODY);
         -- Generate the arguments.
         -- Here we generate a list of parameters in the format ${index:name (type)}.
-        local arguments = generateArguments(f.variants[1].arguments);
-        file:write(APOSTROPHE .. 'love.' .. string.format(f.name .. '(%s)', arguments) .. APOSTROPHE .. LINE_BREAK)
+        local arguments, index = generateArguments(f.variants[1].arguments);
+        file:write(APOSTROPHE .. 'function love.' .. string.format(f.name .. '(%s)', arguments) .. '\\n' ..
+            TAB .. TAB .. string.format(PARAM, index + 1, 'body', 'lua') .. '\\n' .. 'end\\n' .. APOSTROPHE .. LINE_BREAK);
     end
 
     -- Generate the snippets for all LÖVE modules.
