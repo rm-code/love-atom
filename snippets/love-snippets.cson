@@ -2,82 +2,82 @@
 '.source.lua':
   'love.draw':
     'prefix': 'lovedraw'
-    'body':   'love.draw()'
+    'body':   'function love.draw()\n    ${1:body (lua)}\nend\n'
   'love.errhand':
     'prefix': 'loveerrhand'
-    'body':   'love.errhand(${1:msg (string)})'
+    'body':   'function love.errhand(${1:msg (string)})\n    ${2:body (lua)}\nend\n'
   'love.focus':
     'prefix': 'lovefocus'
-    'body':   'love.focus(${1:f (boolean)})'
+    'body':   'function love.focus(${1:f (boolean)})\n    ${2:body (lua)}\nend\n'
   'love.gamepadaxis':
     'prefix': 'lovegamepadaxis'
-    'body':   'love.gamepadaxis(${1:joystick (Joystick)}, ${2:axis (GamepadAxis)})'
+    'body':   'function love.gamepadaxis(${1:joystick (Joystick)}, ${2:axis (GamepadAxis)})\n    ${3:body (lua)}\nend\n'
   'love.gamepadpressed':
     'prefix': 'lovegamepadpressed'
-    'body':   'love.gamepadpressed(${1:joystick (Joystick)}, ${2:button (GamepadButton)})'
+    'body':   'function love.gamepadpressed(${1:joystick (Joystick)}, ${2:button (GamepadButton)})\n    ${3:body (lua)}\nend\n'
   'love.gamepadreleased':
     'prefix': 'lovegamepadreleased'
-    'body':   'love.gamepadreleased(${1:joystick (Joystick)}, ${2:button (GamepadButton)})'
+    'body':   'function love.gamepadreleased(${1:joystick (Joystick)}, ${2:button (GamepadButton)})\n    ${3:body (lua)}\nend\n'
   'love.joystickadded':
     'prefix': 'lovejoystickadded'
-    'body':   'love.joystickadded(${1:joystick (Joystick)})'
+    'body':   'function love.joystickadded(${1:joystick (Joystick)})\n    ${2:body (lua)}\nend\n'
   'love.joystickaxis':
     'prefix': 'lovejoystickaxis'
-    'body':   'love.joystickaxis(${1:joystick (Joystick)}, ${2:axis (number)}, ${3:value (number)})'
+    'body':   'function love.joystickaxis(${1:joystick (Joystick)}, ${2:axis (number)}, ${3:value (number)})\n    ${4:body (lua)}\nend\n'
   'love.joystickhat':
     'prefix': 'lovejoystickhat'
-    'body':   'love.joystickhat(${1:joystick (Joystick)}, ${2:hat (number)}, ${3:direction (JoystickHat)})'
+    'body':   'function love.joystickhat(${1:joystick (Joystick)}, ${2:hat (number)}, ${3:direction (JoystickHat)})\n    ${4:body (lua)}\nend\n'
   'love.joystickpressed':
     'prefix': 'lovejoystickpressed'
-    'body':   'love.joystickpressed(${1:joystick (number)}, ${2:button (number)})'
+    'body':   'function love.joystickpressed(${1:joystick (number)}, ${2:button (number)})\n    ${3:body (lua)}\nend\n'
   'love.joystickreleased':
     'prefix': 'lovejoystickreleased'
-    'body':   'love.joystickreleased(${1:joystick (number)}, ${2:button (number)})'
+    'body':   'function love.joystickreleased(${1:joystick (number)}, ${2:button (number)})\n    ${3:body (lua)}\nend\n'
   'love.joystickremoved':
     'prefix': 'lovejoystickremoved'
-    'body':   'love.joystickremoved(${1:joystick (Joystick)})'
+    'body':   'function love.joystickremoved(${1:joystick (Joystick)})\n    ${2:body (lua)}\nend\n'
   'love.keypressed':
     'prefix': 'lovekeypressed'
-    'body':   'love.keypressed(${1:key (KeyConstant)}, ${2:isrepeat (boolean)})'
+    'body':   'function love.keypressed(${1:key (KeyConstant)}, ${2:isrepeat (boolean)})\n    ${3:body (lua)}\nend\n'
   'love.keyreleased':
     'prefix': 'lovekeyreleased'
-    'body':   'love.keyreleased(${1:key (KeyConstant)})'
+    'body':   'function love.keyreleased(${1:key (KeyConstant)})\n    ${2:body (lua)}\nend\n'
   'love.load':
     'prefix': 'loveload'
-    'body':   'love.load(${1:arg (table)})'
+    'body':   'function love.load(${1:arg (table)})\n    ${2:body (lua)}\nend\n'
   'love.mousefocus':
     'prefix': 'lovemousefocus'
-    'body':   'love.mousefocus(${1:f (boolean)})'
+    'body':   'function love.mousefocus(${1:f (boolean)})\n    ${2:body (lua)}\nend\n'
   'love.mousemoved':
     'prefix': 'lovemousemoved'
-    'body':   'love.mousemoved(${1:x (number)}, ${2:y (number)}, ${3:dx (number)}, ${4:dy (number)})'
+    'body':   'function love.mousemoved(${1:x (number)}, ${2:y (number)}, ${3:dx (number)}, ${4:dy (number)})\n    ${5:body (lua)}\nend\n'
   'love.mousepressed':
     'prefix': 'lovemousepressed'
-    'body':   'love.mousepressed(${1:x (number)}, ${2:y (number)}, ${3:button (MouseConstant)})'
+    'body':   'function love.mousepressed(${1:x (number)}, ${2:y (number)}, ${3:button (MouseConstant)})\n    ${4:body (lua)}\nend\n'
   'love.mousereleased':
     'prefix': 'lovemousereleased'
-    'body':   'love.mousereleased(${1:x (number)}, ${2:y (number)}, ${3:button (MouseConstant)})'
+    'body':   'function love.mousereleased(${1:x (number)}, ${2:y (number)}, ${3:button (MouseConstant)})\n    ${4:body (lua)}\nend\n'
   'love.quit':
     'prefix': 'lovequit'
-    'body':   'love.quit()'
+    'body':   'function love.quit()\n    ${1:body (lua)}\nend\n'
   'love.resize':
     'prefix': 'loveresize'
-    'body':   'love.resize(${1:w (number)}, ${2:h (number)})'
+    'body':   'function love.resize(${1:w (number)}, ${2:h (number)})\n    ${3:body (lua)}\nend\n'
   'love.run':
     'prefix': 'loverun'
-    'body':   'love.run()'
+    'body':   'function love.run()\n    ${1:body (lua)}\nend\n'
   'love.textinput':
     'prefix': 'lovetextinput'
-    'body':   'love.textinput(${1:text (string)})'
+    'body':   'function love.textinput(${1:text (string)})\n    ${2:body (lua)}\nend\n'
   'love.threaderror':
     'prefix': 'lovethreaderror'
-    'body':   'love.threaderror(${1:thread (Thread)}, ${2:errorstr (string)})'
+    'body':   'function love.threaderror(${1:thread (Thread)}, ${2:errorstr (string)})\n    ${3:body (lua)}\nend\n'
   'love.update':
     'prefix': 'loveupdate'
-    'body':   'love.update(${1:dt (number)})'
+    'body':   'function love.update(${1:dt (number)})\n    ${2:body (lua)}\nend\n'
   'love.visible':
     'prefix': 'lovevisible'
-    'body':   'love.visible(${1:v (boolean)})'
+    'body':   'function love.visible(${1:v (boolean)})\n    ${2:body (lua)}\nend\n'
 
 # AUDIO
   'love.audio.getDistanceModel':
