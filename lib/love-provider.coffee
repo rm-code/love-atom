@@ -8,7 +8,6 @@ module.exports =
     inclusionPriority: 10
     excludeLowerPriority: true
 
-    # Required: Return a promise, an array of suggestions, or null.
     getSuggestions: ( { editor, bufferPosition, scopeDescriptor, prefix, activatedManually } ) ->
         if prefix.length is 0
             return []
