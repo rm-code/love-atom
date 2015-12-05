@@ -14,6 +14,8 @@ local PARAM  = '${%d:%s (%s)}';
 
 local OUTPUT_FILE = 'love-completions.json';
 
+local WIKI_URL = 'https://love2d.org/wiki/';
+
 -- ------------------------------------------------
 -- Local Functions
 -- ------------------------------------------------
@@ -64,6 +66,9 @@ local function createJSON()
 
         -- The description field will cause the suggestion menu to display the function's description.
         file:write(TAB .. TAB .. '"description": ' .. APOSTROPHE .. cleanUpString(f.description) .. APOSTROPHE .. COMMA .. LINE_BREAK);
+
+        --
+        file:write(TAB .. TAB .. '"descriptionMoreURL": ' .. APOSTROPHE .. WIKI_URL .. 'love.' .. f.name .. APOSTROPHE .. COMMA .. LINE_BREAK);
 
         -- The snippet will determine what the prefix will be replaced with.
         file:write(TAB .. TAB .. '"snippet": ');

@@ -27,6 +27,7 @@ module.exports =
             snippet: item.snippet
             type: item.type
             description: item.description
+            descriptionMoreURL: item.descriptionMoreURL
 
     loadCompletions: ->
         @completions = {}
