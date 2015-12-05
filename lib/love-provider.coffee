@@ -27,7 +27,6 @@ module.exports =
 
         suggestions
 
-
     loadCompletions: ->
         @completions = {}
         fs.readFile path.resolve( __dirname, '..', './snippets/love-completions.json' ), ( error, data ) =>
