@@ -37,6 +37,10 @@ local function generateArguments(arguments)
     return params, index;
 end
 
+local function cleanUpString(str)
+    return str:gsub('\n\n', ' '):gsub('\"', '\\"');
+end
+
 local function createJSON()
     print('Generating LOVE snippets ... ');
 
@@ -57,6 +61,9 @@ local function createJSON()
 
         -- The type field determines which symbol to display in the autocomplete menu.
         file:write(TAB .. TAB .. '"type": "function"' .. COMMA .. LINE_BREAK);
+
+        -- The description field will cause the suggestion menu to display the function's description.
+        file:write(TAB .. TAB .. '"description": ' .. APOSTROPHE .. cleanUpString(f.description) .. APOSTROPHE .. COMMA .. LINE_BREAK);
 
         -- The snippet will determine what the prefix will be replaced with.
         file:write(TAB .. TAB .. '"snippet": ');

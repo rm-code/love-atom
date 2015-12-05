@@ -2,166 +2,199 @@
   {
     "displayText": "love.directorydropped",
     "type": "function",
+    "description": "Callback function triggered when a directory is dragged and dropped onto the window.",
     "snippet": "function love.directorydropped(${1:path (string)})\n    ${2:body (lua)}\nend\n"
   },
   {
     "displayText": "love.draw",
     "type": "function",
+    "description": "Callback function used to draw on the screen every frame.",
     "snippet": "function love.draw()\n    ${1:body (lua)}\nend\n"
   },
   {
     "displayText": "love.errhand",
     "type": "function",
+    "description": "The error handler, used to display error messages.",
     "snippet": "function love.errhand(${1:msg (string)})\n    ${2:body (lua)}\nend\n"
   },
   {
     "displayText": "love.filedropped",
     "type": "function",
+    "description": "Callback function triggered when a file is dragged and dropped onto the window.",
     "snippet": "function love.filedropped(${1:file (File)})\n    ${2:body (lua)}\nend\n"
   },
   {
     "displayText": "love.focus",
     "type": "function",
+    "description": "Callback function triggered when window receives or loses focus.",
     "snippet": "function love.focus(${1:f (boolean)})\n    ${2:body (lua)}\nend\n"
   },
   {
     "displayText": "love.gamepadaxis",
     "type": "function",
+    "description": "Called when a Joystick's virtual gamepad axis is moved.",
     "snippet": "function love.gamepadaxis(${1:joystick (Joystick)}, ${2:axis (GamepadAxis)})\n    ${3:body (lua)}\nend\n"
   },
   {
     "displayText": "love.gamepadpressed",
     "type": "function",
+    "description": "Called when a Joystick's virtual gamepad button is pressed.",
     "snippet": "function love.gamepadpressed(${1:joystick (Joystick)}, ${2:button (GamepadButton)})\n    ${3:body (lua)}\nend\n"
   },
   {
     "displayText": "love.gamepadreleased",
     "type": "function",
+    "description": "Called when a Joystick's virtual gamepad button is released.",
     "snippet": "function love.gamepadreleased(${1:joystick (Joystick)}, ${2:button (GamepadButton)})\n    ${3:body (lua)}\nend\n"
   },
   {
     "displayText": "love.joystickadded",
     "type": "function",
+    "description": "Called when a Joystick is connected. This callback is also triggered after love.load for every Joystick which was already connected when the game started up.",
     "snippet": "function love.joystickadded(${1:joystick (Joystick)})\n    ${2:body (lua)}\nend\n"
   },
   {
     "displayText": "love.joystickaxis",
     "type": "function",
+    "description": "Called when a joystick axis moves.",
     "snippet": "function love.joystickaxis(${1:joystick (Joystick)}, ${2:axis (number)}, ${3:value (number)})\n    ${4:body (lua)}\nend\n"
   },
   {
     "displayText": "love.joystickhat",
     "type": "function",
+    "description": "Called when a joystick hat direction changes.",
     "snippet": "function love.joystickhat(${1:joystick (Joystick)}, ${2:hat (number)}, ${3:direction (JoystickHat)})\n    ${4:body (lua)}\nend\n"
   },
   {
     "displayText": "love.joystickpressed",
     "type": "function",
+    "description": "Called when a joystick button is pressed.",
     "snippet": "function love.joystickpressed(${1:joystick (number)}, ${2:button (number)})\n    ${3:body (lua)}\nend\n"
   },
   {
     "displayText": "love.joystickreleased",
     "type": "function",
+    "description": "Called when a joystick button is released.",
     "snippet": "function love.joystickreleased(${1:joystick (number)}, ${2:button (number)})\n    ${3:body (lua)}\nend\n"
   },
   {
     "displayText": "love.joystickremoved",
     "type": "function",
+    "description": "Called when a Joystick is disconnected.",
     "snippet": "function love.joystickremoved(${1:joystick (Joystick)})\n    ${2:body (lua)}\nend\n"
   },
   {
     "displayText": "love.keypressed",
     "type": "function",
+    "description": "Callback function triggered when a key is pressed. Key repeat needs to be enabled with love.keyboard.setKeyRepeat for repeat keypress events to be received.",
     "snippet": "function love.keypressed(${1:key (KeyConstant)}, ${2:isrepeat (boolean)})\n    ${3:body (lua)}\nend\n"
   },
   {
     "displayText": "love.keyreleased",
     "type": "function",
+    "description": "Callback function triggered when a key is released.",
     "snippet": "function love.keyreleased(${1:key (KeyConstant)})\n    ${2:body (lua)}\nend\n"
   },
   {
     "displayText": "love.load",
     "type": "function",
+    "description": "This function is called exactly once at the beginning of the game.",
     "snippet": "function love.load(${1:arg (table)})\n    ${2:body (lua)}\nend\n"
   },
   {
     "displayText": "love.lowmemory",
     "type": "function",
+    "description": "Callback function triggered when the system is running out of memory on mobile devices.  Mobile operating systems may forcefully kill the game if it uses too much memory, so any non-critical resource should be removed if possible (by setting all variables referencing the resources to nil, and calling collectgarbage()), when this event is triggered. Sounds and images in particular tend to use the most memory.",
     "snippet": "function love.lowmemory()\n    ${1:body (lua)}\nend\n"
   },
   {
     "displayText": "love.mousefocus",
     "type": "function",
+    "description": "Callback function triggered when window receives or loses mouse focus.",
     "snippet": "function love.mousefocus(${1:f (boolean)})\n    ${2:body (lua)}\nend\n"
   },
   {
     "displayText": "love.mousemoved",
     "type": "function",
+    "description": "Callback function triggered when the mouse is moved.",
     "snippet": "function love.mousemoved(${1:x (number)}, ${2:y (number)}, ${3:dx (number)}, ${4:dy (number)})\n    ${5:body (lua)}\nend\n"
   },
   {
     "displayText": "love.mousepressed",
     "type": "function",
+    "description": "Callback function triggered when a mouse button is pressed.",
     "snippet": "function love.mousepressed(${1:x (number)}, ${2:y (number)}, ${3:button (MouseConstant)})\n    ${4:body (lua)}\nend\n"
   },
   {
     "displayText": "love.mousereleased",
     "type": "function",
+    "description": "Callback function triggered when a mouse button is released.",
     "snippet": "function love.mousereleased(${1:x (number)}, ${2:y (number)}, ${3:button (MouseConstant)})\n    ${4:body (lua)}\nend\n"
   },
   {
     "displayText": "love.quit",
     "type": "function",
+    "description": "Callback function triggered when the game is closed.",
     "snippet": "function love.quit()\n    ${1:body (lua)}\nend\n"
   },
   {
     "displayText": "love.resize",
     "type": "function",
+    "description": "Called when the window is resized, for example if the user resizes the window, or if love.window.setMode is called with an unsupported width or height in fullscreen and the window chooses the closest appropriate size. Calls to love.window.setMode will only trigger this event if the width or height of the window after the call doesn't match the requested width and height. This can happen if a fullscreen mode is requested which doesn't match any supported mode, or if the fullscreen type is 'desktop' and the requested width or height don't match the desktop resolution.",
     "snippet": "function love.resize(${1:w (number)}, ${2:h (number)})\n    ${3:body (lua)}\nend\n"
   },
   {
     "displayText": "love.run",
     "type": "function",
+    "description": "The main function, containing the main loop. A sensible default is used when left out.",
     "snippet": "function love.run()\n    ${1:body (lua)}\nend\n"
   },
   {
     "displayText": "love.textinput",
     "type": "function",
+    "description": "Called when text has been entered by the user. For example if shift-2 is pressed on an American keyboard layout, the text \"@\" will be generated.",
     "snippet": "function love.textinput(${1:text (string)})\n    ${2:body (lua)}\nend\n"
   },
   {
     "displayText": "love.threaderror",
     "type": "function",
+    "description": "Callback function triggered when a Thread encounters an error.",
     "snippet": "function love.threaderror(${1:thread (Thread)}, ${2:errorstr (string)})\n    ${3:body (lua)}\nend\n"
   },
   {
     "displayText": "love.touchmoved",
     "type": "function",
+    "description": "Callback function triggered when a touch press moves inside the touch screen.",
     "snippet": "function love.touchmoved(${1:id (userdata)}, ${2:x (number)}, ${3:y (number)}, ${4:pressure (number)})\n    ${5:body (lua)}\nend\n"
   },
   {
     "displayText": "love.touchpressed",
     "type": "function",
+    "description": "Callback function triggered when the touch screen is touched.",
     "snippet": "function love.touchpressed(${1:id (userdata)}, ${2:x (number)}, ${3:y (number)}, ${4:pressure (number)})\n    ${5:body (lua)}\nend\n"
   },
   {
     "displayText": "love.touchreleased",
     "type": "function",
+    "description": "Callback function triggered when the touch screen stops being touched.",
     "snippet": "function love.touchreleased(${1:id (userdata)}, ${2:x (number)}, ${3:y (number)}, ${4:pressure (number)})\n    ${5:body (lua)}\nend\n"
   },
   {
     "displayText": "love.update",
     "type": "function",
+    "description": "Callback function triggered when a key is pressed.",
     "snippet": "function love.update(${1:dt (number)})\n    ${2:body (lua)}\nend\n"
   },
   {
     "displayText": "love.visible",
     "type": "function",
+    "description": "Callback function triggered when window is minimized/hidden or unminimized by the user.",
     "snippet": "function love.visible(${1:v (boolean)})\n    ${2:body (lua)}\nend\n"
   },
   {
     "displayText": "love.wheelmoved",
     "type": "function",
+    "description": "Callback function triggered when the mouse wheel is moved.",
     "snippet": "function love.wheelmoved(${1:x (number)}, ${2:y (number)})\n    ${3:body (lua)}\nend\n"
   }
 ]

@@ -26,6 +26,7 @@ module.exports =
             displayText: item.displayText
             snippet: item.snippet
             type: item.type
+            description: item.description
 
     loadCompletions: ->
         @completions = {}
