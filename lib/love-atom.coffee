@@ -1,2 +1,10 @@
+# Spread the LOVE!
+loveprovider = require './love-provider'
+
 module.exports =
-  activate: ->
+    activate: ->
+        console.log( "Activate LOVE-Provider. Baby don't hurt me!")
+        loveprovider.loadCompletions()
+
+     provide: ->
+        loveprovider

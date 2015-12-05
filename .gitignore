@@ -42,7 +42,8 @@ luac.out
 # Lua files for generating the snippets
 generator/love_api.lua
 generator/modules/*
-generator/love-snippets.cson
+generator/*.cson
+generator/*.json
 
 # Atom packages
 .DS_Store

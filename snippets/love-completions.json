@@ -1,0 +1,167 @@
+[
+  {
+    "displayText": "love.directorydropped",
+    "type": "function",
+    "snippet": "function love.directorydropped(${1:path (string)})\n    ${2:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.draw",
+    "type": "function",
+    "snippet": "function love.draw()\n    ${1:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.errhand",
+    "type": "function",
+    "snippet": "function love.errhand(${1:msg (string)})\n    ${2:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.filedropped",
+    "type": "function",
+    "snippet": "function love.filedropped(${1:file (File)})\n    ${2:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.focus",
+    "type": "function",
+    "snippet": "function love.focus(${1:f (boolean)})\n    ${2:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.gamepadaxis",
+    "type": "function",
+    "snippet": "function love.gamepadaxis(${1:joystick (Joystick)}, ${2:axis (GamepadAxis)})\n    ${3:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.gamepadpressed",
+    "type": "function",
+    "snippet": "function love.gamepadpressed(${1:joystick (Joystick)}, ${2:button (GamepadButton)})\n    ${3:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.gamepadreleased",
+    "type": "function",
+    "snippet": "function love.gamepadreleased(${1:joystick (Joystick)}, ${2:button (GamepadButton)})\n    ${3:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.joystickadded",
+    "type": "function",
+    "snippet": "function love.joystickadded(${1:joystick (Joystick)})\n    ${2:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.joystickaxis",
+    "type": "function",
+    "snippet": "function love.joystickaxis(${1:joystick (Joystick)}, ${2:axis (number)}, ${3:value (number)})\n    ${4:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.joystickhat",
+    "type": "function",
+    "snippet": "function love.joystickhat(${1:joystick (Joystick)}, ${2:hat (number)}, ${3:direction (JoystickHat)})\n    ${4:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.joystickpressed",
+    "type": "function",
+    "snippet": "function love.joystickpressed(${1:joystick (number)}, ${2:button (number)})\n    ${3:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.joystickreleased",
+    "type": "function",
+    "snippet": "function love.joystickreleased(${1:joystick (number)}, ${2:button (number)})\n    ${3:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.joystickremoved",
+    "type": "function",
+    "snippet": "function love.joystickremoved(${1:joystick (Joystick)})\n    ${2:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.keypressed",
+    "type": "function",
+    "snippet": "function love.keypressed(${1:key (KeyConstant)}, ${2:isrepeat (boolean)})\n    ${3:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.keyreleased",
+    "type": "function",
+    "snippet": "function love.keyreleased(${1:key (KeyConstant)})\n    ${2:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.load",
+    "type": "function",
+    "snippet": "function love.load(${1:arg (table)})\n    ${2:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.lowmemory",
+    "type": "function",
+    "snippet": "function love.lowmemory()\n    ${1:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.mousefocus",
+    "type": "function",
+    "snippet": "function love.mousefocus(${1:f (boolean)})\n    ${2:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.mousemoved",
+    "type": "function",
+    "snippet": "function love.mousemoved(${1:x (number)}, ${2:y (number)}, ${3:dx (number)}, ${4:dy (number)})\n    ${5:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.mousepressed",
+    "type": "function",
+    "snippet": "function love.mousepressed(${1:x (number)}, ${2:y (number)}, ${3:button (MouseConstant)})\n    ${4:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.mousereleased",
+    "type": "function",
+    "snippet": "function love.mousereleased(${1:x (number)}, ${2:y (number)}, ${3:button (MouseConstant)})\n    ${4:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.quit",
+    "type": "function",
+    "snippet": "function love.quit()\n    ${1:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.resize",
+    "type": "function",
+    "snippet": "function love.resize(${1:w (number)}, ${2:h (number)})\n    ${3:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.run",
+    "type": "function",
+    "snippet": "function love.run()\n    ${1:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.textinput",
+    "type": "function",
+    "snippet": "function love.textinput(${1:text (string)})\n    ${2:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.threaderror",
+    "type": "function",
+    "snippet": "function love.threaderror(${1:thread (Thread)}, ${2:errorstr (string)})\n    ${3:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.touchmoved",
+    "type": "function",
+    "snippet": "function love.touchmoved(${1:id (userdata)}, ${2:x (number)}, ${3:y (number)}, ${4:pressure (number)})\n    ${5:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.touchpressed",
+    "type": "function",
+    "snippet": "function love.touchpressed(${1:id (userdata)}, ${2:x (number)}, ${3:y (number)}, ${4:pressure (number)})\n    ${5:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.touchreleased",
+    "type": "function",
+    "snippet": "function love.touchreleased(${1:id (userdata)}, ${2:x (number)}, ${3:y (number)}, ${4:pressure (number)})\n    ${5:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.update",
+    "type": "function",
+    "snippet": "function love.update(${1:dt (number)})\n    ${2:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.visible",
+    "type": "function",
+    "snippet": "function love.visible(${1:v (boolean)})\n    ${2:body (lua)}\nend\n"
+  },
+  {
+    "displayText": "love.wheelmoved",
+    "type": "function",
+    "snippet": "function love.wheelmoved(${1:x (number)}, ${2:y (number)})\n    ${3:body (lua)}\nend\n"
+  }
+]
