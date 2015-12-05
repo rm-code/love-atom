@@ -10,6 +10,9 @@ module.exports =
 
     # Required: Return a promise, an array of suggestions, or null.
     getSuggestions: ( { editor, bufferPosition, scopeDescriptor, prefix, activatedManually } ) ->
+        if prefix.length is 0
+            return []
+
         suggestions = @findSuggestions( @completions, prefix )
         suggestions
 
