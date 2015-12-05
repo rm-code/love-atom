@@ -12,15 +12,13 @@ module.exports =
         if prefix.length is 0
             return []
 
-        suggestions = @findSuggestions( @completions, prefix )
-        suggestions
+        @findSuggestions( @completions, prefix )
 
     findSuggestions: ( completions, prefix ) ->
         suggestions = []
         for item in completions
             if @compareStrings( item.displayText, prefix )
                 suggestions.push( @buildSuggestion( item ) )
-
         suggestions
 
     buildSuggestion: ( item ) ->
@@ -28,7 +26,6 @@ module.exports =
             displayText: item.displayText
             snippet: item.snippet
             type: item.type
-        return suggestion
 
     loadCompletions: ->
         @completions = {}
