@@ -19,13 +19,16 @@ module.exports =
         suggestions = []
         for item in completions
             if @compareStrings( item.displayText, prefix )
-                suggestions.push( {
-                        displayText: item.displayText
-                        snippet: item.snippet
-                        type: item.type
-                    } )
+                suggestions.push( @buildSuggestion( item ) )
 
         suggestions
+
+    buildSuggestion: ( item ) ->
+        suggestion =
+            displayText: item.displayText
+            snippet: item.snippet
+            type: item.type
+        return suggestion
 
     loadCompletions: ->
         @completions = {}
