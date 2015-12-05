@@ -3,6 +3,7 @@ path = require 'path'
 
 module.exports =
     selector: '.source.lua'
+    disableForSelector: '.source.lua .comment, .source.lua .string'
 
     inclusionPriority: 10
     excludeLowerPriority: false
