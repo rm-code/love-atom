@@ -1,7 +1,7 @@
 {
   "name": "love-atom",
   "main": "./lib/love-atom",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Adds snippets for the LÖVE game development framework.",
   "keywords": [
     "lua",
@@ -16,11 +16,11 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "providedServices": {
-      "autocomplete.provider": {
-          "versions": {
-              "2.0.0": "provide"
-          }
+    "autocomplete.provider": {
+      "versions": {
+        "2.0.0": "provide"
       }
+    }
   },
   "dependencies": {}
 }
