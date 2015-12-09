@@ -6,7 +6,7 @@ module.exports =
     disableForSelector: '.source.lua .comment, .source.lua .string'
 
     inclusionPriority: 10
-    excludeLowerPriority: true
+    excludeLowerPriority: false
     filterSuggestions: true
 
     getSuggestions: ( { editor, bufferPosition, scopeDescriptor, prefix, activatedManually } ) ->
