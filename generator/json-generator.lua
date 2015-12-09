@@ -73,8 +73,7 @@ local function createJSON()
         -- The snippet will determine what the prefix will be replaced with.
         file:write(TAB .. TAB .. '"snippet": ');
         local arguments, index = generateArguments(f.variants[1].arguments);
-        file:write(APOSTROPHE .. 'function love.' .. string.format(f.name .. '(%s)', arguments) .. '\\n' ..
-            TAB .. TAB .. string.format(PARAM, index + 1, 'body', 'lua') .. '\\n' .. 'end\\n' .. APOSTROPHE .. LINE_BREAK);
+        file:write(APOSTROPHE .. 'love.' .. string.format(f.name .. '(%s)', arguments) .. APOSTROPHE .. LINE_BREAK);
 
         local closing = i ~= #api.callbacks and '},' or '}';
         file:write(TAB .. closing .. LINE_BREAK);
