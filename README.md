@@ -1,7 +1,11 @@
 # LÖVE Atom
 
-This package adds code snippets of the [LÖVE](https://love2d.org/) game development framework to [Atom](https://atom.io/).
+A lövely provider for [Atom](https://atom.io/)'s [autocomplete+](https://github.com/atom/autocomplete-plus) package.
 
 ![example](https://raw.githubusercontent.com/rm-code/love-atom/master/screenshots/screengrab.gif)
 
-The snippets in this package were automatically generated from the [LÖVE API](https://github.com/rm-code/love-api).
+_Please note: The snippets in this package were automatically generated from the develop branch of [LÖVE API](https://github.com/rm-code/love-api) which is following Version [0.10.0](https://love2d.org/wiki/0.10.0) of the LÖVE framework._
+
+## Installation
+
+You can install the package through Atom's package manager or just run ```apm install love-atom``` in your terminal.
