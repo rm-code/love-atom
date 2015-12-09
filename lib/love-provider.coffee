@@ -7,6 +7,7 @@ module.exports =
 
     inclusionPriority: 10
     excludeLowerPriority: true
+    filterSuggestions: true
 
     getSuggestions: ( { editor, bufferPosition, scopeDescriptor, prefix, activatedManually } ) ->
         if prefix.length is 0
