@@ -40,7 +40,35 @@ local function generateArguments(arguments)
 end
 
 local function cleanUpString(str)
-    return str:gsub('\n\n', ' '):gsub('\"', '\\"');
+    return str:gsub('\n\n', ' '):gsub('\"', '\\"'):gsub('\0', '');
+end
+
+local function buildCallbackCompletion(f)
+    local arguments, index = generateArguments(f.variants[1].arguments);
+    return {
+        TAB .. '{' .. LINE_BREAK,
+        TAB .. TAB .. '"displayText": "love.' .. f.name .. APOSTROPHE .. COMMA .. LINE_BREAK,
+        TAB .. TAB .. '"type": "function"' .. COMMA .. LINE_BREAK,
+        TAB .. TAB .. '"description": ' .. APOSTROPHE .. cleanUpString(f.description) .. APOSTROPHE .. COMMA .. LINE_BREAK,
+        TAB .. TAB .. '"descriptionMoreURL": ' .. APOSTROPHE .. WIKI_URL .. 'love.' .. f.name .. APOSTROPHE .. COMMA .. LINE_BREAK,
+        TAB .. TAB .. '"snippet": ',
+        APOSTROPHE .. 'love.' .. string.format(f.name .. '(%s)', arguments) .. APOSTROPHE .. LINE_BREAK,
+        TAB .. '},' .. LINE_BREAK
+    };
+end
+
+local function buildModuleFunctionCompletion(f, module, closing)
+    local arguments = generateArguments(f.variants[1].arguments);
+    return {
+        TAB .. '{' .. LINE_BREAK,
+        TAB .. TAB .. '"displayText": "love.' .. module.name .. '.' .. f.name .. APOSTROPHE .. COMMA .. LINE_BREAK,
+        TAB .. TAB .. '"type": "function"' .. COMMA .. LINE_BREAK,
+        TAB .. TAB .. '"description": ' .. APOSTROPHE .. cleanUpString(f.description) .. APOSTROPHE .. COMMA .. LINE_BREAK,
+        TAB .. TAB .. '"descriptionMoreURL": ' .. APOSTROPHE .. WIKI_URL .. 'love.' .. f.name .. APOSTROPHE .. COMMA .. LINE_BREAK,
+        TAB .. TAB .. '"snippet": ',
+        APOSTROPHE .. string.format('love.%s.%s(%s)', module.name, f.name, arguments) .. APOSTROPHE .. LINE_BREAK,
+        TAB .. ( closing and '}' or '},' ) .. LINE_BREAK
+    };
 end
 
 local function createJSON()
@@ -55,28 +83,26 @@ local function createJSON()
     -- Create file header.
     file:write('[' .. LINE_BREAK);
 
+    -- Create completions for LÖVE callbacks.
+    print(TAB .. 'Writing callbacks');
     for i, f in ipairs(api.callbacks) do
-        file:write(TAB .. '{' .. LINE_BREAK)
+        local str = buildCallbackCompletion(f);
+        for i = 1, #str do
+            file:write(str[i]);
+        end
+    end
 
-        -- The displayText will be shown in the autocomplete menu.
-        file:write(TAB .. TAB .. '"displayText": "love.' .. f.name .. APOSTROPHE .. COMMA .. LINE_BREAK);
+    -- Generate the snippets for all LÖVE modules.
+    print(TAB .. 'Writing modules');
+    for i, module in ipairs(api.modules) do
+        print(TAB .. TAB .. module.name);
 
-        -- The type field determines which symbol to display in the autocomplete menu.
-        file:write(TAB .. TAB .. '"type": "function"' .. COMMA .. LINE_BREAK);
-
-        -- The description field will cause the suggestion menu to display the function's description.
-        file:write(TAB .. TAB .. '"description": ' .. APOSTROPHE .. cleanUpString(f.description) .. APOSTROPHE .. COMMA .. LINE_BREAK);
-
-        --
-        file:write(TAB .. TAB .. '"descriptionMoreURL": ' .. APOSTROPHE .. WIKI_URL .. 'love.' .. f.name .. APOSTROPHE .. COMMA .. LINE_BREAK);
-
-        -- The snippet will determine what the prefix will be replaced with.
-        file:write(TAB .. TAB .. '"snippet": ');
-        local arguments, index = generateArguments(f.variants[1].arguments);
-        file:write(APOSTROPHE .. 'love.' .. string.format(f.name .. '(%s)', arguments) .. APOSTROPHE .. LINE_BREAK);
-
-        local closing = i ~= #api.callbacks and '},' or '}';
-        file:write(TAB .. closing .. LINE_BREAK);
+        for j, f in ipairs(module.functions) do
+            local str = buildModuleFunctionCompletion(f, module, ( i == #api.modules and j == #module.functions ) );
+            for i = 1, #str do
+                file:write(str[i]);
+            end
+        end
     end
 
     file:write(']');
