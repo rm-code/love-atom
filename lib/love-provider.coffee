@@ -32,7 +32,7 @@ module.exports =
 
     loadCompletions: ->
         @completions = {}
-        fs.readFile path.resolve( __dirname, '..', './snippets/love-completions.json' ), ( error, data ) =>
+        fs.readFile path.resolve( __dirname, '..', './data/love-completions.json' ), ( error, data ) =>
             @completions = JSON.parse( data ) unless error?
             return
 
