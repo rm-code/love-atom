@@ -1,3 +1,6 @@
+## 2.0.1
+- Fixed wiki-urls for love modules
+
 ## 2.0.0
 - LÖVE-Atom now uses a real autocomplete+ provider to provide code suggestions
 	- Added description to the bottom of the suggestion list
