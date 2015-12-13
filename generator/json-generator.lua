@@ -64,7 +64,7 @@ local function buildModuleFunctionCompletion(f, module, closing)
         TAB .. TAB .. '"displayText": "love.' .. module.name .. '.' .. f.name .. APOSTROPHE .. COMMA .. LINE_BREAK,
         TAB .. TAB .. '"type": "function"' .. COMMA .. LINE_BREAK,
         TAB .. TAB .. '"description": ' .. APOSTROPHE .. cleanUpString(f.description) .. APOSTROPHE .. COMMA .. LINE_BREAK,
-        TAB .. TAB .. '"descriptionMoreURL": ' .. APOSTROPHE .. WIKI_URL .. 'love.' .. f.name .. APOSTROPHE .. COMMA .. LINE_BREAK,
+        TAB .. TAB .. '"descriptionMoreURL": ' .. APOSTROPHE .. WIKI_URL .. string.format('love.%s.%s', module.name, f.name) .. APOSTROPHE .. COMMA .. LINE_BREAK,
         TAB .. TAB .. '"snippet": ',
         APOSTROPHE .. string.format('love.%s.%s(%s)', module.name, f.name, arguments) .. APOSTROPHE .. LINE_BREAK,
         TAB .. ( closing and '}' or '},' ) .. LINE_BREAK
