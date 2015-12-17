@@ -1,3 +1,6 @@
+## 2.0.2
+- Update LÖVE api
+
 ## 2.0.1
 - Fixed wiki-urls for love modules
 
