@@ -100,14 +100,14 @@
   {
     "displayText": "love.keypressed",
     "type": "function",
-    "description": "Callback function triggered when a key is pressed. Key repeat needs to be enabled with love.keyboard.setKeyRepeat for repeat keypress events to be received.",
+    "description": "Callback function triggered when a key is pressed.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.keypressed",
-    "snippet": "love.keypressed(${1:key (KeyConstant)}, ${2:isrepeat (boolean)})"
+    "snippet": "love.keypressed(${1:key (KeyConstant)}, ${2:scancode (Scancode)}, ${3:isrepeat (boolean)})"
   },
   {
     "displayText": "love.keyreleased",
     "type": "function",
-    "description": "Callback function triggered when a key is released.",
+    "description": "Callback function triggered when a keyboard key is released.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.keyreleased",
     "snippet": "love.keyreleased(${1:key (KeyConstant)})"
   },
@@ -144,14 +144,14 @@
     "type": "function",
     "description": "Callback function triggered when a mouse button is pressed.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.mousepressed",
-    "snippet": "love.mousepressed(${1:x (number)}, ${2:y (number)}, ${3:button (MouseConstant)})"
+    "snippet": "love.mousepressed(${1:x (number)}, ${2:y (number)}, ${3:button (number)}, ${4:isTouch (boolean)})"
   },
   {
     "displayText": "love.mousereleased",
     "type": "function",
     "description": "Callback function triggered when a mouse button is released.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.mousereleased",
-    "snippet": "love.mousereleased(${1:x (number)}, ${2:y (number)}, ${3:button (MouseConstant)})"
+    "snippet": "love.mousereleased(${1:x (number)}, ${2:y (number)}, ${3:button (number)}, ${4:isTouch (boolean)})"
   },
   {
     "displayText": "love.quit",
@@ -173,6 +173,13 @@
     "description": "The main function, containing the main loop. A sensible default is used when left out.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.run",
     "snippet": "love.run()"
+  },
+  {
+    "displayText": "love.textedited",
+    "type": "function",
+    "description": "Called when the candidate text for an IME (Input Method Editor) has changed. The candidate text is not the final text that the user will eventually choose. Use love.textinput for that.",
+    "descriptionMoreURL": "https://love2d.org/wiki/love.textedited",
+    "snippet": "love.textedited(${1:text (string)}, ${2:start (number)}, ${3:length (number)})"
   },
   {
     "displayText": "love.textinput",
@@ -427,6 +434,13 @@
     "snippet": "love.filesystem.createDirectory(${1:name (string)})"
   },
   {
+    "displayText": "love.filesystem.exists",
+    "type": "function",
+    "description": "Check whether a file or directory exists.",
+    "descriptionMoreURL": "https://love2d.org/wiki/love.filesystem.exists",
+    "snippet": "love.filesystem.exists(${1:filename (string)})"
+  },
+  {
     "displayText": "love.filesystem.getAppdataDirectory",
     "type": "function",
     "description": "Returns the application data directory (could be the same as getUserDirectory)",
@@ -485,7 +499,7 @@
   {
     "displayText": "love.filesystem.getSourceBaseDirectory",
     "type": "function",
-    "description": "Returns the full path to the directory containing the .love file. If the game is fused to the LÖVE executable, then the directory containing the executable is returned. If love.filesystem.isFused is true, the path returned by this function can be passed to love.filesystem.mount, which will make the directory containing the main game readable by love.filesystem.",
+    "description": "Returns the full path to the directory containing the .love file. If the game is fused to the LÖVE executable, then the directory containing the executable is returned. If love.filesystem.isFused is true, the path returned by this function can be passed to love.filesystem.mount, which will make the directory containing the main game (e.g. C:\Program Files\coolgame\) readable by love.filesystem.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.filesystem.getSourceBaseDirectory",
     "snippet": "love.filesystem.getSourceBaseDirectory()"
   },
@@ -604,7 +618,7 @@
   {
     "displayText": "love.filesystem.setSymlinksEnabled",
     "type": "function",
-    "description": "Sets whether love.filesystem follows symbolic links. It is disabled by default.",
+    "description": "Sets whether love.filesystem follows symbolic links. Sets whether love.filesystem follows symbolic links. It is enabled by default in version 0.10.0 and newer, and disabled by default in 0.9.2.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.filesystem.setSymlinksEnabled",
     "snippet": "love.filesystem.setSymlinksEnabled(${1:enable (boolean)})"
   },
@@ -938,6 +952,13 @@
     "snippet": "love.graphics.newSpriteBatch(${1:texture (Texture)}, ${2:size (number)}, ${3:usage (SpriteBatchUsage)})"
   },
   {
+    "displayText": "love.graphics.newVideo",
+    "type": "function",
+    "description": "Creates a new drawable Video. Currently only Ogg Theora video files are supported.",
+    "descriptionMoreURL": "https://love2d.org/wiki/love.graphics.newVideo",
+    "snippet": "love.graphics.newVideo(${1:filename (string)}, ${2:loadaudio (boolean)})"
+  },
+  {
     "displayText": "love.graphics.origin",
     "type": "function",
     "description": "Resets the current coordinate transformation. This function is always used to reverse any previous calls to love.graphics.rotate, love.graphics.scale, love.graphics.shear or love.graphics.translate. It returns the current transformation state to its defaults.",
@@ -1129,9 +1150,9 @@
   {
     "displayText": "love.graphics.setStencilTest",
     "type": "function",
-    "description": "Enables or disables stencil testing. When stencil testing is enabled, the geometry of everything that is drawn will be clipped / stencilled out based on whether it intersects with what has been previously drawn to the stencil buffer. Each Canvas has its own stencil buffer.",
+    "description": "Configures or disables stencil testing. When stencil testing is enabled, the geometry of everything that is drawn afterward will be clipped / stencilled out based on a comparison between the arguments of this function and the stencil value of each pixel that the geometry touches. The stencil values of pixels are affected via love.graphics.stencil. Each Canvas has its own per-pixel stencil values.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.graphics.setStencilTest",
-    "snippet": "love.graphics.setStencilTest(${1:enable (boolean)}, ${2:invert (boolean)})"
+    "snippet": "love.graphics.setStencilTest(${1:comparemode (CompareMode)}, ${2:comparevalue (number)})"
   },
   {
     "displayText": "love.graphics.setWireframe",
@@ -1150,9 +1171,9 @@
   {
     "displayText": "love.graphics.stencil",
     "type": "function",
-    "description": "Draws geometry to the stencil buffer. The passed function draws to the (invisible) stencil buffer instead of the regular screen. The stencil buffer acts like a mask or stencil – the geometry of everything drawn to the stencil buffer determines whether pixels in the buffer are 'enabled' or not. When the Stencil Test is enabled after love.graphics.stencil is used, everything drawn after that point will clipped / stencilled out based on whether it intersects what has been drawn to the stencil buffer. Each Canvas has its own stencil buffer.",
+    "description": "Draws geometry as a stencil. The geometry drawn by the supplied function sets invisible stencil values of pixels, instead of setting pixel colors. The stencil values of pixels can act like a mask / stencil - love.graphics.setStencilTest can be used afterward to determine how further rendering is affected by the stencil values in each pixel. Each Canvas has its own per-pixel stencil values. Stencil values are within the range of [0, 255].",
     "descriptionMoreURL": "https://love2d.org/wiki/love.graphics.stencil",
-    "snippet": "love.graphics.stencil(${1:stencilfunction (function)}, ${2:keepbuffer (boolean)})"
+    "snippet": "love.graphics.stencil(${1:stencilfunction (function)}, ${2:action (StencilAction)}, ${3:value (number)}, ${4:keepvalues (boolean)})"
   },
   {
     "displayText": "love.graphics.translate",
@@ -1253,6 +1274,13 @@
     "snippet": "love.keyboard.isDown(${1:key (KeyConstant)})"
   },
   {
+    "displayText": "love.keyboard.isScancodeDown",
+    "type": "function",
+    "description": "Checks whether the specified Scancodes are pressed. Not to be confused with love.keypressed or love.keyreleased. Unlike regular KeyConstants, Scancodes are keyboard layout-independent. The scancode \"w\" is used if the key in the same place as the \"w\" key on an American keyboard is pressed, no matter what the key is labelled or what the user's operating system settings are.",
+    "descriptionMoreURL": "https://love2d.org/wiki/love.keyboard.isScancodeDown",
+    "snippet": "love.keyboard.isScancodeDown(${1:scancodeN (Scancode)})"
+  },
+  {
     "displayText": "love.keyboard.setKeyRepeat",
     "type": "function",
     "description": "Enables or disables key repeat. It is disabled by default. The interval between repeats depends on the user's system settings.",
@@ -1332,7 +1360,7 @@
   {
     "displayText": "love.math.noise",
     "type": "function",
-    "description": "Generates a Simplex noise value in 1-4 dimensions. Simplex noise is closely related to Perlin noise. It is widely used for procedural content generation.",
+    "description": "Generates a Simplex or Perlin noise value in 1-4 dimensions. Simplex noise is closely related to Perlin noise. It is widely used for procedural content generation. There are many webpages which discuss Perlin and Simplex noise in detail.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.math.noise",
     "snippet": "love.math.noise(${1:x (number)})"
   },
@@ -1423,9 +1451,9 @@
   {
     "displayText": "love.mouse.isDown",
     "type": "function",
-    "description": "Checks whether a certain mouse button is down. This function does not detect mousewheel scrolling; you must use the love.mousepressed callback for that.",
+    "description": "Checks whether a certain mouse button is down. This function does not detect mousewheel scrolling; you must use the love.wheelmoved (or love.mousepressed in version 0.9.2 and older) callback for that.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.mouse.isDown",
-    "snippet": "love.mouse.isDown(${1:button (MouseConstant)})"
+    "snippet": "love.mouse.isDown(${1:button (number)}, ${2:... (number)})"
   },
   {
     "displayText": "love.mouse.isGrabbed",
@@ -1528,9 +1556,9 @@
   {
     "displayText": "love.physics.newCircleShape",
     "type": "function",
-    "description": "Create a new CircleShape at (x,y) in local coordinates. Anchors from the center of the shape by default.",
+    "description": "Creates a new CircleShape.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.physics.newCircleShape",
-    "snippet": "love.physics.newCircleShape(${1:body (Body)}, ${2:x (number)}, ${3:y (number)}, ${4:radius (number)})"
+    "snippet": "love.physics.newCircleShape(${1:radius (number)})"
   },
   {
     "displayText": "love.physics.newDistanceJoint",
@@ -1598,9 +1626,9 @@
   {
     "displayText": "love.physics.newRectangleShape",
     "type": "function",
-    "description": "Shorthand for creating rectangluar PolygonShapes. The rectangle will be created at (x,y) in local coordinates. Anchors from the center of the shape by default.",
+    "description": "Shorthand for creating rectangluar PolygonShapes. By default, the local origin is located at the center of the rectangle as opposed to the top left for graphics.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.physics.newRectangleShape",
-    "snippet": "love.physics.newRectangleShape(${1:body (Body)}, ${2:x (number)}, ${3:y (number)}, ${4:width (number)}, ${5:height (number)}, ${6:angle (number)})"
+    "snippet": "love.physics.newRectangleShape(${1:width (number)}, ${2:height (number)})"
   },
   {
     "displayText": "love.physics.newRevoluteJoint",
