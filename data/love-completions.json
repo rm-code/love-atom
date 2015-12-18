@@ -499,7 +499,7 @@
   {
     "displayText": "love.filesystem.getSourceBaseDirectory",
     "type": "function",
-    "description": "Returns the full path to the directory containing the .love file. If the game is fused to the LÖVE executable, then the directory containing the executable is returned. If love.filesystem.isFused is true, the path returned by this function can be passed to love.filesystem.mount, which will make the directory containing the main game (e.g. C:\Program Files\coolgame\) readable by love.filesystem.",
+    "description": "Returns the full path to the directory containing the .love file. If the game is fused to the LÖVE executable, then the directory containing the executable is returned. If love.filesystem.isFused is true, the path returned by this function can be passed to love.filesystem.mount, which will make the directory containing the main game readable by love.filesystem.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.filesystem.getSourceBaseDirectory",
     "snippet": "love.filesystem.getSourceBaseDirectory()"
   },
@@ -898,7 +898,7 @@
   {
     "displayText": "love.graphics.newImage",
     "type": "function",
-    "description": "Creates a new Image from a filepath, FileData, an ImageData, or a CompressedImageData.",
+    "description": "Creates a new Image from a filepath, FileData, an ImageData, or a CompressedImageData, and optionally generates or specifies mipmaps for the image.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.graphics.newImage",
     "snippet": "love.graphics.newImage(${1:filename (string)})"
   },
@@ -970,7 +970,7 @@
     "type": "function",
     "description": "Draws one or more points.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.graphics.points",
-    "snippet": "love.graphics.points(${1:x1 (number)}, ${2:y1 (number)}, ${3:x2 (number)}, ${4:y2 (number)}, ${5:... (number)})"
+    "snippet": "love.graphics.points(${1:x (number)}, ${2:y (number)}, ${3:... (number)})"
   },
   {
     "displayText": "love.graphics.polygon",
@@ -1241,14 +1241,14 @@
   {
     "displayText": "love.keyboard.getKeyFromScancode",
     "type": "function",
-    "description": "Gets the key corresponding to the given hardware scancode. The location of a key is based on the keyboard's current language layout, whereas scancodes are the layout-independent representations of where the physical keys are. For example, the key located where \"q\" is on a U.S. keyboard has the scancode \"q\". When using a U.S. keyboard layout it produces the key \"q\", but when using a French keyboard layout it produces the key \"a\". Scancodes are useful for creating default controls that have the same physical locations on on all systems.",
+    "description": "Gets the key corresponding to the given hardware scancode. Unlike key constants, Scancodes are keyboard layout-independent. For example the scancode \"w\" will be generated if the key in the same place as the \"w\" key on an American keyboard is pressed, no matter what the key is labelled or what the user's operating system settings are. Scancodes are useful for creating default controls that have the same physical locations on on all systems.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.keyboard.getKeyFromScancode",
     "snippet": "love.keyboard.getKeyFromScancode(${1:scancode (Scancode)})"
   },
   {
     "displayText": "love.keyboard.getScancodeFromKey",
     "type": "function",
-    "description": "Gets the hardware scancode corresponding to the given key. The location of a key is based on the keyboard's current language layout, whereas scancodes are the layout-independent representations of where the physical keys are. For example, the key located where \"q\" is on a U.S. keyboard has the scancode \"q\". When using a U.S. keyboard layout it produces the key \"q\", but when using a French keyboard layout it produces the key \"a\". Scancodes are useful for creating default controls that have the same physical locations on on all systems.",
+    "description": "Gets the hardware scancode corresponding to the given key. Unlike key constants, Scancodes are keyboard layout-independent. For example the scancode \"w\" will be generated if the key in the same place as the \"w\" key on an American keyboard is pressed, no matter what the key is labelled or what the user's operating system settings are. Scancodes are useful for creating default controls that have the same physical locations on on all systems.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.keyboard.getScancodeFromKey",
     "snippet": "love.keyboard.getScancodeFromKey(${1:key (KeyConstant)})"
   },
@@ -1278,7 +1278,7 @@
     "type": "function",
     "description": "Checks whether the specified Scancodes are pressed. Not to be confused with love.keypressed or love.keyreleased. Unlike regular KeyConstants, Scancodes are keyboard layout-independent. The scancode \"w\" is used if the key in the same place as the \"w\" key on an American keyboard is pressed, no matter what the key is labelled or what the user's operating system settings are.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.keyboard.isScancodeDown",
-    "snippet": "love.keyboard.isScancodeDown(${1:scancodeN (Scancode)})"
+    "snippet": "love.keyboard.isScancodeDown(${1:scancode (Scancode)}, ${2:... (Scancode)})"
   },
   {
     "displayText": "love.keyboard.setKeyRepeat",
