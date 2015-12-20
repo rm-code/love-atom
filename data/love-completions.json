@@ -861,6 +861,13 @@
     "snippet": "love.graphics.intersectScissor(${1:x (number)}, ${2:y (number)}, ${3:width (number)}, ${4:height (number)})"
   },
   {
+    "displayText": "love.graphics.isGammaCorrect",
+    "type": "function",
+    "description": "Gets whether gamma-correct rendering is supported and enabled. It can be enabled by setting t.gammacorrect = true in love.conf. Not all devices support gamma-correct rendering, in which case it will be automatically disabled and this function will return false. It is supported on desktop systems which have graphics cards that are capable of using OpenGL 3 / DIrectX 10, and iOS devices that can use OpenGL ES 3.",
+    "descriptionMoreURL": "https://love2d.org/wiki/love.graphics.isGammaCorrect",
+    "snippet": "love.graphics.isGammaCorrect()"
+  },
+  {
     "displayText": "love.graphics.isWireframe",
     "type": "function",
     "description": "Gets whether wireframe mode is used when drawing.",
@@ -891,9 +898,9 @@
   {
     "displayText": "love.graphics.newMesh",
     "type": "function",
-    "description": "Creates a new Mesh.",
+    "description": "Creates a new Mesh. Use Mesh:setTexture if the Mesh should be textured with an Image or Canvas when it's drawn.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.graphics.newMesh",
-    "snippet": "love.graphics.newMesh(${1:vertices (table)}, ${2:texture (Texture)}, ${3:mode (MeshDrawMode)})"
+    "snippet": "love.graphics.newMesh(${1:vertices (table)}, ${2:mode (MeshDrawMode)}, ${3:usage (SpriteBatchUsage)})"
   },
   {
     "displayText": "love.graphics.newImage",
@@ -1145,7 +1152,7 @@
     "type": "function",
     "description": "Sets or disables scissor. The scissor limits the drawing area to a specified rectangle. This affects all graphics calls, including love.graphics.clear.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.graphics.setScissor",
-    "snippet": "love.graphics.setScissor()"
+    "snippet": "love.graphics.setScissor(${1:x (number)}, ${2:y (number)}, ${3:width (number)}, ${4:height (number)})"
   },
   {
     "displayText": "love.graphics.setStencilTest",
@@ -1820,6 +1827,13 @@
     "snippet": "love.touch.getTouches()"
   },
   {
+    "displayText": "love.video.newVideoStream",
+    "type": "function",
+    "description": "Creates a new VideoStream. Currently only Ogg Theora video files are supported. VideoStreams can't draw videos, see love.graphics.newVideo for that.",
+    "descriptionMoreURL": "https://love2d.org/wiki/love.video.newVideoStream",
+    "snippet": "love.video.newVideoStream(${1:filename (string)})"
+  },
+  {
     "displayText": "love.window.close",
     "type": "function",
     "description": "Closes the window. It can be reopened with love.window.setMode.",
@@ -1969,7 +1983,7 @@
   {
     "displayText": "love.window.setMode",
     "type": "function",
-    "description": "Changes the display mode. If width or height is 0, the width or height of the desktop will be used. Changing the display mode may have side effects: for example, canvases will be cleared and values sent to shaders with Shader:send will be erased. Make sure to save the contents of canvases beforehand or re-draw to them afterward if you need to.",
+    "description": "Sets the display mode and properties of the window. If width or height is 0, setMode will use the width and height of the desktop. Changing the display mode may have side effects: for example, canvases will be cleared and values sent to shaders with Shader:send will be erased. Make sure to save the contents of canvases beforehand or re-draw to them afterward if you need to.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.window.setMode",
     "snippet": "love.window.setMode(${1:width (number)}, ${2:height (number)}, ${3:flags (table)})"
   },
