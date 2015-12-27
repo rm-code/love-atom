@@ -1,3 +1,6 @@
+## 2.0.5
+- Update LÖVE api
+
 ## 2.0.4
 - Update LÖVE api
 
