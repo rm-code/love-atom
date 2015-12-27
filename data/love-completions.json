@@ -200,21 +200,21 @@
     "type": "function",
     "description": "Callback function triggered when a touch press moves inside the touch screen.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.touchmoved",
-    "snippet": "love.touchmoved(${1:id (userdata)}, ${2:x (number)}, ${3:y (number)}, ${4:pressure (number)})"
+    "snippet": "love.touchmoved(${1:id (light userdata)}, ${2:x (number)}, ${3:y (number)}, ${4:pressure (number)})"
   },
   {
     "displayText": "love.touchpressed",
     "type": "function",
     "description": "Callback function triggered when the touch screen is touched.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.touchpressed",
-    "snippet": "love.touchpressed(${1:id (userdata)}, ${2:x (number)}, ${3:y (number)}, ${4:pressure (number)})"
+    "snippet": "love.touchpressed(${1:id (light userdata)}, ${2:x (number)}, ${3:y (number)}, ${4:pressure (number)})"
   },
   {
     "displayText": "love.touchreleased",
     "type": "function",
     "description": "Callback function triggered when the touch screen stops being touched.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.touchreleased",
-    "snippet": "love.touchreleased(${1:id (userdata)}, ${2:x (number)}, ${3:y (number)}, ${4:pressure (number)})"
+    "snippet": "love.touchreleased(${1:id (light userdata)}, ${2:x (number)}, ${3:y (number)}, ${4:pressure (number)})"
   },
   {
     "displayText": "love.update",
@@ -814,7 +814,7 @@
   {
     "displayText": "love.graphics.getSupported",
     "type": "function",
-    "description": "Gets the optional graphics features and whether they're supported on the system.",
+    "description": "Gets the optional graphics features and whether they're supported on the system. Some older or low-end systems don't always support all graphics features.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.graphics.getSupported",
     "snippet": "love.graphics.getSupported()"
   },
@@ -1010,7 +1010,7 @@
   {
     "displayText": "love.graphics.printf",
     "type": "function",
-    "description": "Draws formatted text, with word wrap and alignment. See additional notes in love.graphics.print.",
+    "description": "Draws formatted text, with word wrap and alignment. See additional notes in love.graphics.print. In version 0.9.2 and earlier, wrapping was implemented by breaking up words by spaces and putting them back together to make sure things fit nicely within the limit provided. However, due to the way this is done, extra spaces between words would end up missing when printed on the screen, and some lines could overflow past the provided wrap limit. In version 0.10.0 and newer this is no longer the case.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.graphics.printf",
     "snippet": "love.graphics.printf(${1:text (string)}, ${2:x (number)}, ${3:y (number)}, ${4:limit (number)}, ${5:align (AlignMode)}, ${6:r (number)}, ${7:sx (number)}, ${8:sy (number)}, ${9:ox (number)}, ${10:oy (number)}, ${11:kx (number)}, ${12:ky (number)})"
   },
@@ -1318,7 +1318,7 @@
   {
     "displayText": "love.math.gammaToLinear",
     "type": "function",
-    "description": "Converts a color from gamma-space (sRGB) to linear-space (RGB). This is useful when doing gamma-correct rendering using colors created based on what they look like on-screen. Gamma-space sRGB has more precision in the lower end than linear RGB. Using this function to convert from sRGB to RGB can result in non-integer color values, which get truncated to integers and lose precision when used with other functions such as love.graphics.setColor.",
+    "description": "Converts a color from gamma-space (sRGB) to linear-space (RGB). This is useful when doing gamma-correct rendering and you need to do math in linear RGB in the few cases where LÖVE doesn't handle conversions automatically.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.math.gammaToLinear",
     "snippet": "love.math.gammaToLinear(${1:r (number)}, ${2:g (number)}, ${3:b (number)})"
   },
@@ -1810,14 +1810,14 @@
     "type": "function",
     "description": "Gets the current position of the specified touch-press, in pixels.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.touch.getPosition",
-    "snippet": "love.touch.getPosition(${1:id (userdata)})"
+    "snippet": "love.touch.getPosition(${1:id (light userdata)})"
   },
   {
     "displayText": "love.touch.getPressure",
     "type": "function",
     "description": "Gets the current pressure of the specified touch-press.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.touch.getPressure",
-    "snippet": "love.touch.getPressure(${1:id (userdata)})"
+    "snippet": "love.touch.getPressure(${1:id (light userdata)})"
   },
   {
     "displayText": "love.touch.getTouches",
