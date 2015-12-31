@@ -956,7 +956,7 @@
     "type": "function",
     "description": "Creates a new SpriteBatch object.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.graphics.newSpriteBatch",
-    "snippet": "love.graphics.newSpriteBatch(${1:texture (Texture)}, ${2:size (number)}, ${3:usage (SpriteBatchUsage)})"
+    "snippet": "love.graphics.newSpriteBatch(${1:image (Image)}, ${2:maxsprites (number)})"
   },
   {
     "displayText": "love.graphics.newVideo",
