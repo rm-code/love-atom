@@ -1,3 +1,7 @@
+## 2.1.0
+- Enabled autocompletion for moonscript files
+- Update LÖVE api
+
 ## 2.0.5
 - Update LÖVE api
 
