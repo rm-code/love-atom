@@ -2,8 +2,8 @@ fs = require 'fs'
 path = require 'path'
 
 module.exports =
-    selector: '.source.lua'
-    disableForSelector: '.source.lua .comment, .source.lua .string'
+    selector: '.source.lua, .source.moon'
+    disableForSelector: '.source.lua .comment, .source.lua .string, .source.moon .comment, .source.moon .string'
 
     inclusionPriority: 10
     excludeLowerPriority: false
