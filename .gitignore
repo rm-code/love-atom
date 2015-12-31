@@ -40,8 +40,7 @@ luac.out
 *.hex
 
 # Lua files for generating the snippets
-generator/love_api.lua
-generator/modules
+generator/api
 generator/*.cson
 generator/*.json
 
