@@ -78,7 +78,7 @@ local function createJSON()
     assert(file, "ERROR: Can't write file: " .. OUTPUT_FILE);
 
     -- Load the LÖVE api files.
-    local api = require('love_api');
+    local api = require('api.love_api');
 
     -- Create file header.
     file:write('[' .. LINE_BREAK);
