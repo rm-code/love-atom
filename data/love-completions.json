@@ -1192,7 +1192,7 @@
   {
     "displayText": "love.image.isCompressed",
     "type": "function",
-    "description": "Determines whether a file can be loaded as CompressedData.",
+    "description": "Determines whether a file can be loaded as CompressedImageData.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.image.isCompressed",
     "snippet": "love.image.isCompressed(${1:filename (string)})"
   },
