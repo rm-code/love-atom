@@ -68,6 +68,22 @@ local function buildModuleFunctionCompletion( f, module, closing )
     };
 end
 
+local function buildTypeFunctionCompletion( f, type, closing )
+    local arguments = generateArguments( f.variants[1].arguments );
+    return {
+        TAB .. '{' .. LINE_BREAK,
+        TAB .. TAB .. '"displayText": "' .. type.name .. ':' .. f.name .. APOSTROPHE .. COMMA .. LINE_BREAK,
+        TAB .. TAB .. '"type": "function"' .. COMMA .. LINE_BREAK,
+        TAB .. TAB .. '"description": ' .. APOSTROPHE .. cleanUpString( f.description ) .. APOSTROPHE .. COMMA .. LINE_BREAK,
+        TAB .. TAB .. '"descriptionMoreURL": ' .. APOSTROPHE .. WIKI_URL .. string.format( '%s:%s', type.name, f.name ) .. APOSTROPHE .. COMMA .. LINE_BREAK,
+        TAB .. TAB .. '"snippet": ',
+        -- TODO: Wait for fix of https://github.com/atom/autocomplete-plus/issues/635
+        -- APOSTROPHE .. string.format( '${%d:%s}:%s(%s)', index, type.name, f.name, arguments ) .. APOSTROPHE .. LINE_BREAK,
+        APOSTROPHE .. string.format( '%s:%s(%s)', type.name, f.name, arguments ) .. APOSTROPHE .. LINE_BREAK,
+        TAB .. (  closing and '}' or '},'  ) .. LINE_BREAK
+    };
+end
+
 local function createJSON()
     print( 'Generating LOVE snippets ... ' );
 
@@ -92,7 +108,20 @@ local function createJSON()
     -- Generate the snippets for all LÖVE modules.
     print( TAB .. 'Writing modules' );
     for i, module in ipairs( api.modules ) do
-        print( TAB .. TAB .. module.name );
+        print( TAB .. TAB .. '- ' .. module.name );
+
+        if module.types then
+            for _, type in ipairs( module.types ) do
+                print( TAB .. TAB .. TAB .. '-> ' .. type.name );
+
+                for _, f in ipairs( type.functions ) do
+                    local str = buildTypeFunctionCompletion( f, type );
+                    for l = 1, #str do
+                        file:write( str[l] );
+                    end
+                end
+            end
+        end
 
         for j, f in ipairs( module.functions ) do
             local str = buildModuleFunctionCompletion( f, module, ( i == #api.modules and j == #module.functions )  );
