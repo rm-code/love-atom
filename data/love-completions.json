@@ -200,21 +200,21 @@
     "type": "function",
     "description": "Callback function triggered when a touch press moves inside the touch screen.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.touchmoved",
-    "snippet": "love.touchmoved(${1:id (light userdata)}, ${2:x (number)}, ${3:y (number)}, ${4:pressure (number)})"
+    "snippet": "love.touchmoved(${1:id (light userdata)}, ${2:x (number)}, ${3:y (number)}, ${4:dx (number)}, ${5:dy (number)}, ${6:pressure (number)})"
   },
   {
     "displayText": "love.touchpressed",
     "type": "function",
     "description": "Callback function triggered when the touch screen is touched.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.touchpressed",
-    "snippet": "love.touchpressed(${1:id (light userdata)}, ${2:x (number)}, ${3:y (number)}, ${4:pressure (number)})"
+    "snippet": "love.touchpressed(${1:id (light userdata)}, ${2:x (number)}, ${3:y (number)}, ${4:dx (number)}, ${5:dy (number)}, ${6:pressure (number)})"
   },
   {
     "displayText": "love.touchreleased",
     "type": "function",
     "description": "Callback function triggered when the touch screen stops being touched.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.touchreleased",
-    "snippet": "love.touchreleased(${1:id (light userdata)}, ${2:x (number)}, ${3:y (number)}, ${4:pressure (number)})"
+    "snippet": "love.touchreleased(${1:id (light userdata)}, ${2:x (number)}, ${3:y (number)}, ${4:dx (number)}, ${5:dy (number)}, ${6:pressure (number)})"
   },
   {
     "displayText": "love.update",
@@ -236,6 +236,244 @@
     "description": "Callback function triggered when the mouse wheel is moved.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.wheelmoved",
     "snippet": "love.wheelmoved(${1:x (number)}, ${2:y (number)})"
+  },
+  {
+    "displayText": "Source:clone",
+    "type": "function",
+    "description": "Creates an identical copy of the Source in the stopped state. Static Sources will use significantly less memory and take much less time to be created if Source:clone is used to create them instead of love.audio.newSource, so this method should be preferred when making multiple Sources which play the same sound. Cloned Sources inherit all the set-able state of the original Source, but they are initialized stopped.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:clone",
+    "snippet": "Source:clone()"
+  },
+  {
+    "displayText": "Source:getAttenuationDistances",
+    "type": "function",
+    "description": "Returns the reference and maximum distance of the source.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:getAttenuationDistances",
+    "snippet": "Source:getAttenuationDistances()"
+  },
+  {
+    "displayText": "Source:getChannels",
+    "type": "function",
+    "description": "Gets the number of channels in the Source. Only 1-channel (mono) Sources can use directional and positional effects.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:getChannels",
+    "snippet": "Source:getChannels()"
+  },
+  {
+    "displayText": "Source:getCone",
+    "type": "function",
+    "description": "Gets the Source's directional volume cones. Together with Source:setDirection, the cone angles allow for the Source's volume to vary depending on its direction.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:getCone",
+    "snippet": "Source:getCone()"
+  },
+  {
+    "displayText": "Source:getDirection",
+    "type": "function",
+    "description": "Gets the direction of the Source.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:getDirection",
+    "snippet": "Source:getDirection()"
+  },
+  {
+    "displayText": "Source:getDuration",
+    "type": "function",
+    "description": "Gets the duration of the Source. For streaming Sources it may not always be sample-accurate, and may return -1 if the duration cannot be determined at all.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:getDuration",
+    "snippet": "Source:getDuration(${1:unit (TimeUnit)})"
+  },
+  {
+    "displayText": "Source:getPitch",
+    "type": "function",
+    "description": "Gets the current pitch of the Source.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:getPitch",
+    "snippet": "Source:getPitch()"
+  },
+  {
+    "displayText": "Source:getPosition",
+    "type": "function",
+    "description": "Gets the position of the Source.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:getPosition",
+    "snippet": "Source:getPosition()"
+  },
+  {
+    "displayText": "Source:getRolloff",
+    "type": "function",
+    "description": "Returns the rolloff factor of the source.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:getRolloff",
+    "snippet": "Source:getRolloff()"
+  },
+  {
+    "displayText": "Source:getType",
+    "type": "function",
+    "description": "Gets the type (static or stream) of the Source.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:getType",
+    "snippet": "Source:getType()"
+  },
+  {
+    "displayText": "Source:getVelocity",
+    "type": "function",
+    "description": "Gets the velocity of the Source.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:getVelocity",
+    "snippet": "Source:getVelocity()"
+  },
+  {
+    "displayText": "Source:getVolume",
+    "type": "function",
+    "description": "Gets the current volume of the Source.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:getVolume",
+    "snippet": "Source:getVolume()"
+  },
+  {
+    "displayText": "Source:getVolumeLimits",
+    "type": "function",
+    "description": "Returns the volume limits of the source.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:getVolumeLimits",
+    "snippet": "Source:getVolumeLimits()"
+  },
+  {
+    "displayText": "Source:isLooping",
+    "type": "function",
+    "description": "Returns whether the Source will loop.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:isLooping",
+    "snippet": "Source:isLooping()"
+  },
+  {
+    "displayText": "Source:isPaused",
+    "type": "function",
+    "description": "Returns whether the Source is paused.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:isPaused",
+    "snippet": "Source:isPaused()"
+  },
+  {
+    "displayText": "Source:isPlaying",
+    "type": "function",
+    "description": "Returns whether the Source is playing.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:isPlaying",
+    "snippet": "Source:isPlaying()"
+  },
+  {
+    "displayText": "Source:isStopped",
+    "type": "function",
+    "description": "Returns whether the Source is stopped.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:isStopped",
+    "snippet": "Source:isStopped()"
+  },
+  {
+    "displayText": "Source:pause",
+    "type": "function",
+    "description": "Pauses the Source.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:pause",
+    "snippet": "Source:pause()"
+  },
+  {
+    "displayText": "Source:play",
+    "type": "function",
+    "description": "Starts playing the Source.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:play",
+    "snippet": "Source:play()"
+  },
+  {
+    "displayText": "Source:resume",
+    "type": "function",
+    "description": "Resumes a paused Source.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:resume",
+    "snippet": "Source:resume()"
+  },
+  {
+    "displayText": "Source:rewind",
+    "type": "function",
+    "description": "Rewinds a Source.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:rewind",
+    "snippet": "Source:rewind()"
+  },
+  {
+    "displayText": "Source:seek",
+    "type": "function",
+    "description": "Sets the playing position of the Source.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:seek",
+    "snippet": "Source:seek(${1:position (number)}, ${2:unit (TimeUnit)})"
+  },
+  {
+    "displayText": "Source:setDirection",
+    "type": "function",
+    "description": "Sets the direction vector of the Source. A zero vector makes the source non-directional.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:setDirection",
+    "snippet": "Source:setDirection(${1:x (number)}, ${2:y (number)}, ${3:z (number)})"
+  },
+  {
+    "displayText": "Source:setAttenuationDistances",
+    "type": "function",
+    "description": "Sets the reference and maximum distance of the source.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:setAttenuationDistances",
+    "snippet": "Source:setAttenuationDistances(${1:ref (number)}, ${2:max (number)})"
+  },
+  {
+    "displayText": "Source:setCone",
+    "type": "function",
+    "description": "Sets the Source's directional volume cones. Together with Source:setDirection, the cone angles allow for the Source's volume to vary depending on its direction.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:setCone",
+    "snippet": "Source:setCone(${1:innerAngle (number)}, ${2:outerAngle (number)}, ${3:outerVolume (number)})"
+  },
+  {
+    "displayText": "Source:setLooping",
+    "type": "function",
+    "description": "Sets whether the Source should loop.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:setLooping",
+    "snippet": "Source:setLooping(${1:loop (boolean)})"
+  },
+  {
+    "displayText": "Source:setPitch",
+    "type": "function",
+    "description": "Sets the pitch of the Source.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:setPitch",
+    "snippet": "Source:setPitch(${1:pitch (number)})"
+  },
+  {
+    "displayText": "Source:setPosition",
+    "type": "function",
+    "description": "Sets the position of the Source.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:setPosition",
+    "snippet": "Source:setPosition(${1:x (number)}, ${2:y (number)}, ${3:z (number)})"
+  },
+  {
+    "displayText": "Source:setRolloff",
+    "type": "function",
+    "description": "Sets the rolloff factor.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:setRolloff",
+    "snippet": "Source:setRolloff(${1:rolloff (number)})"
+  },
+  {
+    "displayText": "Source:setVelocity",
+    "type": "function",
+    "description": "Sets the velocity of the Source. This does not change the position of the Source, but is used to calculate the doppler effect.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:setVelocity",
+    "snippet": "Source:setVelocity(${1:x (number)}, ${2:y (number)}, ${3:z (number)})"
+  },
+  {
+    "displayText": "Source:setVolume",
+    "type": "function",
+    "description": "Sets the volume of the Source.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:setVolume",
+    "snippet": "Source:setVolume(${1:volume (number)})"
+  },
+  {
+    "displayText": "Source:setVolumeLimits",
+    "type": "function",
+    "description": "Sets the volume limits of the source. The limits have to be numbers from 0 to 1.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:setVolumeLimits",
+    "snippet": "Source:setVolumeLimits(${1:min (number)}, ${2:max (number)})"
+  },
+  {
+    "displayText": "Source:stop",
+    "type": "function",
+    "description": "Stops a Source.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:stop",
+    "snippet": "Source:stop()"
+  },
+  {
+    "displayText": "Source:tell",
+    "type": "function",
+    "description": "Gets the currently playing position of the Source.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Source:tell",
+    "snippet": "Source:tell(${1:unit (TimeUnit)})"
   },
   {
     "displayText": "love.audio.getDistanceModel",
@@ -411,6 +649,118 @@
     "description": "Like love.event.poll but blocks until there is an event in the queue.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.event.wait",
     "snippet": "love.event.wait()"
+  },
+  {
+    "displayText": "File:close",
+    "type": "function",
+    "description": "Closes a file.",
+    "descriptionMoreURL": "https://love2d.org/wiki/File:close",
+    "snippet": "File:close()"
+  },
+  {
+    "displayText": "File:flush",
+    "type": "function",
+    "description": "Flushes any buffered written data in the file to the disk.",
+    "descriptionMoreURL": "https://love2d.org/wiki/File:flush",
+    "snippet": "File:flush()"
+  },
+  {
+    "displayText": "File:getBuffer",
+    "type": "function",
+    "description": "Gets the buffer mode of a file.",
+    "descriptionMoreURL": "https://love2d.org/wiki/File:getBuffer",
+    "snippet": "File:getBuffer()"
+  },
+  {
+    "displayText": "File:getFilename",
+    "type": "function",
+    "description": "Gets the filename that the File object was created with. If the file object originated from the love.filedropped callback, the filename will be the full platform-dependent file path.",
+    "descriptionMoreURL": "https://love2d.org/wiki/File:getFilename",
+    "snippet": "File:getFilename()"
+  },
+  {
+    "displayText": "File:getMode",
+    "type": "function",
+    "description": "Gets the FileMode the file has been opened with.",
+    "descriptionMoreURL": "https://love2d.org/wiki/File:getMode",
+    "snippet": "File:getMode()"
+  },
+  {
+    "displayText": "File:getSize",
+    "type": "function",
+    "description": "Returns the file size.",
+    "descriptionMoreURL": "https://love2d.org/wiki/File:getSize",
+    "snippet": "File:getSize()"
+  },
+  {
+    "displayText": "File:isEOF",
+    "type": "function",
+    "description": "Gets whether end-of-file has been reached.",
+    "descriptionMoreURL": "https://love2d.org/wiki/File:isEOF",
+    "snippet": "File:isEOF()"
+  },
+  {
+    "displayText": "File:isOpen",
+    "type": "function",
+    "description": "Gets whether the file is open.",
+    "descriptionMoreURL": "https://love2d.org/wiki/File:isOpen",
+    "snippet": "File:isOpen()"
+  },
+  {
+    "displayText": "File:lines",
+    "type": "function",
+    "description": "Iterate over all the lines in a file",
+    "descriptionMoreURL": "https://love2d.org/wiki/File:lines",
+    "snippet": "File:lines()"
+  },
+  {
+    "displayText": "File:open",
+    "type": "function",
+    "description": "Open the file for write, read or append. If you are getting the error message \"Could not set write directory\", try setting the save directory. This is done either with love.filesystem.setIdentity or by setting the identity field in love.conf.",
+    "descriptionMoreURL": "https://love2d.org/wiki/File:open",
+    "snippet": "File:open(${1:mode (FileMode)})"
+  },
+  {
+    "displayText": "File:read",
+    "type": "function",
+    "description": "Read a number of bytes from a file.",
+    "descriptionMoreURL": "https://love2d.org/wiki/File:read",
+    "snippet": "File:read(${1:bytes (number)})"
+  },
+  {
+    "displayText": "File:seek",
+    "type": "function",
+    "description": "Seek to a position in a file.",
+    "descriptionMoreURL": "https://love2d.org/wiki/File:seek",
+    "snippet": "File:seek(${1:position (number)})"
+  },
+  {
+    "displayText": "File:setBuffer",
+    "type": "function",
+    "description": "Sets the buffer mode for a file opened for writing or appending. Files with buffering enabled will not write data to the disk until the buffer size limit is reached, depending on the buffer mode.",
+    "descriptionMoreURL": "https://love2d.org/wiki/File:setBuffer",
+    "snippet": "File:setBuffer(${1:mode (BufferMode)}, ${2:size (number)})"
+  },
+  {
+    "displayText": "File:write",
+    "type": "function",
+    "description": "Write data to a file.",
+    "descriptionMoreURL": "https://love2d.org/wiki/File:write",
+    "snippet": "File:write(${1:data (string)}, ${2:size (number)})"
+  },
+  {
+    "displayText": "FileData:getExtension",
+    "type": "function",
+    "description": "Gets the extension of the FileData.",
+    "descriptionMoreURL": "https://love2d.org/wiki/FileData:getExtension",
+    "snippet": "FileData:getExtension()"
+  },
+  {
+    "displayText": "FileData:getFilename",
+    "type": "function",
+    "description": "Gets the filename of the FileData.",
+    "descriptionMoreURL": "https://love2d.org/wiki/FileData:getFilename",
+    "snippet": "FileData:getFilename()"
   },
   {
     "displayText": "love.filesystem.append",
@@ -635,6 +985,993 @@
     "description": "Write data to a file. If you are getting the error message \"Could not set write directory\", try setting the save directory. This is done either with love.filesystem.setIdentity or by setting the identity field in love.conf.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.filesystem.write",
     "snippet": "love.filesystem.write(${1:name (string)}, ${2:data (string)}, ${3:size (number)})"
+  },
+  {
+    "displayText": "Canvas:getDimensions",
+    "type": "function",
+    "description": "Gets the width and height of the Canvas.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Canvas:getDimensions",
+    "snippet": "Canvas:getDimensions()"
+  },
+  {
+    "displayText": "Canvas:getFilter",
+    "type": "function",
+    "description": "Gets the filter mode of the Canvas.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Canvas:getFilter",
+    "snippet": "Canvas:getFilter()"
+  },
+  {
+    "displayText": "Canvas:getFormat",
+    "type": "function",
+    "description": "Gets the texture format of the Canvas.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Canvas:getFormat",
+    "snippet": "Canvas:getFormat()"
+  },
+  {
+    "displayText": "Canvas:getHeight",
+    "type": "function",
+    "description": "Gets the height of the Canvas.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Canvas:getHeight",
+    "snippet": "Canvas:getHeight()"
+  },
+  {
+    "displayText": "Canvas:getMSAA",
+    "type": "function",
+    "description": "Gets the number of multisample antialiasing (MSAA) samples used when drawing to the Canvas. This may be different than the number used as an argument to love.graphics.newCanvas if the system running LÖVE doesn't support that number.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Canvas:getMSAA",
+    "snippet": "Canvas:getMSAA()"
+  },
+  {
+    "displayText": "Canvas:getWidth",
+    "type": "function",
+    "description": "Gets the width of the Canvas.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Canvas:getWidth",
+    "snippet": "Canvas:getWidth()"
+  },
+  {
+    "displayText": "Canvas:getWrap",
+    "type": "function",
+    "description": "Gets the wrapping properties of a Canvas. This function returns the currently set horizontal and vertical wrapping modes for the Canvas.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Canvas:getWrap",
+    "snippet": "Canvas:getWrap()"
+  },
+  {
+    "displayText": "Canvas:isActive",
+    "type": "function",
+    "description": "Gets whether the graphics module is able to be used. If it is not active, love.graphics function and method calls will not work correctly and may cause the program to crash. The graphics module is inactive if a window is not open, or if the app is in the background on iOS. Typically the app's execution will be automatically paused by the system, in the latter case.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Canvas:isActive",
+    "snippet": "Canvas:isActive()"
+  },
+  {
+    "displayText": "Canvas:newImageData",
+    "type": "function",
+    "description": "Generates ImageData from the contents of the Canvas.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Canvas:newImageData",
+    "snippet": "Canvas:newImageData()"
+  },
+  {
+    "displayText": "Canvas:renderTo",
+    "type": "function",
+    "description": "Render to the Canvas using a function.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Canvas:renderTo",
+    "snippet": "Canvas:renderTo(${1:func (function)})"
+  },
+  {
+    "displayText": "Canvas:setFilter",
+    "type": "function",
+    "description": "Sets the filter of the Canvas.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Canvas:setFilter",
+    "snippet": "Canvas:setFilter(${1:min (FilterMode)}, ${2:mag (FilterMode)}, ${3:anisotropy (number)})"
+  },
+  {
+    "displayText": "Canvas:setWrap",
+    "type": "function",
+    "description": "Sets the wrapping properties of a Canvas. This function sets the way the edges of a Canvas are treated if it is scaled or rotated. If the WrapMode is set to \"clamp\", the edge will not be interpolated. If set to \"repeat\", the edge will be interpolated with the pixels on the opposing side of the framebuffer.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Canvas:setWrap",
+    "snippet": "Canvas:setWrap(${1:horizontal (WrapMode)}, ${2:vertical (WrapMode)})"
+  },
+  {
+    "displayText": "Font:getAscent",
+    "type": "function",
+    "description": "Gets the ascent of the Font. The ascent spans the distance between the baseline and the top of the glyph that reaches farthest from the baseline.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Font:getAscent",
+    "snippet": "Font:getAscent()"
+  },
+  {
+    "displayText": "Font:getBaseline",
+    "type": "function",
+    "description": "Gets the baseline of the Font. Most scripts share the notion of a baseline: an imaginary horizontal line on which characters rest. In some scripts, parts of glyphs lie below the baseline.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Font:getBaseline",
+    "snippet": "Font:getBaseline()"
+  },
+  {
+    "displayText": "Font:getDescent",
+    "type": "function",
+    "description": "Gets the descent of the Font. The descent spans the distance between the baseline and the lowest descending glyph in a typeface.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Font:getDescent",
+    "snippet": "Font:getDescent()"
+  },
+  {
+    "displayText": "Font:getFilter",
+    "type": "function",
+    "description": "Gets the filter mode for a font.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Font:getFilter",
+    "snippet": "Font:getFilter()"
+  },
+  {
+    "displayText": "Font:getHeight",
+    "type": "function",
+    "description": "Gets the height of the Font. The height of the font is the size including any spacing; the height which it will need.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Font:getHeight",
+    "snippet": "Font:getHeight()"
+  },
+  {
+    "displayText": "Font:getLineHeight",
+    "type": "function",
+    "description": "Gets the line height. This will be the value previously set by Font:setLineHeight, or 1.0 by default.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Font:getLineHeight",
+    "snippet": "Font:getLineHeight()"
+  },
+  {
+    "displayText": "Font:getWidth",
+    "type": "function",
+    "description": "Determines the horizontal size a line of text needs. Does not support line-breaks.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Font:getWidth",
+    "snippet": "Font:getWidth(${1:line (string)})"
+  },
+  {
+    "displayText": "Font:getWrap",
+    "type": "function",
+    "description": "Gets formatting information for text, given a wrap limit. This function accounts for newlines correctly (i.e. '\n').",
+    "descriptionMoreURL": "https://love2d.org/wiki/Font:getWrap",
+    "snippet": "Font:getWrap(${1:text (string)}, ${2:wraplimit (number)})"
+  },
+  {
+    "displayText": "Font:hasGlyph",
+    "type": "function",
+    "description": "Gets whether the font can render a particular character.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Font:hasGlyph",
+    "snippet": "Font:hasGlyph(${1:character (string)})"
+  },
+  {
+    "displayText": "Font:setFallbacks",
+    "type": "function",
+    "description": "Sets the fallback fonts. When the Font doesn't contain a glyph, it will substitute the glyph from the next subsequent fallback Fonts. This is akin to setting a \"font stack\" in Cascading Style Sheets (CSS).",
+    "descriptionMoreURL": "https://love2d.org/wiki/Font:setFallbacks",
+    "snippet": "Font:setFallbacks(${1:fallbackfont1 (Font)}, ${2:... (Font)})"
+  },
+  {
+    "displayText": "Font:setFilter",
+    "type": "function",
+    "description": "Sets the filter mode for a font.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Font:setFilter",
+    "snippet": "Font:setFilter(${1:min (FilterMode)}, ${2:mag (FilterMode)}, ${3:anisotropy (number)})"
+  },
+  {
+    "displayText": "Font:setLineHeight",
+    "type": "function",
+    "description": "Sets the line height. When rendering the font in lines the actual height will be determined by the line height multiplied by the height of the font. The default is 1.0.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Font:setLineHeight",
+    "snippet": "Font:setLineHeight(${1:height (number)})"
+  },
+  {
+    "displayText": "Mesh:attachAttribute",
+    "type": "function",
+    "description": "Attaches a vertex attribute from a different Mesh onto this Mesh, for use when drawing. This can be used to share vertex attribute data between several different Meshes.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Mesh:attachAttribute",
+    "snippet": "Mesh:attachAttribute(${1:name (string)}, ${2:mesh (Mesh)})"
+  },
+  {
+    "displayText": "Mesh:getDrawMode",
+    "type": "function",
+    "description": "Gets the mode used when drawing the Mesh.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Mesh:getDrawMode",
+    "snippet": "Mesh:getDrawMode()"
+  },
+  {
+    "displayText": "Mesh:getDrawRange",
+    "type": "function",
+    "description": "Gets the range of vertices used when drawing the Mesh. If the Mesh's draw range has not been set previously with Mesh:setDrawRange, this function will return nil.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Mesh:getDrawRange",
+    "snippet": "Mesh:getDrawRange()"
+  },
+  {
+    "displayText": "Mesh:getTexture",
+    "type": "function",
+    "description": "Gets the texture (Image or Canvas) used when drawing the Mesh.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Mesh:getTexture",
+    "snippet": "Mesh:getTexture()"
+  },
+  {
+    "displayText": "Mesh:getVertex",
+    "type": "function",
+    "description": "Gets the properties of a vertex in the Mesh.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Mesh:getVertex",
+    "snippet": "Mesh:getVertex(${1:index (number)})"
+  },
+  {
+    "displayText": "Mesh:getVertexAttribute",
+    "type": "function",
+    "description": "Gets the properties of a specific attribute within a vertex in the Mesh. Meshes without a custom vertex format specified in love.graphics.newMesh have position as their first attribute, texture coordinates as their second attribute, and color as their third attribute.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Mesh:getVertexAttribute",
+    "snippet": "Mesh:getVertexAttribute(${1:vertexindex (number)}, ${2:attributeindex (number)})"
+  },
+  {
+    "displayText": "Mesh:getVertexCount",
+    "type": "function",
+    "description": "Returns the total number of vertices in the Mesh.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Mesh:getVertexCount",
+    "snippet": "Mesh:getVertexCount()"
+  },
+  {
+    "displayText": "Mesh:getVertexFormat",
+    "type": "function",
+    "description": "Gets the vertex format that the Mesh was created with.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Mesh:getVertexFormat",
+    "snippet": "Mesh:getVertexFormat()"
+  },
+  {
+    "displayText": "Mesh:getVertexMap",
+    "type": "function",
+    "description": "Gets the vertex map for the Mesh. The vertex map describes the order in which the vertices are used when the Mesh is drawn. The vertices, vertex map, and mesh draw mode work together to determine what exactly is displayed on the screen. If no vertex map has been set previously via Mesh:setVertexMap, then this function will return nil in LÖVE 0.10.0+, or an empty table in 0.9.2 and older.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Mesh:getVertexMap",
+    "snippet": "Mesh:getVertexMap()"
+  },
+  {
+    "displayText": "Mesh:isAttributeEnabled",
+    "type": "function",
+    "description": "Gets whether a specific vertex attribute in the Mesh is enabled. Vertex data from disabled attributes is not used when drawing the Mesh.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Mesh:isAttributeEnabled",
+    "snippet": "Mesh:isAttributeEnabled(${1:name (string)})"
+  },
+  {
+    "displayText": "Mesh:setAttributeEnabled",
+    "type": "function",
+    "description": "Enables or disables a specific vertex attribute in the Mesh. Vertex data from disabled attributes is not used when drawing the Mesh.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Mesh:setAttributeEnabled",
+    "snippet": "Mesh:setAttributeEnabled(${1:name (string)}, ${2:enable (boolean)})"
+  },
+  {
+    "displayText": "Mesh:setDrawMode",
+    "type": "function",
+    "description": "Sets the mode used when drawing the Mesh.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Mesh:setDrawMode",
+    "snippet": "Mesh:setDrawMode(${1:mode (MeshDrawMode)})"
+  },
+  {
+    "displayText": "Mesh:setDrawRange",
+    "type": "function",
+    "description": "Restricts the drawn vertices of the Mesh to a subset of the total. If a vertex map is used with the Mesh, this method will set a subset of the values in the vertex map array to use, instead of a subset of the total vertices in the Mesh. For example, if Mesh:setVertexMap(1, 2, 3, 1, 3, 4) and Mesh:setDrawRange(4, 6) are called, vertices 1, 3, and 4 will be drawn.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Mesh:setDrawRange",
+    "snippet": "Mesh:setDrawRange(${1:min (number)}, ${2:max (number)})"
+  },
+  {
+    "displayText": "Mesh:setTexture",
+    "type": "function",
+    "description": "Sets the texture (Image or Canvas) used when drawing the Mesh. When called without an argument disables the texture. Untextured meshes have a white color by default.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Mesh:setTexture",
+    "snippet": "Mesh:setTexture()"
+  },
+  {
+    "displayText": "Mesh:setVertex",
+    "type": "function",
+    "description": "Sets the properties of a vertex in the Mesh.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Mesh:setVertex",
+    "snippet": "Mesh:setVertex(${1:index (number)}, ${2:attributecomponent (number)}, ${3:... (number)})"
+  },
+  {
+    "displayText": "Mesh:setVertexAttribute",
+    "type": "function",
+    "description": "Sets the properties of a specific attribute within a vertex in the Mesh. Meshes without a custom vertex format specified in love.graphics.newMesh have position as their first attribute, texture coordinates as their second attribute, and color as their third attribute.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Mesh:setVertexAttribute",
+    "snippet": "Mesh:setVertexAttribute(${1:vertexindex (number)}, ${2:attributeindex (number)}, ${3:value1 (number)}, ${4:value2 (number)}, ${5:... (number)})"
+  },
+  {
+    "displayText": "Mesh:setVertexColors",
+    "type": "function",
+    "description": "Sets if the per-vertex colors are used when rendering instead of the constant color (constant color being love.graphics.setColor or SpriteBatch:setColor) The per-vertex colors are automatically enabled by default when making a new Mesh or when doing Mesh:setVertex, but only if at least one vertex color is not the default (255,255,255,255).",
+    "descriptionMoreURL": "https://love2d.org/wiki/Mesh:setVertexColors",
+    "snippet": "Mesh:setVertexColors(${1:on (boolean)})"
+  },
+  {
+    "displayText": "Mesh:setVertexMap",
+    "type": "function",
+    "description": "Sets the vertex map for a Mesh. The vertex map describes the order in which the vertices are used when the Mesh is drawn. The vertex map allows you to re-order or reuse vertices when drawing without changing the actual vertex parameters or duplicating vertices. It is especially useful when combined with different Mesh draw modes.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Mesh:setVertexMap",
+    "snippet": "Mesh:setVertexMap(${1:vertex_map (table)})"
+  },
+  {
+    "displayText": "Mesh:setVertices",
+    "type": "function",
+    "description": "Replaces a range of vertices in the Mesh with new ones. The total number of vertices in a Mesh cannot be changed after it has been created.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Mesh:setVertices",
+    "snippet": "Mesh:setVertices(${1:vertices (table)}, ${2:startvertex (number)})"
+  },
+  {
+    "displayText": "Image:getData",
+    "type": "function",
+    "description": "Gets the original ImageData or CompressedData used to create the Image. All Images keep a reference to the Data that was used to create the Image. The Data is used to refresh the Image when love.window.setMode or Image:refresh is called.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Image:getData",
+    "snippet": "Image:getData()"
+  },
+  {
+    "displayText": "Image:getDimensions",
+    "type": "function",
+    "description": "Gets the width and height of the Image.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Image:getDimensions",
+    "snippet": "Image:getDimensions()"
+  },
+  {
+    "displayText": "Image:getFilter",
+    "type": "function",
+    "description": "Gets the filter mode for an image.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Image:getFilter",
+    "snippet": "Image:getFilter()"
+  },
+  {
+    "displayText": "Image:getFlags",
+    "type": "function",
+    "description": "Gets the flags used when the image was created.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Image:getFlags",
+    "snippet": "Image:getFlags()"
+  },
+  {
+    "displayText": "Image:getHeight",
+    "type": "function",
+    "description": "Gets the height of the Image.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Image:getHeight",
+    "snippet": "Image:getHeight()"
+  },
+  {
+    "displayText": "Image:getMipmapFilter",
+    "type": "function",
+    "description": "Gets the mipmap filter mode for an Image.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Image:getMipmapFilter",
+    "snippet": "Image:getMipmapFilter()"
+  },
+  {
+    "displayText": "Image:getWidth",
+    "type": "function",
+    "description": "Gets the width of the Image.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Image:getWidth",
+    "snippet": "Image:getWidth()"
+  },
+  {
+    "displayText": "Image:getWrap",
+    "type": "function",
+    "description": "Gets the wrapping properties of an Image. This function returns the currently set horizontal and vertical wrapping modes for the image.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Image:getWrap",
+    "snippet": "Image:getWrap()"
+  },
+  {
+    "displayText": "Image:refresh",
+    "type": "function",
+    "description": "Reloads the Image's contents from the ImageData or CompressedData used to create the image.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Image:refresh",
+    "snippet": "Image:refresh()"
+  },
+  {
+    "displayText": "Image:setFilter",
+    "type": "function",
+    "description": "Sets the filter mode for an image.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Image:setFilter",
+    "snippet": "Image:setFilter(${1:min (FilterMode)}, ${2:mag (FilterMode)})"
+  },
+  {
+    "displayText": "Image:setMipmapFilter",
+    "type": "function",
+    "description": "Sets the mipmap filter mode for an Image. Mipmapping is useful when drawing an image at a reduced scale. It can improve performance and reduce aliasing issues. In 0.10.0 and newer, the Image must be created with the mipmaps flag enabled for the mipmap filter to have any effect.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Image:setMipmapFilter",
+    "snippet": "Image:setMipmapFilter(${1:filtermode (FilterMode)}, ${2:sharpness (number)})"
+  },
+  {
+    "displayText": "Image:setWrap",
+    "type": "function",
+    "description": "Sets the wrapping properties of an Image. This function sets the way an Image is repeated when it is drawn with a Quad that is larger than the image's extent. An image may be clamped or set to repeat in both horizontal and vertical directions. Clamped images appear only once, but repeated ones repeat as many times as there is room in the Quad. If you use a Quad that is larger than the image extent and do not use repeated tiling, there may be an unwanted visual effect of the image stretching all the way to fill the Quad. If this is the case, setting Image:getWrap(\"repeat\", \"repeat\") for all the images to be repeated, and using Quad of appropriate size will result in the best visual appearance.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Image:setWrap",
+    "snippet": "Image:setWrap(${1:horizontal (WrapMode)}, ${2:vertical (WrapMode)})"
+  },
+  {
+    "displayText": "ParticleSystem:clone",
+    "type": "function",
+    "description": "Creates an identical copy of the ParticleSystem in the stopped state. Cloned ParticleSystem inherit all the set-able state of the original ParticleSystem, but they are initialized stopped.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:clone",
+    "snippet": "ParticleSystem:clone()"
+  },
+  {
+    "displayText": "ParticleSystem:emit",
+    "type": "function",
+    "description": "Emits a burst of particles from the particle emitter.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:emit",
+    "snippet": "ParticleSystem:emit(${1:numparticles (number)})"
+  },
+  {
+    "displayText": "ParticleSystem:getCount",
+    "type": "function",
+    "description": "Gets the amount of particles that are currently in the system.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:getCount",
+    "snippet": "ParticleSystem:getCount()"
+  },
+  {
+    "displayText": "ParticleSystem:getAreaSpread",
+    "type": "function",
+    "description": "Gets the area-based spawn parameters for the particles.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:getAreaSpread",
+    "snippet": "ParticleSystem:getAreaSpread()"
+  },
+  {
+    "displayText": "ParticleSystem:getBufferSize",
+    "type": "function",
+    "description": "Gets the size of the buffer (the max allowed amount of particles in the system).",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:getBufferSize",
+    "snippet": "ParticleSystem:getBufferSize()"
+  },
+  {
+    "displayText": "ParticleSystem:getColors",
+    "type": "function",
+    "description": "Gets a series of colors to apply to the particle sprite. The particle system will interpolate between each color evenly over the particle's lifetime. Color modulation needs to be activated for this function to have any effect. Arguments are passed in groups of four, representing the components of the desired RGBA value. At least one color must be specified. A maximum of eight may be used.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:getColors",
+    "snippet": "ParticleSystem:getColors()"
+  },
+  {
+    "displayText": "ParticleSystem:getDirection",
+    "type": "function",
+    "description": "Gets the direction the particles will be emitted in.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:getDirection",
+    "snippet": "ParticleSystem:getDirection()"
+  },
+  {
+    "displayText": "ParticleSystem:getEmissionRate",
+    "type": "function",
+    "description": "Gets the amount of particles emitted per second.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:getEmissionRate",
+    "snippet": "ParticleSystem:getEmissionRate()"
+  },
+  {
+    "displayText": "ParticleSystem:getInsertMode",
+    "type": "function",
+    "description": "Gets the mode to use when the ParticleSystem adds new particles.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:getInsertMode",
+    "snippet": "ParticleSystem:getInsertMode()"
+  },
+  {
+    "displayText": "ParticleSystem:getLinearAcceleration",
+    "type": "function",
+    "description": "Gets the linear acceleration (acceleration along the x and y axes) for particles. Every particle created will accelerate along the x and y axes between xmin,ymin and xmax,ymax.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:getLinearAcceleration",
+    "snippet": "ParticleSystem:getLinearAcceleration()"
+  },
+  {
+    "displayText": "ParticleSystem:getLinearDamping",
+    "type": "function",
+    "description": "Gets the amount of linear damping (constant deceleration) for particles.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:getLinearDamping",
+    "snippet": "ParticleSystem:getLinearDamping()"
+  },
+  {
+    "displayText": "ParticleSystem:getEmitterLifetime",
+    "type": "function",
+    "description": "Gets how long the particle system should emit particles (if -1 then it emits particles forever).",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:getEmitterLifetime",
+    "snippet": "ParticleSystem:getEmitterLifetime()"
+  },
+  {
+    "displayText": "ParticleSystem:getOffset",
+    "type": "function",
+    "description": "Get the offget position which the particle sprite is rotated around. If this function is not used, the particles rotate around their center.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:getOffset",
+    "snippet": "ParticleSystem:getOffset()"
+  },
+  {
+    "displayText": "ParticleSystem:getParticleLifetime",
+    "type": "function",
+    "description": "Gets the life of the particles.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:getParticleLifetime",
+    "snippet": "ParticleSystem:getParticleLifetime()"
+  },
+  {
+    "displayText": "ParticleSystem:getPosition",
+    "type": "function",
+    "description": "Gets the position of the emitter.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:getPosition",
+    "snippet": "ParticleSystem:getPosition()"
+  },
+  {
+    "displayText": "ParticleSystem:getRadialAcceleration",
+    "type": "function",
+    "description": "Get the radial acceleration (away from the emitter).",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:getRadialAcceleration",
+    "snippet": "ParticleSystem:getRadialAcceleration()"
+  },
+  {
+    "displayText": "ParticleSystem:getRotation",
+    "type": "function",
+    "description": "Gets the rotation of the image upon particle creation (in radians).",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:getRotation",
+    "snippet": "ParticleSystem:getRotation()"
+  },
+  {
+    "displayText": "ParticleSystem:getSizes",
+    "type": "function",
+    "description": "Gets a series of sizes by which to scale a particle sprite. 1.0 is normal size. The particle system will interpolate between each size evenly over the particle's lifetime. At least one size must be specified. A maximum of eight may be used.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:getSizes",
+    "snippet": "ParticleSystem:getSizes()"
+  },
+  {
+    "displayText": "ParticleSystem:getSizeVariation",
+    "type": "function",
+    "description": "Gets the degree of variation (0 meaning no variation and 1 meaning full variation between start and end).",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:getSizeVariation",
+    "snippet": "ParticleSystem:getSizeVariation()"
+  },
+  {
+    "displayText": "ParticleSystem:getSpeed",
+    "type": "function",
+    "description": "Gets the speed of the particles.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:getSpeed",
+    "snippet": "ParticleSystem:getSpeed()"
+  },
+  {
+    "displayText": "ParticleSystem:getSpin",
+    "type": "function",
+    "description": "Gets the spin of the sprite.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:getSpin",
+    "snippet": "ParticleSystem:getSpin()"
+  },
+  {
+    "displayText": "ParticleSystem:getSpinVariation",
+    "type": "function",
+    "description": "Gets the degree of variation (0 meaning no variation and 1 meaning full variation between start and end).",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:getSpinVariation",
+    "snippet": "ParticleSystem:getSpinVariation()"
+  },
+  {
+    "displayText": "ParticleSystem:getSpread",
+    "type": "function",
+    "description": "Gets the amount of spread for the system.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:getSpread",
+    "snippet": "ParticleSystem:getSpread()"
+  },
+  {
+    "displayText": "ParticleSystem:getTexture",
+    "type": "function",
+    "description": "Gets the Image or Canvas which is to be emitted.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:getTexture",
+    "snippet": "ParticleSystem:getTexture()"
+  },
+  {
+    "displayText": "ParticleSystem:getTangentialAcceleration",
+    "type": "function",
+    "description": "Gets the tangential acceleration (acceleration perpendicular to the particle's direction).",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:getTangentialAcceleration",
+    "snippet": "ParticleSystem:getTangentialAcceleration()"
+  },
+  {
+    "displayText": "ParticleSystem:hasRelativeRotation",
+    "type": "function",
+    "description": "Gets whether particle angles and rotations are relative to their velocities. If enabled, particles are aligned to the angle of their velocities and rotate relative to that angle.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:hasRelativeRotation",
+    "snippet": "ParticleSystem:hasRelativeRotation()"
+  },
+  {
+    "displayText": "ParticleSystem:isActive",
+    "type": "function",
+    "description": "Checks whether the particle system is actively emitting particles.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:isActive",
+    "snippet": "ParticleSystem:isActive()"
+  },
+  {
+    "displayText": "ParticleSystem:isPaused",
+    "type": "function",
+    "description": "Checks whether the particle system is paused.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:isPaused",
+    "snippet": "ParticleSystem:isPaused()"
+  },
+  {
+    "displayText": "ParticleSystem:isStopped",
+    "type": "function",
+    "description": "Checks whether the particle system is stopped.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:isStopped",
+    "snippet": "ParticleSystem:isStopped()"
+  },
+  {
+    "displayText": "ParticleSystem:moveTo",
+    "type": "function",
+    "description": "Moves the position of the emitter. This results in smoother particle spawning behaviour than if ParticleSystem:setPosition is used every frame.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:moveTo",
+    "snippet": "ParticleSystem:moveTo(${1:x (number)}, ${2:y (number)})"
+  },
+  {
+    "displayText": "ParticleSystem:pause",
+    "type": "function",
+    "description": "Pauses the particle emitter.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:pause",
+    "snippet": "ParticleSystem:pause()"
+  },
+  {
+    "displayText": "ParticleSystem:reset",
+    "type": "function",
+    "description": "Resets the particle emitter, removing any existing particles and resetting the lifetime counter.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:reset",
+    "snippet": "ParticleSystem:reset()"
+  },
+  {
+    "displayText": "ParticleSystem:setAreaSpread",
+    "type": "function",
+    "description": "Sets area-based spawn parameters for the particles. Newly created particles will spawn in an area around the emitter based on the parameters to this function.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:setAreaSpread",
+    "snippet": "ParticleSystem:setAreaSpread(${1:distribution (AreaSpreadDistribution)}, ${2:dx (number)}, ${3:dy (number)})"
+  },
+  {
+    "displayText": "ParticleSystem:setBufferSize",
+    "type": "function",
+    "description": "Sets the size of the buffer (the max allowed amount of particles in the system).",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:setBufferSize",
+    "snippet": "ParticleSystem:setBufferSize(${1:buffer (number)})"
+  },
+  {
+    "displayText": "ParticleSystem:setColors",
+    "type": "function",
+    "description": "Sets a series of colors to apply to the particle sprite. The particle system will interpolate between each color evenly over the particle's lifetime. Color modulation needs to be activated for this function to have any effect. Arguments are passed in groups of four, representing the components of the desired RGBA value. At least one color must be specified. A maximum of eight may be used.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:setColors",
+    "snippet": "ParticleSystem:setColors(${1:r1 (number)}, ${2:g1 (number)}, ${3:b1 (number)}, ${4:a1 (number)}, ${5:r2 (number)}, ${6:g2 (number)}, ${7:b2 (number)}, ${8:a2 (number)}, ${9:... (number)})"
+  },
+  {
+    "displayText": "ParticleSystem:setDirection",
+    "type": "function",
+    "description": "Sets the direction the particles will be emitted in.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:setDirection",
+    "snippet": "ParticleSystem:setDirection(${1:direction (number)})"
+  },
+  {
+    "displayText": "ParticleSystem:setEmissionRate",
+    "type": "function",
+    "description": "Sets the amount of particles emitted per second.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:setEmissionRate",
+    "snippet": "ParticleSystem:setEmissionRate(${1:rate (number)})"
+  },
+  {
+    "displayText": "ParticleSystem:setEmitterLifetime",
+    "type": "function",
+    "description": "Sets how long the particle system should emit particles (if -1 then it emits particles forever).",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:setEmitterLifetime",
+    "snippet": "ParticleSystem:setEmitterLifetime(${1:life (number)})"
+  },
+  {
+    "displayText": "ParticleSystem:setInsertMode",
+    "type": "function",
+    "description": "Sets the mode to use when the ParticleSystem adds new particles.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:setInsertMode",
+    "snippet": "ParticleSystem:setInsertMode(${1:mode (ParticleInsertMode)})"
+  },
+  {
+    "displayText": "ParticleSystem:setLinearAcceleration",
+    "type": "function",
+    "description": "Sets the linear acceleration (acceleration along the x and y axes) for particles. Every particle created will accelerate along the x and y axes between xmin,ymin and xmax,ymax.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:setLinearAcceleration",
+    "snippet": "ParticleSystem:setLinearAcceleration(${1:xmin (number)}, ${2:ymin (number)}, ${3:xmax (number)}, ${4:ymax (number)})"
+  },
+  {
+    "displayText": "ParticleSystem:setLinearDamping",
+    "type": "function",
+    "description": "Sets the amount of linear damping (constant deceleration) for particles.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:setLinearDamping",
+    "snippet": "ParticleSystem:setLinearDamping(${1:min (number)}, ${2:max (number)})"
+  },
+  {
+    "displayText": "ParticleSystem:setOffset",
+    "type": "function",
+    "description": "Set the offset position which the particle sprite is rotated around. If this function is not used, the particles rotate around their center.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:setOffset",
+    "snippet": "ParticleSystem:setOffset(${1:x (number)}, ${2:y (number)})"
+  },
+  {
+    "displayText": "ParticleSystem:setParticleLifetime",
+    "type": "function",
+    "description": "Sets the life of the particles.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:setParticleLifetime",
+    "snippet": "ParticleSystem:setParticleLifetime(${1:min (number)}, ${2:max (number)})"
+  },
+  {
+    "displayText": "ParticleSystem:setPosition",
+    "type": "function",
+    "description": "Sets the position of the emitter.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:setPosition",
+    "snippet": "ParticleSystem:setPosition(${1:x (number)}, ${2:y (number)})"
+  },
+  {
+    "displayText": "ParticleSystem:setQuads",
+    "type": "function",
+    "description": "Sets a series of Quads to use for the particle sprites. Particles will choose a Quad from the list based on the particle's current lifetime, allowing for the use of animated sprite sheets with ParticleSystems.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:setQuads",
+    "snippet": "ParticleSystem:setQuads(${1:quad1 (Quad)}, ${2:quad2 (Quad)})"
+  },
+  {
+    "displayText": "ParticleSystem:setRadialAcceleration",
+    "type": "function",
+    "description": "Set the radial acceleration (away from the emitter).",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:setRadialAcceleration",
+    "snippet": "ParticleSystem:setRadialAcceleration(${1:min (number)}, ${2:max (number)})"
+  },
+  {
+    "displayText": "ParticleSystem:setRelativeRotation",
+    "type": "function",
+    "description": "Sets whether particle angles and rotations are relative to their velocities. If enabled, particles are aligned to the angle of their velocities and rotate relative to that angle.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:setRelativeRotation",
+    "snippet": "ParticleSystem:setRelativeRotation(${1:enable (boolean)})"
+  },
+  {
+    "displayText": "ParticleSystem:setRotation",
+    "type": "function",
+    "description": "Sets the rotation of the image upon particle creation (in radians).",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:setRotation",
+    "snippet": "ParticleSystem:setRotation(${1:min (number)}, ${2:max (number)})"
+  },
+  {
+    "displayText": "ParticleSystem:setSizes",
+    "type": "function",
+    "description": "Sets a series of sizes by which to scale a particle sprite. 1.0 is normal size. The particle system will interpolate between each size evenly over the particle's lifetime. At least one size must be specified. A maximum of eight may be used.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:setSizes",
+    "snippet": "ParticleSystem:setSizes(${1:size1 (number)}, ${2:size2 (number)}, ${3:... (number)})"
+  },
+  {
+    "displayText": "ParticleSystem:setSizeVariation",
+    "type": "function",
+    "description": "Sets the degree of variation (0 meaning no variation and 1 meaning full variation between start and end).",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:setSizeVariation",
+    "snippet": "ParticleSystem:setSizeVariation(${1:variation (number)})"
+  },
+  {
+    "displayText": "ParticleSystem:setSpeed",
+    "type": "function",
+    "description": "Sets the speed of the particles.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:setSpeed",
+    "snippet": "ParticleSystem:setSpeed(${1:min (number)}, ${2:max (number)})"
+  },
+  {
+    "displayText": "ParticleSystem:setSpin",
+    "type": "function",
+    "description": "Sets the spin of the sprite.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:setSpin",
+    "snippet": "ParticleSystem:setSpin(${1:min (number)}, ${2:max (number)})"
+  },
+  {
+    "displayText": "ParticleSystem:setSpinVariation",
+    "type": "function",
+    "description": "Sets the degree of variation (0 meaning no variation and 1 meaning full variation between start and end).",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:setSpinVariation",
+    "snippet": "ParticleSystem:setSpinVariation(${1:variation (number)})"
+  },
+  {
+    "displayText": "ParticleSystem:setSpread",
+    "type": "function",
+    "description": "Sets the amount of spread for the system.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:setSpread",
+    "snippet": "ParticleSystem:setSpread(${1:spread (number)})"
+  },
+  {
+    "displayText": "ParticleSystem:setTexture",
+    "type": "function",
+    "description": "Sets the Image or Canvas which is to be emitted.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:setTexture",
+    "snippet": "ParticleSystem:setTexture(${1:texture (Texture)})"
+  },
+  {
+    "displayText": "ParticleSystem:setTangentialAcceleration",
+    "type": "function",
+    "description": "Sets the tangential acceleration (acceleration perpendicular to the particle's direction).",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:setTangentialAcceleration",
+    "snippet": "ParticleSystem:setTangentialAcceleration(${1:min (number)}, ${2:max (number)})"
+  },
+  {
+    "displayText": "ParticleSystem:start",
+    "type": "function",
+    "description": "Starts the particle emitter.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:start",
+    "snippet": "ParticleSystem:start()"
+  },
+  {
+    "displayText": "ParticleSystem:stop",
+    "type": "function",
+    "description": "Stops the particle emitter, resetting the lifetime counter.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:stop",
+    "snippet": "ParticleSystem:stop()"
+  },
+  {
+    "displayText": "ParticleSystem:update",
+    "type": "function",
+    "description": "Updates the particle system; moving, creating and killing particles.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ParticleSystem:update",
+    "snippet": "ParticleSystem:update(${1:dt (number)})"
+  },
+  {
+    "displayText": "Quad:getViewport",
+    "type": "function",
+    "description": "Gets the current viewport of this Quad.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Quad:getViewport",
+    "snippet": "Quad:getViewport()"
+  },
+  {
+    "displayText": "Quad:setViewport",
+    "type": "function",
+    "description": "Sets the texture coordinates according to a viewport.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Quad:setViewport",
+    "snippet": "Quad:setViewport()"
+  },
+  {
+    "displayText": "Shader:getExternVariable",
+    "type": "function",
+    "description": "Gets information about an 'extern' ('uniform') variable in the shader.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Shader:getExternVariable",
+    "snippet": "Shader:getExternVariable(${1:name (string)})"
+  },
+  {
+    "displayText": "Shader:getWarnings",
+    "type": "function",
+    "description": "Returns any warning and error messages from compiling the shader code. This can be used for debugging your shaders if there's anything the graphics hardware doesn't like.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Shader:getWarnings",
+    "snippet": "Shader:getWarnings()"
+  },
+  {
+    "displayText": "Shader:send",
+    "type": "function",
+    "description": "Sends one or more values to a special (extern) variable inside the shader.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Shader:send",
+    "snippet": "Shader:send(${1:name (string)}, ${2:number (number)}, ${3:... (number)})"
+  },
+  {
+    "displayText": "Shader:sendColor",
+    "type": "function",
+    "description": "Sends one or more colors to a special (extern / uniform) vec3 or vec4 variable inside the shader. The color components must be in the range of [0, 255], unlike Shader:send. The colors are gamma-corrected if global gamma-correction is enabled.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Shader:sendColor",
+    "snippet": "Shader:sendColor(${1:name (string)}, ${2:color (table)}, ${3:... (table)})"
+  },
+  {
+    "displayText": "SpriteBatch:add",
+    "type": "function",
+    "description": "Add a sprite to the batch.",
+    "descriptionMoreURL": "https://love2d.org/wiki/SpriteBatch:add",
+    "snippet": "SpriteBatch:add(${1:x (number)}, ${2:y (number)}, ${3:r (number)}, ${4:sx (number)}, ${5:sy (number)}, ${6:ox (number)}, ${7:oy (number)}, ${8:kx (number)}, ${9:ky (number)})"
+  },
+  {
+    "displayText": "SpriteBatch:attachAttribute",
+    "type": "function",
+    "description": "Attaches a per-vertex attribute from a Mesh onto this SpriteBatch, for use when drawing. This can be combined with a Shader to augment a SpriteBatch with per-vertex or additional per-sprite information instead of just having per-sprite colors. Each sprite in a SpriteBatch has 4 vertices in the following order: top-left, bottom-left, top-right, bottom-right. The index returned by SpriteBatch:add (and used by SpriteBatch:set) can be multiplied by 4 to determine the first vertex in a specific sprite.",
+    "descriptionMoreURL": "https://love2d.org/wiki/SpriteBatch:attachAttribute",
+    "snippet": "SpriteBatch:attachAttribute(${1:name (string)}, ${2:mesh (Mesh)})"
+  },
+  {
+    "displayText": "SpriteBatch:clear",
+    "type": "function",
+    "description": "Removes all sprites from the buffer.",
+    "descriptionMoreURL": "https://love2d.org/wiki/SpriteBatch:clear",
+    "snippet": "SpriteBatch:clear()"
+  },
+  {
+    "displayText": "SpriteBatch:flush",
+    "type": "function",
+    "description": "Immediately sends all new and modified sprite data in the batch to the graphics card.",
+    "descriptionMoreURL": "https://love2d.org/wiki/SpriteBatch:flush",
+    "snippet": "SpriteBatch:flush()"
+  },
+  {
+    "displayText": "SpriteBatch:getBufferSize",
+    "type": "function",
+    "description": "Gets the maximum number of sprites the SpriteBatch can hold.",
+    "descriptionMoreURL": "https://love2d.org/wiki/SpriteBatch:getBufferSize",
+    "snippet": "SpriteBatch:getBufferSize()"
+  },
+  {
+    "displayText": "SpriteBatch:getColor",
+    "type": "function",
+    "description": "Gets the color that will be used for the next add and set operations. If no color has been set with SpriteBatch:setColor or the current SpriteBatch color has been cleared, this method will return nil.",
+    "descriptionMoreURL": "https://love2d.org/wiki/SpriteBatch:getColor",
+    "snippet": "SpriteBatch:getColor()"
+  },
+  {
+    "displayText": "SpriteBatch:getCount",
+    "type": "function",
+    "description": "Gets the amount of sprites currently in the SpriteBatch.",
+    "descriptionMoreURL": "https://love2d.org/wiki/SpriteBatch:getCount",
+    "snippet": "SpriteBatch:getCount()"
+  },
+  {
+    "displayText": "SpriteBatch:getTexture",
+    "type": "function",
+    "description": "Returns the Image or Canvas used by the SpriteBatch.",
+    "descriptionMoreURL": "https://love2d.org/wiki/SpriteBatch:getTexture",
+    "snippet": "SpriteBatch:getTexture()"
+  },
+  {
+    "displayText": "SpriteBatch:set",
+    "type": "function",
+    "description": "Changes a sprite in the batch. This requires the identifier returned by add and addq.",
+    "descriptionMoreURL": "https://love2d.org/wiki/SpriteBatch:set",
+    "snippet": "SpriteBatch:set(${1:id (number)}, ${2:x (number)}, ${3:y (number)}, ${4:r (number)}, ${5:sx (number)}, ${6:sy (number)}, ${7:ox (number)}, ${8:oy (number)}, ${9:kx (number)}, ${10:ky (number)})"
+  },
+  {
+    "displayText": "SpriteBatch:setBufferSize",
+    "type": "function",
+    "description": "Sets the maximum number of sprites the SpriteBatch can hold. Existing sprites in the batch (up to the new maximum) will not be cleared when this function is called.",
+    "descriptionMoreURL": "https://love2d.org/wiki/SpriteBatch:setBufferSize",
+    "snippet": "SpriteBatch:setBufferSize(${1:size (number)})"
+  },
+  {
+    "displayText": "SpriteBatch:setColor",
+    "type": "function",
+    "description": "Sets the color that will be used for the next add and set operations. Calling the function without arguments will clear the color. The global color set with love.graphics.setColor will not work on the SpriteBatch if any of the sprites has its own color.",
+    "descriptionMoreURL": "https://love2d.org/wiki/SpriteBatch:setColor",
+    "snippet": "SpriteBatch:setColor(${1:r (number)}, ${2:g (number)}, ${3:b (number)}, ${4:a (number)})"
+  },
+  {
+    "displayText": "SpriteBatch:setTexture",
+    "type": "function",
+    "description": "Replaces the Image or Canvas used for the sprites.",
+    "descriptionMoreURL": "https://love2d.org/wiki/SpriteBatch:setTexture",
+    "snippet": "SpriteBatch:setTexture(${1:texture (Texture)})"
+  },
+  {
+    "displayText": "Text:add",
+    "type": "function",
+    "description": "Adds additional colored text to the Text object at the specified position.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Text:add",
+    "snippet": "Text:add(${1:textstring (string)}, ${2:x (number)}, ${3:y (number)}, ${4:angle (number)}, ${5:sx (number)}, ${6:sy (number)}, ${7:ox (number)}, ${8:oy (number)}, ${9:kx (number)}, ${10:ky (number)})"
+  },
+  {
+    "displayText": "Text:addf",
+    "type": "function",
+    "description": "Adds additional formatted / colored text to the Text object at the specified position.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Text:addf",
+    "snippet": "Text:addf(${1:textstring (string)}, ${2:wraplimit (number)}, ${3:align (AlignMode)}, ${4:x (number)}, ${5:y (number)}, ${6:angle (number)}, ${7:sx (number)}, ${8:sy (number)}, ${9:ox (number)}, ${10:oy (number)}, ${11:kx (number)}, ${12:ky (number)})"
+  },
+  {
+    "displayText": "Text:clear",
+    "type": "function",
+    "description": "Clears the contents of the Text object.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Text:clear",
+    "snippet": "Text:clear()"
+  },
+  {
+    "displayText": "Text:getFont",
+    "type": "function",
+    "description": "Gets the Font used with the Text object.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Text:getFont",
+    "snippet": "Text:getFont()"
+  },
+  {
+    "displayText": "Text:getHeight",
+    "type": "function",
+    "description": "Gets the height of the text in pixels.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Text:getHeight",
+    "snippet": "Text:getHeight()"
+  },
+  {
+    "displayText": "Text:getWidth",
+    "type": "function",
+    "description": "Gets the width of the text in pixels.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Text:getWidth",
+    "snippet": "Text:getWidth()"
+  },
+  {
+    "displayText": "Text:set",
+    "type": "function",
+    "description": "Replaces the contents of the Text object with a new unformatted string.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Text:set",
+    "snippet": "Text:set(${1:textstring (string)})"
+  },
+  {
+    "displayText": "Text:setf",
+    "type": "function",
+    "description": "Replaces the contents of the Text object with a new formatted string.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Text:setf",
+    "snippet": "Text:setf(${1:textstring (string)}, ${2:wraplimit (number)}, ${3:align (AlignMode)})"
+  },
+  {
+    "displayText": "Text:setFont",
+    "type": "function",
+    "description": "Replaces the Font used with the text.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Text:setFont",
+    "snippet": "Text:setFont(${1:font (Font)})"
   },
   {
     "displayText": "love.graphics.arc",
@@ -1190,6 +2527,97 @@
     "snippet": "love.graphics.translate(${1:dx (number)}, ${2:dy (number)})"
   },
   {
+    "displayText": "CompressedImageData:getDimensions",
+    "type": "function",
+    "description": "Gets the width and height of the CompressedImageData.",
+    "descriptionMoreURL": "https://love2d.org/wiki/CompressedImageData:getDimensions",
+    "snippet": "CompressedImageData:getDimensions()"
+  },
+  {
+    "displayText": "CompressedImageData:getFormat",
+    "type": "function",
+    "description": "Gets the format of the CompressedImageData.",
+    "descriptionMoreURL": "https://love2d.org/wiki/CompressedImageData:getFormat",
+    "snippet": "CompressedImageData:getFormat()"
+  },
+  {
+    "displayText": "CompressedImageData:getHeight",
+    "type": "function",
+    "description": "Gets the height of the CompressedImageData.",
+    "descriptionMoreURL": "https://love2d.org/wiki/CompressedImageData:getHeight",
+    "snippet": "CompressedImageData:getHeight()"
+  },
+  {
+    "displayText": "CompressedImageData:getMipmapCount",
+    "type": "function",
+    "description": "Gets the number of mipmap levels in the CompressedImageData. The base mipmap level (original image) is included in the count.",
+    "descriptionMoreURL": "https://love2d.org/wiki/CompressedImageData:getMipmapCount",
+    "snippet": "CompressedImageData:getMipmapCount(${1:mipmaps (number)})"
+  },
+  {
+    "displayText": "CompressedImageData:getWidth",
+    "type": "function",
+    "description": "Gets the width of the CompressedImageData.",
+    "descriptionMoreURL": "https://love2d.org/wiki/CompressedImageData:getWidth",
+    "snippet": "CompressedImageData:getWidth()"
+  },
+  {
+    "displayText": "ImageData:encode",
+    "type": "function",
+    "description": "Encodes the ImageData and optionally writes it to the save directory.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ImageData:encode",
+    "snippet": "ImageData:encode(${1:format (ImageFormat)}, ${2:filename (string)})"
+  },
+  {
+    "displayText": "ImageData:getDimensions",
+    "type": "function",
+    "description": "Gets the width and height of the ImageData.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ImageData:getDimensions",
+    "snippet": "ImageData:getDimensions()"
+  },
+  {
+    "displayText": "ImageData:getHeight",
+    "type": "function",
+    "description": "Gets the height of the ImageData.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ImageData:getHeight",
+    "snippet": "ImageData:getHeight()"
+  },
+  {
+    "displayText": "ImageData:getPixel",
+    "type": "function",
+    "description": "Gets the pixel at the specified position. Valid x and y values start at 0 and go up to image width and height minus 1.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ImageData:getPixel",
+    "snippet": "ImageData:getPixel(${1:x (number)}, ${2:y (number)})"
+  },
+  {
+    "displayText": "ImageData:getWidth",
+    "type": "function",
+    "description": "Gets the width of the ImageData.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ImageData:getWidth",
+    "snippet": "ImageData:getWidth()"
+  },
+  {
+    "displayText": "ImageData:mapPixel",
+    "type": "function",
+    "description": "Transform an image by applying a function to every pixel. This function is a higher order function. It takes another function as a parameter, and calls it once for each pixel in the ImageData. The function parameter is called with six parameters for each pixel in turn. The parameters are numbers that represent the x and y coordinates of the pixel and its red, green, blue and alpha values. The function parameter can return up to four number values, which become the new r, g, b and a values of the pixel. If the function returns fewer values, the remaining components are set to 0.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ImageData:mapPixel",
+    "snippet": "ImageData:mapPixel(${1:pixelFunction (function)})"
+  },
+  {
+    "displayText": "ImageData:paste",
+    "type": "function",
+    "description": "Paste into ImageData from another source ImageData.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ImageData:paste",
+    "snippet": "ImageData:paste(${1:source (ImageData)}, ${2:dx (number)}, ${3:dy (number)}, ${4:sx (number)}, ${5:sy (number)}, ${6:sw (number)}, ${7:sh (number)})"
+  },
+  {
+    "displayText": "ImageData:setPixel",
+    "type": "function",
+    "description": "Sets the color of a pixel. Valid x and y values start at 0 and go up to image width and height minus 1.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ImageData:setPixel",
+    "snippet": "ImageData:setPixel(${1:x (number)}, ${2:y (number)}, ${3:r (number)}, ${4:g (number)}, ${5:b (number)}, ${6:a (number)})"
+  },
+  {
     "displayText": "love.image.isCompressed",
     "type": "function",
     "description": "Determines whether a file can be loaded as CompressedImageData.",
@@ -1209,6 +2637,132 @@
     "description": "Create a new ImageData object.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.image.newImageData",
     "snippet": "love.image.newImageData(${1:width (number)}, ${2:height (number)})"
+  },
+  {
+    "displayText": "Joystick:getAxes",
+    "type": "function",
+    "description": "Gets the direction of each axis.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Joystick:getAxes",
+    "snippet": "Joystick:getAxes()"
+  },
+  {
+    "displayText": "Joystick:getAxis",
+    "type": "function",
+    "description": "Gets the direction of an axis.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Joystick:getAxis",
+    "snippet": "Joystick:getAxis(${1:axis (number)})"
+  },
+  {
+    "displayText": "Joystick:getAxisCount",
+    "type": "function",
+    "description": "Gets the number of axes on the joystick.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Joystick:getAxisCount",
+    "snippet": "Joystick:getAxisCount()"
+  },
+  {
+    "displayText": "Joystick:getButtonCount",
+    "type": "function",
+    "description": "Gets the number of buttons on the joystick.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Joystick:getButtonCount",
+    "snippet": "Joystick:getButtonCount()"
+  },
+  {
+    "displayText": "Joystick:getGUID",
+    "type": "function",
+    "description": "Gets a stable GUID unique to the type of the physical joystick which does not change over time. For example, all Sony Dualshock 3 controllers in OS X have the same GUID. The value is platform-dependent.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Joystick:getGUID",
+    "snippet": "Joystick:getGUID()"
+  },
+  {
+    "displayText": "Joystick:getGamepadAxis",
+    "type": "function",
+    "description": "Gets the direction of a virtual gamepad axis. If the Joystick isn't recognized as a gamepad or isn't connected, this function will always return 0.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Joystick:getGamepadAxis",
+    "snippet": "Joystick:getGamepadAxis(${1:axis (GamepadAxis)})"
+  },
+  {
+    "displayText": "Joystick:getGamepadMapping",
+    "type": "function",
+    "description": "Gets the button, axis or hat that a virtual gamepad input is bound to.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Joystick:getGamepadMapping",
+    "snippet": "Joystick:getGamepadMapping(${1:axis (GamepadAxis)})"
+  },
+  {
+    "displayText": "Joystick:getHat",
+    "type": "function",
+    "description": "Gets the direction of a hat.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Joystick:getHat",
+    "snippet": "Joystick:getHat(${1:hat (number)})"
+  },
+  {
+    "displayText": "Joystick:getHatCount",
+    "type": "function",
+    "description": "Gets the number of hats on the joystick.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Joystick:getHatCount",
+    "snippet": "Joystick:getHatCount()"
+  },
+  {
+    "displayText": "Joystick:getID",
+    "type": "function",
+    "description": "Gets the joystick's unique identifier. The identifier will remain the same for the life of the game, even when the Joystick is disconnected and reconnected, but it will change when the game is re-launched.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Joystick:getID",
+    "snippet": "Joystick:getID()"
+  },
+  {
+    "displayText": "Joystick:getName",
+    "type": "function",
+    "description": "Gets the name of the joystick.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Joystick:getName",
+    "snippet": "Joystick:getName()"
+  },
+  {
+    "displayText": "Joystick:getVibration",
+    "type": "function",
+    "description": "Gets the current vibration motor strengths on a Joystick with rumble support.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Joystick:getVibration",
+    "snippet": "Joystick:getVibration()"
+  },
+  {
+    "displayText": "Joystick:isConnected",
+    "type": "function",
+    "description": "Gets whether the Joystick is connected.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Joystick:isConnected",
+    "snippet": "Joystick:isConnected()"
+  },
+  {
+    "displayText": "Joystick:isDown",
+    "type": "function",
+    "description": "Checks if a button on the Joystick is pressed. LÖVE 0.9.0 had a bug which required the button indices passed to Joystick:isDown to be 0-based instead of 1-based, for example button 1 would be 0 for this function. It was fixed in 0.9.1.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Joystick:isDown",
+    "snippet": "Joystick:isDown(${1:... (number)})"
+  },
+  {
+    "displayText": "Joystick:isGamepad",
+    "type": "function",
+    "description": "Gets whether the Joystick is recognized as a gamepad. If this is the case, the Joystick's buttons and axes can be used in a standardized manner across different operating systems and joystick models via Joystick:getGamepadAxis and related functions. LÖVE automatically recognizes most popular controllers with a similar layout to the Xbox 360 controller as gamepads, but you can add more with love.joystick.setGamepadMapping.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Joystick:isGamepad",
+    "snippet": "Joystick:isGamepad()"
+  },
+  {
+    "displayText": "Joystick:isGamepadDown",
+    "type": "function",
+    "description": "Checks if a virtual gamepad button on the Joystick is pressed. If the Joystick is not recognized as a Gamepad or isn't connected, then this function will always return false.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Joystick:isGamepadDown",
+    "snippet": "Joystick:isGamepadDown(${1:... (GamepadButton)})"
+  },
+  {
+    "displayText": "Joystick:isVibrationSupported",
+    "type": "function",
+    "description": "Gets whether the Joystick supports vibration.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Joystick:isVibrationSupported",
+    "snippet": "Joystick:isVibrationSupported()"
+  },
+  {
+    "displayText": "Joystick:setVibration",
+    "type": "function",
+    "description": "Sets the vibration motor speeds on a Joystick with rumble support.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Joystick:setVibration",
+    "snippet": "Joystick:setVibration(${1:left (number)}, ${2:right (number)})"
   },
   {
     "displayText": "love.joystick.getJoystickCount",
@@ -1300,6 +2854,153 @@
     "description": "Enables or disables text input events. It is enabled by default on Windows, Mac, and Linux, and disabled by default on iOS and Android.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.keyboard.setTextInput",
     "snippet": "love.keyboard.setTextInput(${1:enable (boolean)})"
+  },
+  {
+    "displayText": "BezierCurve:evalulate",
+    "type": "function",
+    "description": "Evaluate Bézier curve at parameter t. The parameter must be between 0 and 1 (inclusive). This function can be used to move objects along paths or tween parameters. However it should not be used to render the curve, see BezierCurve:render for that purpose.",
+    "descriptionMoreURL": "https://love2d.org/wiki/BezierCurve:evalulate",
+    "snippet": "BezierCurve:evalulate(${1:t (number)})"
+  },
+  {
+    "displayText": "BezierCurve:getControlPoint",
+    "type": "function",
+    "description": "Get coordinates of the i-th control point. Indices start with 1.",
+    "descriptionMoreURL": "https://love2d.org/wiki/BezierCurve:getControlPoint",
+    "snippet": "BezierCurve:getControlPoint(${1:i (number)})"
+  },
+  {
+    "displayText": "BezierCurve:getControlPointCount",
+    "type": "function",
+    "description": "Get the number of control points in the Bézier curve.",
+    "descriptionMoreURL": "https://love2d.org/wiki/BezierCurve:getControlPointCount",
+    "snippet": "BezierCurve:getControlPointCount()"
+  },
+  {
+    "displayText": "BezierCurve:getDegree",
+    "type": "function",
+    "description": "Get degree of the Bézier curve. The degree is equal to number-of-control-points - 1.",
+    "descriptionMoreURL": "https://love2d.org/wiki/BezierCurve:getDegree",
+    "snippet": "BezierCurve:getDegree()"
+  },
+  {
+    "displayText": "BezierCurve:getDerivative",
+    "type": "function",
+    "description": "Get the derivative of the Bézier curve. This function can be used to rotate sprites moving along a curve in the direction of the movement and compute the direction perpendicular to the curve at some parameter t.",
+    "descriptionMoreURL": "https://love2d.org/wiki/BezierCurve:getDerivative",
+    "snippet": "BezierCurve:getDerivative()"
+  },
+  {
+    "displayText": "BezierCurve:getSegment",
+    "type": "function",
+    "description": "Gets a BezierCurve that corresponds to the specified segment of this BezierCurve.",
+    "descriptionMoreURL": "https://love2d.org/wiki/BezierCurve:getSegment",
+    "snippet": "BezierCurve:getSegment(${1:startpoint (number)}, ${2:endpoint (number)})"
+  },
+  {
+    "displayText": "BezierCurve:insertControlPoint",
+    "type": "function",
+    "description": "Insert control point after the i-th control point. Indices start with 1. Negative indices wrap around: -1 is the last control point, -2 the one before the last, etc.",
+    "descriptionMoreURL": "https://love2d.org/wiki/BezierCurve:insertControlPoint",
+    "snippet": "BezierCurve:insertControlPoint(${1:x (number)}, ${2:y (number)}, ${3:i (number)})"
+  },
+  {
+    "displayText": "BezierCurve:removeControlPoint",
+    "type": "function",
+    "description": "Removes the specified control point.",
+    "descriptionMoreURL": "https://love2d.org/wiki/BezierCurve:removeControlPoint",
+    "snippet": "BezierCurve:removeControlPoint(${1:index (number)})"
+  },
+  {
+    "displayText": "BezierCurve:render",
+    "type": "function",
+    "description": "Get a list of coordinates to be used with love.graphics.line. This function samples the Bézier curve using recursive subdivision. You can control the recursion depth using the depth parameter. If you are just interested to know the position on the curve given a parameter, use BezierCurve:evalulate.",
+    "descriptionMoreURL": "https://love2d.org/wiki/BezierCurve:render",
+    "snippet": "BezierCurve:render(${1:depth (number)})"
+  },
+  {
+    "displayText": "BezierCurve:renderSegment",
+    "type": "function",
+    "description": "Get a list of coordinates on a specific part of the curve, to be used with love.graphics.line. This function samples the Bézier curve using recursive subdivision. You can control the recursion depth using the depth parameter. If you are just need to know the position on the curve given a parameter, use BezierCurve:evaluate.",
+    "descriptionMoreURL": "https://love2d.org/wiki/BezierCurve:renderSegment",
+    "snippet": "BezierCurve:renderSegment(${1:startpoint (number)}, ${2:endpoint (number)}, ${3:depth (number)})"
+  },
+  {
+    "displayText": "BezierCurve:rotate",
+    "type": "function",
+    "description": "Rotate the Bézier curve by an angle.",
+    "descriptionMoreURL": "https://love2d.org/wiki/BezierCurve:rotate",
+    "snippet": "BezierCurve:rotate(${1:angle (number)}, ${2:ox (number)}, ${3:oy (number)})"
+  },
+  {
+    "displayText": "BezierCurve:scale",
+    "type": "function",
+    "description": "Scale the Bézier curve by a factor.",
+    "descriptionMoreURL": "https://love2d.org/wiki/BezierCurve:scale",
+    "snippet": "BezierCurve:scale(${1:s (number)}, ${2:ox (number)}, ${3:oy (number)})"
+  },
+  {
+    "displayText": "BezierCurve:setControlPoint",
+    "type": "function",
+    "description": "Set coordinates of the i-th control point. Indices start with 1.",
+    "descriptionMoreURL": "https://love2d.org/wiki/BezierCurve:setControlPoint",
+    "snippet": "BezierCurve:setControlPoint(${1:i (number)}, ${2:ox (number)}, ${3:oy (number)})"
+  },
+  {
+    "displayText": "BezierCurve:translate",
+    "type": "function",
+    "description": "Move the Bézier curve by an offset.",
+    "descriptionMoreURL": "https://love2d.org/wiki/BezierCurve:translate",
+    "snippet": "BezierCurve:translate(${1:dx (number)}, ${2:dy (number)})"
+  },
+  {
+    "displayText": "CompressedData:getFormat",
+    "type": "function",
+    "description": "Gets the compression format of the CompressedData.",
+    "descriptionMoreURL": "https://love2d.org/wiki/CompressedData:getFormat",
+    "snippet": "CompressedData:getFormat()"
+  },
+  {
+    "displayText": "RandomGenerator:getSeed",
+    "type": "function",
+    "description": "Gets the state of the random number generator. The state is split into two numbers due to Lua's use of doubles for all number values - doubles can't accurately represent integer values above 2^53.",
+    "descriptionMoreURL": "https://love2d.org/wiki/RandomGenerator:getSeed",
+    "snippet": "RandomGenerator:getSeed()"
+  },
+  {
+    "displayText": "RandomGenerator:getState",
+    "type": "function",
+    "description": "Gets the current state of the random number generator. This returns an opaque implementation-dependent string which is only useful for later use with RandomGenerator:setState. This is different from RandomGenerator:getSeed in that getState gets the RandomGenerator's current state, whereas getSeed gets the previously set seed number. The value of the state string does not depend on the current operating system.",
+    "descriptionMoreURL": "https://love2d.org/wiki/RandomGenerator:getState",
+    "snippet": "RandomGenerator:getState()"
+  },
+  {
+    "displayText": "RandomGenerator:random",
+    "type": "function",
+    "description": "Generates a pseudo-random number in a platform independent manner.",
+    "descriptionMoreURL": "https://love2d.org/wiki/RandomGenerator:random",
+    "snippet": "RandomGenerator:random()"
+  },
+  {
+    "displayText": "RandomGenerator:randomNormal",
+    "type": "function",
+    "description": "Get a normally distributed pseudo random number.",
+    "descriptionMoreURL": "https://love2d.org/wiki/RandomGenerator:randomNormal",
+    "snippet": "RandomGenerator:randomNormal(${1:stddev (number)}, ${2:mean (number)})"
+  },
+  {
+    "displayText": "RandomGenerator:setSeed",
+    "type": "function",
+    "description": "Sets the seed of the random number generator using the specified integer number.",
+    "descriptionMoreURL": "https://love2d.org/wiki/RandomGenerator:setSeed",
+    "snippet": "RandomGenerator:setSeed(${1:seed (number)})"
+  },
+  {
+    "displayText": "RandomGenerator:setState",
+    "type": "function",
+    "description": "Sets the current state of the random number generator. The value used as an argument for this function is an opaque implementation-dependent string and should only originate from a previous call to RandomGenerator:getState. This is different from RandomGenerator:setSeed in that setState directly sets the RandomGenerator's current implementation-dependent state, whereas setSeed gives it a new seed value. The effect of the state string does not depend on the current operating system.",
+    "descriptionMoreURL": "https://love2d.org/wiki/RandomGenerator:setState",
+    "snippet": "RandomGenerator:setState(${1:state (string)})"
   },
   {
     "displayText": "love.math.compress",
@@ -1405,6 +3106,13 @@
     "description": "Triangulate a simple polygon.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.math.triangulate",
     "snippet": "love.math.triangulate(${1:polygon (table)})"
+  },
+  {
+    "displayText": "Cursor:getType",
+    "type": "function",
+    "description": "Gets the type of the Cursor.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Cursor:getType",
+    "snippet": "Cursor:getType()"
   },
   {
     "displayText": "love.mouse.getCursor",
@@ -1531,6 +3239,1609 @@
     "description": "Sets the current Y position of the mouse.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.mouse.setY",
     "snippet": "love.mouse.setY(${1:y (number)})"
+  },
+  {
+    "displayText": "Body:applyAngularImpulse",
+    "type": "function",
+    "description": "Applies an angular impulse to a body. This makes a single, instantaneous addition to the body momentum. A body with with a larger mass will react less. The reaction does not depend on the timestep, and is equivalent to applying a force continuously for 1 second. Impulses are best used to give a single push to a body. For a continuous push to a body it is better to use Body:applyForce.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:applyAngularImpulse",
+    "snippet": "Body:applyAngularImpulse(${1:impulse (number)})"
+  },
+  {
+    "displayText": "Body:applyForce",
+    "type": "function",
+    "description": "Apply force to a Body. A force pushes a body in a direction. A body with with a larger mass will react less. The reaction also depends on how long a force is applied: since the force acts continuously over the entire timestep, a short timestep will only push the body for a short time. Thus forces are best used for many timesteps to give a continuous push to a body (like gravity). For a single push that is independent of timestep, it is better to use Body:applyLinearImpulse. If the position to apply the force is not given, it will act on the center of mass of the body. The part of the force not directed towards the center of mass will cause the body to spin (and depends on the rotational inertia). Note that the force components and position must be given in world coordinates.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:applyForce",
+    "snippet": "Body:applyForce(${1:fx (number)}, ${2:fy (number)})"
+  },
+  {
+    "displayText": "Body:applyLinearImpulse",
+    "type": "function",
+    "description": "Applies an impulse to a body. This makes a single, instantaneous addition to the body momentum. An impulse pushes a body in a direction. A body with with a larger mass will react less. The reaction does not depend on the timestep, and is equivalent to applying a force continuously for 1 second. Impulses are best used to give a single push to a body. For a continuous push to a body it is better to use Body:applyForce. If the position to apply the impulse is not given, it will act on the center of mass of the body. The part of the impulse not directed towards the center of mass will cause the body to spin (and depends on the rotational inertia). Note that the impulse components and position must be given in world coordinates.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:applyLinearImpulse",
+    "snippet": "Body:applyLinearImpulse(${1:ix (number)}, ${2:iy (number)})"
+  },
+  {
+    "displayText": "Body:applyTorque",
+    "type": "function",
+    "description": "Apply torque to a body. Torque is like a force that will change the angular velocity (spin) of a body. The effect will depend on the rotational inertia a body has.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:applyTorque",
+    "snippet": "Body:applyTorque(${1:torque (number)})"
+  },
+  {
+    "displayText": "Body:destroy",
+    "type": "function",
+    "description": "Explicitly destroys the Body. When you don't have time to wait for garbage collection, this function may be used to free the object immediately, but note that an error will occur if you attempt to use the object after calling this function.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:destroy",
+    "snippet": "Body:destroy()"
+  },
+  {
+    "displayText": "Body:getAngle",
+    "type": "function",
+    "description": "Get the angle of the body. The angle is measured in radians. If you need to transform it to degrees, use math.deg. A value of 0 radians will mean \"looking to the right\". Although radians increase counter-clockwise, the y-axis points down so it becomes clockwise from our point of view.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:getAngle",
+    "snippet": "Body:getAngle()"
+  },
+  {
+    "displayText": "Body:getAngularDamping",
+    "type": "function",
+    "description": "Gets the Angular damping of the Body The angular damping is the rate of decrease of the angular velocity over time: A spinning body with no damping and no external forces will continue spinning indefinitely. A spinning body with damping will gradually stop spinning. Damping is not the same as friction - they can be modelled together. However, only damping is provided by Box2D (and LÖVE). Damping parameters should be between 0 and infinity, with 0 meaning no damping, and infinity meaning full damping. Normally you will use a damping value between 0 and 0.1.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:getAngularDamping",
+    "snippet": "Body:getAngularDamping()"
+  },
+  {
+    "displayText": "Body:getAngularVelocity",
+    "type": "function",
+    "description": "Get the angular velocity of the Body. The angular velocity is the rate of change of angle over time. It is changed in World:update by applying torques, off centre forces/impulses, and angular damping. It can be set directly with Body:setAngularVelocity. If you need the rate of change of position over time, use Body:getLinearVelocity.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:getAngularVelocity",
+    "snippet": "Body:getAngularVelocity()"
+  },
+  {
+    "displayText": "Body:getContactList",
+    "type": "function",
+    "description": "Gets a list of all Contacts attached to the Body.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:getContactList",
+    "snippet": "Body:getContactList()"
+  },
+  {
+    "displayText": "Body:getFixtureList",
+    "type": "function",
+    "description": "Returns a table with all fixtures.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:getFixtureList",
+    "snippet": "Body:getFixtureList()"
+  },
+  {
+    "displayText": "Body:getGravityScale",
+    "type": "function",
+    "description": "Returns the gravity scale factor.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:getGravityScale",
+    "snippet": "Body:getGravityScale()"
+  },
+  {
+    "displayText": "Body:getInertia",
+    "type": "function",
+    "description": "Gets the rotational inertia of the body. The rotational inertia is how hard is it to make the body spin. It is set with the 4th argument to Body:setMass, or automatically with Body:setMassFromShapes.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:getInertia",
+    "snippet": "Body:getInertia()"
+  },
+  {
+    "displayText": "Body:getJointList",
+    "type": "function",
+    "description": "Returns a table containing the Joints attached to this Body.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:getJointList",
+    "snippet": "Body:getJointList()"
+  },
+  {
+    "displayText": "Body:getLinearDamping",
+    "type": "function",
+    "description": "Gets the linear damping of the Body. The linear damping is the rate of decrease of the linear velocity over time. A moving body with no damping and no external forces will continue moving indefinitely, as is the case in space. A moving body with damping will gradually stop moving. Damping is not the same as friction - they can be modelled together. However, only damping is provided by Box2D (and LÖVE).",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:getLinearDamping",
+    "snippet": "Body:getLinearDamping()"
+  },
+  {
+    "displayText": "Body:getLinearVelocity",
+    "type": "function",
+    "description": "Gets the linear velocity of the Body from its center of mass. The linear velocity is the rate of change of position over time. If you need the rate of change of angle over time, use Body:getAngularVelocity. If you need to get the linear velocity of a point different from the center of mass: Body:getLinearVelocityFromLocalPoint allows you to specify the point in local coordinates. Body:getLinearVelocityFromWorldPoint allows you to specify the point in world coordinates.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:getLinearVelocity",
+    "snippet": "Body:getLinearVelocity()"
+  },
+  {
+    "displayText": "Body:getLinearVelocityFromLocalPoint",
+    "type": "function",
+    "description": "Get the linear velocity of a point on the body. The linear velocity for a point on the body is the velocity of the body center of mass plus the velocity at that point from the body spinning. The point on the body must given in local coordinates. Use Body:getLinearVelocityFromWorldPoint to specify this with world coordinates.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:getLinearVelocityFromLocalPoint",
+    "snippet": "Body:getLinearVelocityFromLocalPoint(${1:x (number)}, ${2:y (number)})"
+  },
+  {
+    "displayText": "Body:getLinearVelocityFromWorldPoint",
+    "type": "function",
+    "description": "Get the linear velocity of a point on the body. The linear velocity for a point on the body is the velocity of the body center of mass plus the velocity at that point from the body spinning. The point on the body must given in world coordinates. Use Body:getLinearVelocityFromLocalPoint to specify this with local coordinates.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:getLinearVelocityFromWorldPoint",
+    "snippet": "Body:getLinearVelocityFromWorldPoint(${1:x (number)}, ${2:y (number)})"
+  },
+  {
+    "displayText": "Body:getLocalCenter",
+    "type": "function",
+    "description": "Get the center of mass position in local coordinates. Use Body:getWorldCenter to get the center of mass in world coordinates.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:getLocalCenter",
+    "snippet": "Body:getLocalCenter()"
+  },
+  {
+    "displayText": "Body:getLocalPoint",
+    "type": "function",
+    "description": "Transform a point from world coordinates to local coordinates.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:getLocalPoint",
+    "snippet": "Body:getLocalPoint(${1:world_x (number)}, ${2:world_y (number)})"
+  },
+  {
+    "displayText": "Body:getLocalVector",
+    "type": "function",
+    "description": "Transform a vector from world coordinates to local coordinates.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:getLocalVector",
+    "snippet": "Body:getLocalVector(${1:world_x (number)}, ${2:world_y (number)})"
+  },
+  {
+    "displayText": "Body:getMass",
+    "type": "function",
+    "description": "Get the mass of the body.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:getMass",
+    "snippet": "Body:getMass()"
+  },
+  {
+    "displayText": "Body:getMassData",
+    "type": "function",
+    "description": "Returns the mass, its center, and the rotational inertia.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:getMassData",
+    "snippet": "Body:getMassData()"
+  },
+  {
+    "displayText": "Body:getPosition",
+    "type": "function",
+    "description": "Get the position of the body. Note that this may not be the center of mass of the body.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:getPosition",
+    "snippet": "Body:getPosition()"
+  },
+  {
+    "displayText": "Body:getType",
+    "type": "function",
+    "description": "Returns the type of the body.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:getType",
+    "snippet": "Body:getType()"
+  },
+  {
+    "displayText": "Body:getUserData",
+    "type": "function",
+    "description": "Returns the Lua value associated with this Body. Use this function in one thread only.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:getUserData",
+    "snippet": "Body:getUserData()"
+  },
+  {
+    "displayText": "Body:getWorld",
+    "type": "function",
+    "description": "Gets the World the body lives in.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:getWorld",
+    "snippet": "Body:getWorld()"
+  },
+  {
+    "displayText": "Body:getWorldCenter",
+    "type": "function",
+    "description": "Get the center of mass position in world coordinates. Use Body:getLocalCenter to get the center of mass in local coordinates.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:getWorldCenter",
+    "snippet": "Body:getWorldCenter()"
+  },
+  {
+    "displayText": "Body:getWorldPoint",
+    "type": "function",
+    "description": "Transform a point from local coordinates to world coordinates.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:getWorldPoint",
+    "snippet": "Body:getWorldPoint(${1:local_x (number)}, ${2:local_y (number)})"
+  },
+  {
+    "displayText": "Body:getWorldPoints",
+    "type": "function",
+    "description": "Transforms multiple points from local coordinates to world coordinates.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:getWorldPoints",
+    "snippet": "Body:getWorldPoints(${1:x1 (number)}, ${2:y1 (number)}, ${3:x2 (number)}, ${4:y2 (number)}, ${5:... (number)})"
+  },
+  {
+    "displayText": "Body:getWorldVector",
+    "type": "function",
+    "description": "Transform a vector from local coordinates to world coordinates.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:getWorldVector",
+    "snippet": "Body:getWorldVector(${1:local_x (number)}, ${2:local_y (number)})"
+  },
+  {
+    "displayText": "Body:getX",
+    "type": "function",
+    "description": "Get the x position of the body in world coordinates.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:getX",
+    "snippet": "Body:getX()"
+  },
+  {
+    "displayText": "Body:getY",
+    "type": "function",
+    "description": "Get the y position of the body in world coordinates.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:getY",
+    "snippet": "Body:getY()"
+  },
+  {
+    "displayText": "Body:isActive",
+    "type": "function",
+    "description": "Returns whether the body is actively used in the simulation.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:isActive",
+    "snippet": "Body:isActive()"
+  },
+  {
+    "displayText": "Body:isAwake",
+    "type": "function",
+    "description": "Returns the sleep status of the body.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:isAwake",
+    "snippet": "Body:isAwake()"
+  },
+  {
+    "displayText": "Body:isBullet",
+    "type": "function",
+    "description": "Get the bullet status of a body. There are two methods to check for body collisions: at their location when the world is updated (default) using continuous collision detection (CCD) The default method is efficient, but a body moving very quickly may sometimes jump over another body without producing a collision. A body that is set as a bullet will use CCD. This is less efficient, but is guaranteed not to jump when moving quickly. Note that static bodies (with zero mass) always use CCD, so your walls will not let a fast moving body pass through even if it is not a bullet.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:isBullet",
+    "snippet": "Body:isBullet()"
+  },
+  {
+    "displayText": "Body:isDestroyed",
+    "type": "function",
+    "description": "Gets whether the Body is destroyed. Destroyed bodies cannot be used.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:isDestroyed",
+    "snippet": "Body:isDestroyed()"
+  },
+  {
+    "displayText": "Body:isFixedRotation",
+    "type": "function",
+    "description": "Returns whether the body rotation is locked.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:isFixedRotation",
+    "snippet": "Body:isFixedRotation()"
+  },
+  {
+    "displayText": "Body:isSleepingAllowed",
+    "type": "function",
+    "description": "Returns the sleeping behaviour of the body.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:isSleepingAllowed",
+    "snippet": "Body:isSleepingAllowed()"
+  },
+  {
+    "displayText": "Body:resetMassData",
+    "type": "function",
+    "description": "Resets the mass of the body by recalculating it from the mass properties of the fixtures.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:resetMassData",
+    "snippet": "Body:resetMassData()"
+  },
+  {
+    "displayText": "Body:setActive",
+    "type": "function",
+    "description": "Sets whether the body is active in the world. An inactive body does not take part in the simulation. It will not move or cause any collisions.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:setActive",
+    "snippet": "Body:setActive(${1:active (boolean)})"
+  },
+  {
+    "displayText": "Body:setAngle",
+    "type": "function",
+    "description": "Set the angle of the body. The angle is measured in radians. If you need to transform it from degrees, use math.rad. A value of 0 radians will mean \"looking to the right\". .Although radians increase counter-clockwise, the y-axis points down so it becomes clockwise from our point of view. It is possible to cause a collision with another body by changing its angle.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:setAngle",
+    "snippet": "Body:setAngle(${1:angle (number)})"
+  },
+  {
+    "displayText": "Body:setAngularDamping",
+    "type": "function",
+    "description": "Sets the angular damping of a Body. See Body:getAngularDamping for a definition of angular damping. Angular damping can take any value from 0 to infinity. It is recommended to stay between 0 and 0.1, though. Other values will look unrealistic.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:setAngularDamping",
+    "snippet": "Body:setAngularDamping(${1:damping (number)})"
+  },
+  {
+    "displayText": "Body:setAngularVelocity",
+    "type": "function",
+    "description": "Sets the angular velocity of a Body. The angular velocity is the rate of change of angle over time. This function will not accumulate anything; any impulses previously applied since the last call to World:update will be lost.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:setAngularVelocity",
+    "snippet": "Body:setAngularVelocity(${1:w (number)})"
+  },
+  {
+    "displayText": "Body:setAwake",
+    "type": "function",
+    "description": "Wakes the body up or puts it to sleep.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:setAwake",
+    "snippet": "Body:setAwake(${1:awake (boolean)})"
+  },
+  {
+    "displayText": "Body:setBullet",
+    "type": "function",
+    "description": "Set the bullet status of a body. There are two methods to check for body collisions: at their location when the world is updated (default) using continuous collision detection (CCD) The default method is efficient, but a body moving very quickly may sometimes jump over another body without producing a collision. A body that is set as a bullet will use CCD. This is less efficient, but is guaranteed not to jump when moving quickly. Note that static bodies (with zero mass) always use CCD, so your walls will not let a fast moving body pass through even if it is not a bullet.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:setBullet",
+    "snippet": "Body:setBullet(${1:status (boolean)})"
+  },
+  {
+    "displayText": "Body:setFixedRotation",
+    "type": "function",
+    "description": "Set whether a body has fixed rotation. Bodies with fixed rotation don't vary the speed at which they rotate.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:setFixedRotation",
+    "snippet": "Body:setFixedRotation(${1:fixed (boolean)})"
+  },
+  {
+    "displayText": "Body:setGravityScale",
+    "type": "function",
+    "description": "Sets a new gravity scale factor for the body.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:setGravityScale",
+    "snippet": "Body:setGravityScale(${1:scale (number)})"
+  },
+  {
+    "displayText": "Body:setInertia",
+    "type": "function",
+    "description": "Set the inertia of a body. This value can also be set by the fourth argument of Body:setMass.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:setInertia",
+    "snippet": "Body:setInertia(${1:inertia (number)})"
+  },
+  {
+    "displayText": "Body:setLinearDamping",
+    "type": "function",
+    "description": "Sets the linear damping of a Body See Body:getLinearDamping for a definition of linear damping. Linear damping can take any value from 0 to infinity. It is recommended to stay between 0 and 0.1, though. Other values will make the objects look \"floaty\".",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:setLinearDamping",
+    "snippet": "Body:setLinearDamping(${1:ld (number)})"
+  },
+  {
+    "displayText": "Body:setLinearVelocity",
+    "type": "function",
+    "description": "Sets a new linear velocity for the Body. This function will not accumulate anything; any impulses previously applied since the last call to World:update will be lost.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:setLinearVelocity",
+    "snippet": "Body:setLinearVelocity(${1:x (number)}, ${2:y (number)})"
+  },
+  {
+    "displayText": "Body:setMass",
+    "type": "function",
+    "description": "Sets the mass in kilograms.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:setMass",
+    "snippet": "Body:setMass(${1:mass (number)})"
+  },
+  {
+    "displayText": "Body:setMassData",
+    "type": "function",
+    "description": "Overrides the calculated mass data.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:setMassData",
+    "snippet": "Body:setMassData(${1:x (number)}, ${2:y (number)}, ${3:mass (number)}, ${4:inertia (number)})"
+  },
+  {
+    "displayText": "Body:setPosition",
+    "type": "function",
+    "description": "Set the position of the body. Note that this may not be the center of mass of the body.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:setPosition",
+    "snippet": "Body:setPosition(${1:x (number)}, ${2:y (number)})"
+  },
+  {
+    "displayText": "Body:setSleepingAllowed",
+    "type": "function",
+    "description": "Sets the sleeping behaviour of the body.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:setSleepingAllowed",
+    "snippet": "Body:setSleepingAllowed(${1:allowed (boolean)})"
+  },
+  {
+    "displayText": "Body:setType",
+    "type": "function",
+    "description": "Sets a new body type.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:setType",
+    "snippet": "Body:setType(${1:type (BodyType)})"
+  },
+  {
+    "displayText": "Body:setUserData",
+    "type": "function",
+    "description": "Associates a Lua value with the Body. To delete the reference, explicitly pass nil. Use this function in one thread only.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:setUserData",
+    "snippet": "Body:setUserData(${1:value (value)})"
+  },
+  {
+    "displayText": "Body:setX",
+    "type": "function",
+    "description": "Set the x position of the body.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:setX",
+    "snippet": "Body:setX(${1:x (number)})"
+  },
+  {
+    "displayText": "Body:setY",
+    "type": "function",
+    "description": "Set the y position of the body.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Body:setY",
+    "snippet": "Body:setY(${1:y (number)})"
+  },
+  {
+    "displayText": "ChainShape:getChildEdge",
+    "type": "function",
+    "description": "Returns a child of the shape as an EdgeShape.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ChainShape:getChildEdge",
+    "snippet": "ChainShape:getChildEdge(${1:index (number)})"
+  },
+  {
+    "displayText": "ChainShape:getPoint",
+    "type": "function",
+    "description": "Returns a point of the shape.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ChainShape:getPoint",
+    "snippet": "ChainShape:getPoint(${1:index (number)})"
+  },
+  {
+    "displayText": "ChainShape:getPoints",
+    "type": "function",
+    "description": "Returns all points of the shape.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ChainShape:getPoints",
+    "snippet": "ChainShape:getPoints()"
+  },
+  {
+    "displayText": "ChainShape:getVertexCount",
+    "type": "function",
+    "description": "Returns the number of vertices the shape has.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ChainShape:getVertexCount",
+    "snippet": "ChainShape:getVertexCount()"
+  },
+  {
+    "displayText": "ChainShape:setNextVertex",
+    "type": "function",
+    "description": "Sets a vertex that establishes a connection to the next shape. This can help prevent unwanted collisions when a flat shape slides along the edge and moves over to the new shape.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ChainShape:setNextVertex",
+    "snippet": "ChainShape:setNextVertex(${1:x (number)}, ${2:y (number)})"
+  },
+  {
+    "displayText": "ChainShape:setPreviousVertex",
+    "type": "function",
+    "description": "Sets a vertex that establishes a connection to the previous shape. This can help prevent unwanted collisions when a flat shape slides along the edge and moves over to the new shape.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ChainShape:setPreviousVertex",
+    "snippet": "ChainShape:setPreviousVertex(${1:x (number)}, ${2:y (number)})"
+  },
+  {
+    "displayText": "CircleShape:getPoint",
+    "type": "function",
+    "description": "Gets the center point of the circle shape.",
+    "descriptionMoreURL": "https://love2d.org/wiki/CircleShape:getPoint",
+    "snippet": "CircleShape:getPoint()"
+  },
+  {
+    "displayText": "CircleShape:getRadius",
+    "type": "function",
+    "description": "Gets the radius of the circle shape.",
+    "descriptionMoreURL": "https://love2d.org/wiki/CircleShape:getRadius",
+    "snippet": "CircleShape:getRadius()"
+  },
+  {
+    "displayText": "CircleShape:setPoint",
+    "type": "function",
+    "description": "Sets the location of the center of the circle shape.",
+    "descriptionMoreURL": "https://love2d.org/wiki/CircleShape:setPoint",
+    "snippet": "CircleShape:setPoint(${1:x (number)}, ${2:y (number)})"
+  },
+  {
+    "displayText": "CircleShape:setRadius",
+    "type": "function",
+    "description": "Sets the radius of the circle.",
+    "descriptionMoreURL": "https://love2d.org/wiki/CircleShape:setRadius",
+    "snippet": "CircleShape:setRadius(${1:radius (number)})"
+  },
+  {
+    "displayText": "Contact:getFixtures",
+    "type": "function",
+    "description": "Gets the two Fixtures that hold the shapes that are in contact.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Contact:getFixtures",
+    "snippet": "Contact:getFixtures()"
+  },
+  {
+    "displayText": "Contact:getFriction",
+    "type": "function",
+    "description": "Get the friction between two shapes that are in contact.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Contact:getFriction",
+    "snippet": "Contact:getFriction()"
+  },
+  {
+    "displayText": "Contact:getNormal",
+    "type": "function",
+    "description": "Get the normal vector between two shapes that are in contact. This function returns the coordinates of a unit vector that points from the first shape to the second.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Contact:getNormal",
+    "snippet": "Contact:getNormal()"
+  },
+  {
+    "displayText": "Contact:getPositions",
+    "type": "function",
+    "description": "Returns the contact points of the two colliding fixtures. There can be one or two points.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Contact:getPositions",
+    "snippet": "Contact:getPositions()"
+  },
+  {
+    "displayText": "Contact:getRestitution",
+    "type": "function",
+    "description": "Get the restitution between two shapes that are in contact.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Contact:getRestitution",
+    "snippet": "Contact:getRestitution()"
+  },
+  {
+    "displayText": "Contact:isEnabled",
+    "type": "function",
+    "description": "Returns whether the contact is enabled. The collision will be ignored if a contact gets disabled in the post solve callback.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Contact:isEnabled",
+    "snippet": "Contact:isEnabled()"
+  },
+  {
+    "displayText": "Contact:isTouching",
+    "type": "function",
+    "description": "Returns whether the two colliding fixtures are touching each other.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Contact:isTouching",
+    "snippet": "Contact:isTouching()"
+  },
+  {
+    "displayText": "Contact:resetFriction",
+    "type": "function",
+    "description": "Resets the contact friction to the mixture value of both fixtures.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Contact:resetFriction",
+    "snippet": "Contact:resetFriction()"
+  },
+  {
+    "displayText": "Contact:resetRestitution",
+    "type": "function",
+    "description": "Resets the contact restitution to the mixture value of both fixtures.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Contact:resetRestitution",
+    "snippet": "Contact:resetRestitution()"
+  },
+  {
+    "displayText": "Contact:setEnabled",
+    "type": "function",
+    "description": "Enables or disables the contact.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Contact:setEnabled",
+    "snippet": "Contact:setEnabled(${1:enabled (boolean)})"
+  },
+  {
+    "displayText": "Contact:setFriction",
+    "type": "function",
+    "description": "Sets the contact friction.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Contact:setFriction",
+    "snippet": "Contact:setFriction(${1:friction (number)})"
+  },
+  {
+    "displayText": "Contact:setRestitution",
+    "type": "function",
+    "description": "Sets the contact restitution.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Contact:setRestitution",
+    "snippet": "Contact:setRestitution(${1:restitution (number)})"
+  },
+  {
+    "displayText": "EdgeShape:getPoints",
+    "type": "function",
+    "description": "Returns the local coordinates of the edge points.",
+    "descriptionMoreURL": "https://love2d.org/wiki/EdgeShape:getPoints",
+    "snippet": "EdgeShape:getPoints()"
+  },
+  {
+    "displayText": "DistanceJoint:getDampingRatio",
+    "type": "function",
+    "description": "Gets the damping ratio.",
+    "descriptionMoreURL": "https://love2d.org/wiki/DistanceJoint:getDampingRatio",
+    "snippet": "DistanceJoint:getDampingRatio()"
+  },
+  {
+    "displayText": "DistanceJoint:getFrequency",
+    "type": "function",
+    "description": "Gets the response speed.",
+    "descriptionMoreURL": "https://love2d.org/wiki/DistanceJoint:getFrequency",
+    "snippet": "DistanceJoint:getFrequency()"
+  },
+  {
+    "displayText": "DistanceJoint:getLength",
+    "type": "function",
+    "description": "Gets the equilibrium distance between the two Bodies.",
+    "descriptionMoreURL": "https://love2d.org/wiki/DistanceJoint:getLength",
+    "snippet": "DistanceJoint:getLength()"
+  },
+  {
+    "displayText": "DistanceJoint:setDampingRatio",
+    "type": "function",
+    "description": "Sets the damping ratio.",
+    "descriptionMoreURL": "https://love2d.org/wiki/DistanceJoint:setDampingRatio",
+    "snippet": "DistanceJoint:setDampingRatio(${1:ratio (number)})"
+  },
+  {
+    "displayText": "DistanceJoint:setFrequency",
+    "type": "function",
+    "description": "Sets the response speed.",
+    "descriptionMoreURL": "https://love2d.org/wiki/DistanceJoint:setFrequency",
+    "snippet": "DistanceJoint:setFrequency(${1:Hz (number)})"
+  },
+  {
+    "displayText": "DistanceJoint:setLength",
+    "type": "function",
+    "description": "Sets the equilibrium distance between the two Bodies.",
+    "descriptionMoreURL": "https://love2d.org/wiki/DistanceJoint:setLength",
+    "snippet": "DistanceJoint:setLength(${1:l (number)})"
+  },
+  {
+    "displayText": "Fixture:destroy",
+    "type": "function",
+    "description": "Destroys the fixture",
+    "descriptionMoreURL": "https://love2d.org/wiki/Fixture:destroy",
+    "snippet": "Fixture:destroy()"
+  },
+  {
+    "displayText": "Fixture:getBody",
+    "type": "function",
+    "description": "Returns the body to which the fixture is attached.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Fixture:getBody",
+    "snippet": "Fixture:getBody()"
+  },
+  {
+    "displayText": "Fixture:getBoundingBox",
+    "type": "function",
+    "description": "Returns the points of the fixture bounding box. In case the fixture has multiple children a 1-based index can be specified. For example, a fixture will have multiple children with a chain shape.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Fixture:getBoundingBox",
+    "snippet": "Fixture:getBoundingBox(${1:index (number)})"
+  },
+  {
+    "displayText": "Fixture:getCategory",
+    "type": "function",
+    "description": "Returns the categories the fixture belongs to.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Fixture:getCategory",
+    "snippet": "Fixture:getCategory()"
+  },
+  {
+    "displayText": "Fixture:getDensity",
+    "type": "function",
+    "description": "Returns the density of the fixture.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Fixture:getDensity",
+    "snippet": "Fixture:getDensity()"
+  },
+  {
+    "displayText": "Fixture:getFilterData",
+    "type": "function",
+    "description": "Returns the filter data of the fixture. Categories and masks are encoded as the bits of a 16-bit integer.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Fixture:getFilterData",
+    "snippet": "Fixture:getFilterData()"
+  },
+  {
+    "displayText": "Fixture:getFriction",
+    "type": "function",
+    "description": "Returns the friction of the fixture.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Fixture:getFriction",
+    "snippet": "Fixture:getFriction()"
+  },
+  {
+    "displayText": "Fixture:getGroupIndex",
+    "type": "function",
+    "description": "Returns the group the fixture belongs to. Fixtures with the same group will always collide if the group is positive or never collide if it's negative. The group zero means no group. The groups range from -32768 to 32767.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Fixture:getGroupIndex",
+    "snippet": "Fixture:getGroupIndex()"
+  },
+  {
+    "displayText": "Fixture:getMask",
+    "type": "function",
+    "description": "Returns the category mask of the fixture.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Fixture:getMask",
+    "snippet": "Fixture:getMask()"
+  },
+  {
+    "displayText": "Fixture:getMassData",
+    "type": "function",
+    "description": "Returns the mass, its center and the rotational inertia.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Fixture:getMassData",
+    "snippet": "Fixture:getMassData()"
+  },
+  {
+    "displayText": "Fixture:getRestitution",
+    "type": "function",
+    "description": "Returns the restitution of the fixture.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Fixture:getRestitution",
+    "snippet": "Fixture:getRestitution()"
+  },
+  {
+    "displayText": "Fixture:getShape",
+    "type": "function",
+    "description": "Returns the shape of the fixture. This shape is a reference to the actual data used in the simulation. It's possible to change its values between timesteps. Do not call any functions on this shape after the parent fixture has been destroyed. This shape will point to an invalid memory address and likely cause crashes if you interact further with it.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Fixture:getShape",
+    "snippet": "Fixture:getShape()"
+  },
+  {
+    "displayText": "Fixture:getUserData",
+    "type": "function",
+    "description": "Returns the Lua value associated with this fixture. Use this function in one thread only.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Fixture:getUserData",
+    "snippet": "Fixture:getUserData()"
+  },
+  {
+    "displayText": "Fixture:isDestroyed",
+    "type": "function",
+    "description": "Gets whether the Fixture is destroyed. Destroyed fixtures cannot be used.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Fixture:isDestroyed",
+    "snippet": "Fixture:isDestroyed()"
+  },
+  {
+    "displayText": "Fixture:isSensor",
+    "type": "function",
+    "description": "Returns whether the fixture is a sensor.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Fixture:isSensor",
+    "snippet": "Fixture:isSensor()"
+  },
+  {
+    "displayText": "Fixture:rayCast",
+    "type": "function",
+    "description": "Casts a ray against the shape of the fixture and returns the surface normal vector and the line position where the ray hit. If the ray missed the shape, nil will be returned. The ray starts on the first point of the input line and goes towards the second point of the line. The fourth argument is the maximum distance the ray is going to travel as a scale factor of the input line length. The childIndex parameter is used to specify which child of a parent shape, such as a ChainShape, will be ray casted. For ChainShapes, the index of 1 is the first edge on the chain. Ray casting a parent shape will only test the child specified so if you want to test every shape of the parent, you must loop through all of its children. The world position of the impact can be calculated by multiplying the line vector with the third return value and adding it to the line starting point. hitx, hity = x1 + (x2 - x1) * fraction, y1 + (y2 - y1) * fraction",
+    "descriptionMoreURL": "https://love2d.org/wiki/Fixture:rayCast",
+    "snippet": "Fixture:rayCast(${1:x1 (number)}, ${2:y1 (number)}, ${3:x2 (number)}, ${4:y1 (number)}, ${5:maxFraction (number)}, ${6:childIndex (number)})"
+  },
+  {
+    "displayText": "Fixture:setCategory",
+    "type": "function",
+    "description": "Sets the categories the fixture belongs to. There can be up to 16 categories represented as a number from 1 to 16.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Fixture:setCategory",
+    "snippet": "Fixture:setCategory(${1:category1 (number)}, ${2:category2 (number)}, ${3:... (number)})"
+  },
+  {
+    "displayText": "Fixture:setDensity",
+    "type": "function",
+    "description": "Sets the density of the fixture. Call Body:resetMassData if this needs to take effect immediately.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Fixture:setDensity",
+    "snippet": "Fixture:setDensity(${1:density (number)})"
+  },
+  {
+    "displayText": "Fixture:setFilterData",
+    "type": "function",
+    "description": "Sets the filter data of the fixture. Groups, categories, and mask can be used to define the collision behaviour of the fixture. If two fixtures are in the same group they either always collide if the group is positive, or never collide if it's negative. Is the group zero or they do not match, then the contact filter checks if the fixtures select a category of the other fixture with their masks. The fixtures do not collide if that's not the case. If they do have each others categories selected, the return value of the custom contact filter will be used. They always collide if none was set. There can be up to 16 categories. Categories and masks are encoded as the bits of a 16-bit integer.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Fixture:setFilterData",
+    "snippet": "Fixture:setFilterData(${1:categories (number)}, ${2:mask (number)}, ${3:group (number)})"
+  },
+  {
+    "displayText": "Fixture:setFriction",
+    "type": "function",
+    "description": "Sets the friction of the fixture.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Fixture:setFriction",
+    "snippet": "Fixture:setFriction(${1:friction (number)})"
+  },
+  {
+    "displayText": "Fixture:setGroupIndex",
+    "type": "function",
+    "description": "Sets the group the fixture belongs to. Fixtures with the same group will always collide if the group is positive or never collide if it's negative. The group zero means no group. The groups range from -32768 to 32767.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Fixture:setGroupIndex",
+    "snippet": "Fixture:setGroupIndex(${1:group (number)})"
+  },
+  {
+    "displayText": "Fixture:setMask",
+    "type": "function",
+    "description": "Sets the category mask of the fixture. There can be up to 16 categories represented as a number from 1 to 16. This fixture will collide with the fixtures that are in the selected categories if the other fixture also has a category of this fixture selected.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Fixture:setMask",
+    "snippet": "Fixture:setMask(${1:mask1 (number)}, ${2:mask2 (number)}, ${3:... (number)})"
+  },
+  {
+    "displayText": "Fixture:setRestitution",
+    "type": "function",
+    "description": "Sets the restitution of the fixture.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Fixture:setRestitution",
+    "snippet": "Fixture:setRestitution(${1:restitution (number)})"
+  },
+  {
+    "displayText": "Fixture:setSensor",
+    "type": "function",
+    "description": "Sets whether the fixture should act as a sensor. Sensor do not produce collisions responses, but the begin and end callbacks will still be called for this fixture.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Fixture:setSensor",
+    "snippet": "Fixture:setSensor(${1:sensor (boolean)})"
+  },
+  {
+    "displayText": "Fixture:setUserData",
+    "type": "function",
+    "description": "Associates a Lua value with the fixture. Use this function in one thread only.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Fixture:setUserData",
+    "snippet": "Fixture:setUserData(${1:value (mixed)})"
+  },
+  {
+    "displayText": "Fixture:testPoint",
+    "type": "function",
+    "description": "Checks if a point is inside the shape of the fixture.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Fixture:testPoint",
+    "snippet": "Fixture:testPoint(${1:x (number)}, ${2:y (number)})"
+  },
+  {
+    "displayText": "FrictionJoint:getMaxForce",
+    "type": "function",
+    "description": "Gets the maximum friction force in Newtons.",
+    "descriptionMoreURL": "https://love2d.org/wiki/FrictionJoint:getMaxForce",
+    "snippet": "FrictionJoint:getMaxForce()"
+  },
+  {
+    "displayText": "FrictionJoint:getMaxTorque",
+    "type": "function",
+    "description": "Gets the maximum friction torque in Newton-meters.",
+    "descriptionMoreURL": "https://love2d.org/wiki/FrictionJoint:getMaxTorque",
+    "snippet": "FrictionJoint:getMaxTorque()"
+  },
+  {
+    "displayText": "FrictionJoint:setMaxForce",
+    "type": "function",
+    "description": "Sets the maximum friction force in Newtons.",
+    "descriptionMoreURL": "https://love2d.org/wiki/FrictionJoint:setMaxForce",
+    "snippet": "FrictionJoint:setMaxForce(${1:maxForce (number)})"
+  },
+  {
+    "displayText": "FrictionJoint:setMaxTorque",
+    "type": "function",
+    "description": "Sets the maximum friction torque in Newton-meters.",
+    "descriptionMoreURL": "https://love2d.org/wiki/FrictionJoint:setMaxTorque",
+    "snippet": "FrictionJoint:setMaxTorque(${1:torque (number)})"
+  },
+  {
+    "displayText": "GearJoint:getJoints",
+    "type": "function",
+    "description": "Get the Joints connected by this GearJoint.",
+    "descriptionMoreURL": "https://love2d.org/wiki/GearJoint:getJoints",
+    "snippet": "GearJoint:getJoints()"
+  },
+  {
+    "displayText": "GearJoint:getRatio",
+    "type": "function",
+    "description": "Get the ratio of a gear joint.",
+    "descriptionMoreURL": "https://love2d.org/wiki/GearJoint:getRatio",
+    "snippet": "GearJoint:getRatio()"
+  },
+  {
+    "displayText": "GearJoint:setRatio",
+    "type": "function",
+    "description": "Set the ratio of a gear joint.",
+    "descriptionMoreURL": "https://love2d.org/wiki/GearJoint:setRatio",
+    "snippet": "GearJoint:setRatio(${1:ratio (number)})"
+  },
+  {
+    "displayText": "Joint:destroy",
+    "type": "function",
+    "description": "Explicitly destroys the Joint. When you don't have time to wait for garbage collection, this function may be used to free the object immediately, but note that an error will occur if you attempt to use the object after calling this function.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Joint:destroy",
+    "snippet": "Joint:destroy()"
+  },
+  {
+    "displayText": "Joint:getAnchors",
+    "type": "function",
+    "description": "Get the anchor points of the joint.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Joint:getAnchors",
+    "snippet": "Joint:getAnchors()"
+  },
+  {
+    "displayText": "Joint:getBodies",
+    "type": "function",
+    "description": "Gets the bodies that the Joint is attached to.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Joint:getBodies",
+    "snippet": "Joint:getBodies()"
+  },
+  {
+    "displayText": "Joint:getCollideConnected",
+    "type": "function",
+    "description": "Gets whether the connected Bodies collide.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Joint:getCollideConnected",
+    "snippet": "Joint:getCollideConnected()"
+  },
+  {
+    "displayText": "Joint:getReactionForce",
+    "type": "function",
+    "description": "Gets the reaction force on Body 2 at the joint anchor.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Joint:getReactionForce",
+    "snippet": "Joint:getReactionForce()"
+  },
+  {
+    "displayText": "Joint:getReactionTorque",
+    "type": "function",
+    "description": "Returns the reaction torque on the second body.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Joint:getReactionTorque",
+    "snippet": "Joint:getReactionTorque(${1:invdt (number)})"
+  },
+  {
+    "displayText": "Joint:getType",
+    "type": "function",
+    "description": "Gets an string representing the type.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Joint:getType",
+    "snippet": "Joint:getType()"
+  },
+  {
+    "displayText": "Joint:getUserData",
+    "type": "function",
+    "description": "Returns the Lua value associated with this Joint.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Joint:getUserData",
+    "snippet": "Joint:getUserData()"
+  },
+  {
+    "displayText": "Joint:isDestroyed",
+    "type": "function",
+    "description": "Gets whether the Joint is destroyed. Destroyed joints cannot be used.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Joint:isDestroyed",
+    "snippet": "Joint:isDestroyed()"
+  },
+  {
+    "displayText": "Joint:setCollideConnected",
+    "type": "function",
+    "description": "Sets whether the connected Bodies should collide with eachother.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Joint:setCollideConnected",
+    "snippet": "Joint:setCollideConnected(${1:collide (boolean)})"
+  },
+  {
+    "displayText": "Joint:setUserData",
+    "type": "function",
+    "description": "Associates a Lua value with the Joint. To delete the reference, explicitly pass nil.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Joint:setUserData",
+    "snippet": "Joint:setUserData(${1:value (mixed)})"
+  },
+  {
+    "displayText": "MouseJoint:getDampingRatio",
+    "type": "function",
+    "description": "Returns the damping ratio.",
+    "descriptionMoreURL": "https://love2d.org/wiki/MouseJoint:getDampingRatio",
+    "snippet": "MouseJoint:getDampingRatio()"
+  },
+  {
+    "displayText": "MouseJoint:getFrequency",
+    "type": "function",
+    "description": "Returns the frequency.",
+    "descriptionMoreURL": "https://love2d.org/wiki/MouseJoint:getFrequency",
+    "snippet": "MouseJoint:getFrequency()"
+  },
+  {
+    "displayText": "MouseJoint:getMaxForce",
+    "type": "function",
+    "description": "Gets the highest allowed force.",
+    "descriptionMoreURL": "https://love2d.org/wiki/MouseJoint:getMaxForce",
+    "snippet": "MouseJoint:getMaxForce()"
+  },
+  {
+    "displayText": "MouseJoint:getTarget",
+    "type": "function",
+    "description": "Gets the target point.",
+    "descriptionMoreURL": "https://love2d.org/wiki/MouseJoint:getTarget",
+    "snippet": "MouseJoint:getTarget()"
+  },
+  {
+    "displayText": "MouseJoint:setDampingRatio",
+    "type": "function",
+    "description": "Sets a new damping ratio.",
+    "descriptionMoreURL": "https://love2d.org/wiki/MouseJoint:setDampingRatio",
+    "snippet": "MouseJoint:setDampingRatio(${1:ratio (number)})"
+  },
+  {
+    "displayText": "MouseJoint:setFrequency",
+    "type": "function",
+    "description": "Sets a new frequency.",
+    "descriptionMoreURL": "https://love2d.org/wiki/MouseJoint:setFrequency",
+    "snippet": "MouseJoint:setFrequency(${1:freq (number)})"
+  },
+  {
+    "displayText": "MouseJoint:setMaxForce",
+    "type": "function",
+    "description": "Sets the highest allowed force.",
+    "descriptionMoreURL": "https://love2d.org/wiki/MouseJoint:setMaxForce",
+    "snippet": "MouseJoint:setMaxForce(${1:f (number)})"
+  },
+  {
+    "displayText": "MouseJoint:setTarget",
+    "type": "function",
+    "description": "Sets the target point.",
+    "descriptionMoreURL": "https://love2d.org/wiki/MouseJoint:setTarget",
+    "snippet": "MouseJoint:setTarget(${1:x (number)}, ${2:y (number)})"
+  },
+  {
+    "displayText": "PolygonShape:getPoints",
+    "type": "function",
+    "description": "Get the local coordinates of the polygon's vertices. This function has a variable number of return values. It can be used in a nested fashion with love.graphics.polygon. This function may have up to 16 return values, since it returns two values for each vertex in the polygon. In other words, it can return the coordinates of up to 8 points.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PolygonShape:getPoints",
+    "snippet": "PolygonShape:getPoints()"
+  },
+  {
+    "displayText": "PrismaticJoint:setLimitsEnabled",
+    "type": "function",
+    "description": "Enables or disables the limits of the joint.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PrismaticJoint:setLimitsEnabled",
+    "snippet": "PrismaticJoint:setLimitsEnabled(${1:enable (boolean)})"
+  },
+  {
+    "displayText": "PrismaticJoint:setMotorEnabled",
+    "type": "function",
+    "description": "Starts or stops the joint motor.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PrismaticJoint:setMotorEnabled",
+    "snippet": "PrismaticJoint:setMotorEnabled(${1:enable (boolean)})"
+  },
+  {
+    "displayText": "PrismaticJoint:getJointSpeed",
+    "type": "function",
+    "description": "Get the current joint angle speed.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PrismaticJoint:getJointSpeed",
+    "snippet": "PrismaticJoint:getJointSpeed()"
+  },
+  {
+    "displayText": "PrismaticJoint:getJointTranslation",
+    "type": "function",
+    "description": "Get the current joint translation.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PrismaticJoint:getJointTranslation",
+    "snippet": "PrismaticJoint:getJointTranslation()"
+  },
+  {
+    "displayText": "PrismaticJoint:getLimits",
+    "type": "function",
+    "description": "Gets the joint limits.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PrismaticJoint:getLimits",
+    "snippet": "PrismaticJoint:getLimits()"
+  },
+  {
+    "displayText": "PrismaticJoint:getLowerLimit",
+    "type": "function",
+    "description": "Gets the lower limit.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PrismaticJoint:getLowerLimit",
+    "snippet": "PrismaticJoint:getLowerLimit()"
+  },
+  {
+    "displayText": "PrismaticJoint:getMaxMotorForce",
+    "type": "function",
+    "description": "Gets the maximum motor force.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PrismaticJoint:getMaxMotorForce",
+    "snippet": "PrismaticJoint:getMaxMotorForce()"
+  },
+  {
+    "displayText": "PrismaticJoint:getMotorForce",
+    "type": "function",
+    "description": "Get the current motor force.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PrismaticJoint:getMotorForce",
+    "snippet": "PrismaticJoint:getMotorForce()"
+  },
+  {
+    "displayText": "PrismaticJoint:getMotorSpeed",
+    "type": "function",
+    "description": "Gets the motor speed.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PrismaticJoint:getMotorSpeed",
+    "snippet": "PrismaticJoint:getMotorSpeed()"
+  },
+  {
+    "displayText": "PrismaticJoint:getUpperLimit",
+    "type": "function",
+    "description": "Gets the upper limit.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PrismaticJoint:getUpperLimit",
+    "snippet": "PrismaticJoint:getUpperLimit()"
+  },
+  {
+    "displayText": "PrismaticJoint:hasLimitsEnabled",
+    "type": "function",
+    "description": "Checks whether the limits are enabled.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PrismaticJoint:hasLimitsEnabled",
+    "snippet": "PrismaticJoint:hasLimitsEnabled()"
+  },
+  {
+    "displayText": "PrismaticJoint:isMotorEnabled",
+    "type": "function",
+    "description": "Checks whether the motor is enabled.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PrismaticJoint:isMotorEnabled",
+    "snippet": "PrismaticJoint:isMotorEnabled()"
+  },
+  {
+    "displayText": "PrismaticJoint:setLimits",
+    "type": "function",
+    "description": "Sets the limits.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PrismaticJoint:setLimits",
+    "snippet": "PrismaticJoint:setLimits(${1:lower (number)}, ${2:upper (number)})"
+  },
+  {
+    "displayText": "PrismaticJoint:setLowerLimit",
+    "type": "function",
+    "description": "Sets the lower limit.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PrismaticJoint:setLowerLimit",
+    "snippet": "PrismaticJoint:setLowerLimit(${1:lower (number)})"
+  },
+  {
+    "displayText": "PrismaticJoint:setMaxMotorForce",
+    "type": "function",
+    "description": "Set the maximum motor force.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PrismaticJoint:setMaxMotorForce",
+    "snippet": "PrismaticJoint:setMaxMotorForce(${1:f (number)})"
+  },
+  {
+    "displayText": "PrismaticJoint:setMotorSpeed",
+    "type": "function",
+    "description": "Sets the motor speed.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PrismaticJoint:setMotorSpeed",
+    "snippet": "PrismaticJoint:setMotorSpeed(${1:s (number)})"
+  },
+  {
+    "displayText": "PrismaticJoint:setUpperLimit",
+    "type": "function",
+    "description": "Sets the upper limit.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PrismaticJoint:setUpperLimit",
+    "snippet": "PrismaticJoint:setUpperLimit(${1:upper (number)})"
+  },
+  {
+    "displayText": "PulleyJoint:getConstant",
+    "type": "function",
+    "description": "Get the total length of the rope.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PulleyJoint:getConstant",
+    "snippet": "PulleyJoint:getConstant()"
+  },
+  {
+    "displayText": "PulleyJoint:getGroundAnchors",
+    "type": "function",
+    "description": "Get the ground anchor positions in world coordinates.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PulleyJoint:getGroundAnchors",
+    "snippet": "PulleyJoint:getGroundAnchors()"
+  },
+  {
+    "displayText": "PulleyJoint:getLengthA",
+    "type": "function",
+    "description": "Get the current length of the rope segment attached to the first body.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PulleyJoint:getLengthA",
+    "snippet": "PulleyJoint:getLengthA()"
+  },
+  {
+    "displayText": "PulleyJoint:getLengthB",
+    "type": "function",
+    "description": "Get the current length of the rope segment attached to the second body.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PulleyJoint:getLengthB",
+    "snippet": "PulleyJoint:getLengthB()"
+  },
+  {
+    "displayText": "PulleyJoint:getMaxLengths",
+    "type": "function",
+    "description": "Get the maximum lengths of the rope segments.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PulleyJoint:getMaxLengths",
+    "snippet": "PulleyJoint:getMaxLengths()"
+  },
+  {
+    "displayText": "PulleyJoint:getRatio",
+    "type": "function",
+    "description": "Get the pulley ratio.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PulleyJoint:getRatio",
+    "snippet": "PulleyJoint:getRatio()"
+  },
+  {
+    "displayText": "PulleyJoint:setConstant",
+    "type": "function",
+    "description": "Set the total length of the rope. Setting a new length for the rope updates the maximum length values of the joint.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PulleyJoint:setConstant",
+    "snippet": "PulleyJoint:setConstant(${1:length (number)})"
+  },
+  {
+    "displayText": "PulleyJoint:setMaxLengths",
+    "type": "function",
+    "description": "Set the maximum lengths of the rope segments. The physics module also imposes maximum values for the rope segments. If the parameters exceed these values, the maximum values are set instead of the requested values.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PulleyJoint:setMaxLengths",
+    "snippet": "PulleyJoint:setMaxLengths(${1:max1 (number)}, ${2:max2 (number)})"
+  },
+  {
+    "displayText": "PulleyJoint:setRatio",
+    "type": "function",
+    "description": "Set the pulley ratio.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PulleyJoint:setRatio",
+    "snippet": "PulleyJoint:setRatio(${1:ratio (number)})"
+  },
+  {
+    "displayText": "RevoluteJoint:setLimitsEnabled",
+    "type": "function",
+    "description": "Enables or disables the joint limits.",
+    "descriptionMoreURL": "https://love2d.org/wiki/RevoluteJoint:setLimitsEnabled",
+    "snippet": "RevoluteJoint:setLimitsEnabled(${1:enable (boolean)})"
+  },
+  {
+    "displayText": "RevoluteJoint:setMotorEnabled",
+    "type": "function",
+    "description": "Starts or stops the joint motor.",
+    "descriptionMoreURL": "https://love2d.org/wiki/RevoluteJoint:setMotorEnabled",
+    "snippet": "RevoluteJoint:setMotorEnabled(${1:enable (boolean)})"
+  },
+  {
+    "displayText": "RevoluteJoint:getJointAngle",
+    "type": "function",
+    "description": "Get the current joint angle.",
+    "descriptionMoreURL": "https://love2d.org/wiki/RevoluteJoint:getJointAngle",
+    "snippet": "RevoluteJoint:getJointAngle()"
+  },
+  {
+    "displayText": "RevoluteJoint:getJointSpeed",
+    "type": "function",
+    "description": "Get the current joint angle speed.",
+    "descriptionMoreURL": "https://love2d.org/wiki/RevoluteJoint:getJointSpeed",
+    "snippet": "RevoluteJoint:getJointSpeed()"
+  },
+  {
+    "displayText": "RevoluteJoint:getLimits",
+    "type": "function",
+    "description": "Gets the joint limits.",
+    "descriptionMoreURL": "https://love2d.org/wiki/RevoluteJoint:getLimits",
+    "snippet": "RevoluteJoint:getLimits()"
+  },
+  {
+    "displayText": "RevoluteJoint:getLowerLimit",
+    "type": "function",
+    "description": "Gets the lower limit.",
+    "descriptionMoreURL": "https://love2d.org/wiki/RevoluteJoint:getLowerLimit",
+    "snippet": "RevoluteJoint:getLowerLimit()"
+  },
+  {
+    "displayText": "RevoluteJoint:getMaxMotorTorque",
+    "type": "function",
+    "description": "Gets the maximum motor force.",
+    "descriptionMoreURL": "https://love2d.org/wiki/RevoluteJoint:getMaxMotorTorque",
+    "snippet": "RevoluteJoint:getMaxMotorTorque()"
+  },
+  {
+    "displayText": "RevoluteJoint:getMotorSpeed",
+    "type": "function",
+    "description": "Gets the motor speed.",
+    "descriptionMoreURL": "https://love2d.org/wiki/RevoluteJoint:getMotorSpeed",
+    "snippet": "RevoluteJoint:getMotorSpeed()"
+  },
+  {
+    "displayText": "RevoluteJoint:getMotorTorque",
+    "type": "function",
+    "description": "Get the current motor force.",
+    "descriptionMoreURL": "https://love2d.org/wiki/RevoluteJoint:getMotorTorque",
+    "snippet": "RevoluteJoint:getMotorTorque()"
+  },
+  {
+    "displayText": "RevoluteJoint:getUpperLimit",
+    "type": "function",
+    "description": "Gets the upper limit.",
+    "descriptionMoreURL": "https://love2d.org/wiki/RevoluteJoint:getUpperLimit",
+    "snippet": "RevoluteJoint:getUpperLimit()"
+  },
+  {
+    "displayText": "RevoluteJoint:hasLimitsEnabled",
+    "type": "function",
+    "description": "Checks whether limits are enabled.",
+    "descriptionMoreURL": "https://love2d.org/wiki/RevoluteJoint:hasLimitsEnabled",
+    "snippet": "RevoluteJoint:hasLimitsEnabled()"
+  },
+  {
+    "displayText": "RevoluteJoint:isMotorEnabled",
+    "type": "function",
+    "description": "Checks whether the motor is enabled.",
+    "descriptionMoreURL": "https://love2d.org/wiki/RevoluteJoint:isMotorEnabled",
+    "snippet": "RevoluteJoint:isMotorEnabled()"
+  },
+  {
+    "displayText": "RevoluteJoint:setLimits",
+    "type": "function",
+    "description": "Sets the limits.",
+    "descriptionMoreURL": "https://love2d.org/wiki/RevoluteJoint:setLimits",
+    "snippet": "RevoluteJoint:setLimits(${1:lower (number)}, ${2:upper (number)})"
+  },
+  {
+    "displayText": "RevoluteJoint:setLowerLimit",
+    "type": "function",
+    "description": "Sets the lower limit.",
+    "descriptionMoreURL": "https://love2d.org/wiki/RevoluteJoint:setLowerLimit",
+    "snippet": "RevoluteJoint:setLowerLimit(${1:lower (number)})"
+  },
+  {
+    "displayText": "RevoluteJoint:setMaxMotorTorque",
+    "type": "function",
+    "description": "Set the maximum motor force.",
+    "descriptionMoreURL": "https://love2d.org/wiki/RevoluteJoint:setMaxMotorTorque",
+    "snippet": "RevoluteJoint:setMaxMotorTorque(${1:f (number)})"
+  },
+  {
+    "displayText": "RevoluteJoint:setMotorSpeed",
+    "type": "function",
+    "description": "Sets the motor speed.",
+    "descriptionMoreURL": "https://love2d.org/wiki/RevoluteJoint:setMotorSpeed",
+    "snippet": "RevoluteJoint:setMotorSpeed(${1:s (number)})"
+  },
+  {
+    "displayText": "RevoluteJoint:setUpperLimit",
+    "type": "function",
+    "description": "Sets the upper limit.",
+    "descriptionMoreURL": "https://love2d.org/wiki/RevoluteJoint:setUpperLimit",
+    "snippet": "RevoluteJoint:setUpperLimit(${1:upper (number)})"
+  },
+  {
+    "displayText": "RopeJoint:getMaxLength",
+    "type": "function",
+    "description": "Gets the maximum length of a RopeJoint.",
+    "descriptionMoreURL": "https://love2d.org/wiki/RopeJoint:getMaxLength",
+    "snippet": "RopeJoint:getMaxLength()"
+  },
+  {
+    "displayText": "Shape:computeAABB",
+    "type": "function",
+    "description": "Returns the points of the bounding box for the transformed shape.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Shape:computeAABB",
+    "snippet": "Shape:computeAABB(${1:tx (number)}, ${2:ty (number)}, ${3:tr (number)}, ${4:childIndex (number)})"
+  },
+  {
+    "displayText": "Shape:computeMass",
+    "type": "function",
+    "description": "Computes the mass properties for the shape with the specified density.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Shape:computeMass",
+    "snippet": "Shape:computeMass(${1:density (number)})"
+  },
+  {
+    "displayText": "Shape:getChildCount",
+    "type": "function",
+    "description": "Returns the number of children the shape has.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Shape:getChildCount",
+    "snippet": "Shape:getChildCount()"
+  },
+  {
+    "displayText": "Shape:getRadius",
+    "type": "function",
+    "description": "Gets the radius of the shape.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Shape:getRadius",
+    "snippet": "Shape:getRadius()"
+  },
+  {
+    "displayText": "Shape:getType",
+    "type": "function",
+    "description": "Gets a string representing the Shape. This function can be useful for conditional debug drawing.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Shape:getType",
+    "snippet": "Shape:getType()"
+  },
+  {
+    "displayText": "Shape:rayCast",
+    "type": "function",
+    "description": "Casts a ray against the shape and returns the surface normal vector and the line position where the ray hit. If the ray missed the shape, nil will be returned. The Shape can be transformed to get it into the desired position. The ray starts on the first point of the input line and goes towards the second point of the line. The fourth argument is the maximum distance the ray is going to travel as a scale factor of the input line length. The childIndex parameter is used to specify which child of a parent shape, such as a ChainShape, will be ray casted. For ChainShapes, the index of 1 is the first edge on the chain. Ray casting a parent shape will only test the child specified so if you want to test every shape of the parent, you must loop through all of its children. The world position of the impact can be calculated by multiplying the line vector with the third return value and adding it to the line starting point. hitx, hity = x1 + (x2 - x1) * fraction, y1 + (y2 - y1) * fraction",
+    "descriptionMoreURL": "https://love2d.org/wiki/Shape:rayCast",
+    "snippet": "Shape:rayCast(${1:x1 (number)}, ${2:y1 (number)}, ${3:x2 (number)}, ${4:y2 (number)}, ${5:maxFraction (number)}, ${6:tx (number)}, ${7:ty (number)}, ${8:tr (number)}, ${9:childIndex (number)})"
+  },
+  {
+    "displayText": "Shape:testPoint",
+    "type": "function",
+    "description": "Checks whether a point lies inside the shape. This is particularly useful for mouse interaction with the shapes. By looping through all shapes and testing the mouse position with this function, we can find which shapes the mouse touches.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Shape:testPoint",
+    "snippet": "Shape:testPoint(${1:x (number)}, ${2:y (number)})"
+  },
+  {
+    "displayText": "WeldJoint:getDampingRatio",
+    "type": "function",
+    "description": "Returns the damping ratio of the joint.",
+    "descriptionMoreURL": "https://love2d.org/wiki/WeldJoint:getDampingRatio",
+    "snippet": "WeldJoint:getDampingRatio()"
+  },
+  {
+    "displayText": "WeldJoint:getFrequency",
+    "type": "function",
+    "description": "Returns the frequency.",
+    "descriptionMoreURL": "https://love2d.org/wiki/WeldJoint:getFrequency",
+    "snippet": "WeldJoint:getFrequency()"
+  },
+  {
+    "displayText": "WeldJoint:setDampingRatio",
+    "type": "function",
+    "description": "The new damping ratio.",
+    "descriptionMoreURL": "https://love2d.org/wiki/WeldJoint:setDampingRatio",
+    "snippet": "WeldJoint:setDampingRatio(${1:ratio (number)})"
+  },
+  {
+    "displayText": "WeldJoint:setFrequency",
+    "type": "function",
+    "description": "Sets a new frequency.",
+    "descriptionMoreURL": "https://love2d.org/wiki/WeldJoint:setFrequency",
+    "snippet": "WeldJoint:setFrequency(${1:freq (number)})"
+  },
+  {
+    "displayText": "WheelJoint:getJointSpeed",
+    "type": "function",
+    "description": "Returns the current joint translation speed.",
+    "descriptionMoreURL": "https://love2d.org/wiki/WheelJoint:getJointSpeed",
+    "snippet": "WheelJoint:getJointSpeed()"
+  },
+  {
+    "displayText": "WheelJoint:getJointTranslation",
+    "type": "function",
+    "description": "Returns the current joint translation.",
+    "descriptionMoreURL": "https://love2d.org/wiki/WheelJoint:getJointTranslation",
+    "snippet": "WheelJoint:getJointTranslation()"
+  },
+  {
+    "displayText": "WheelJoint:getLimits",
+    "type": "function",
+    "description": "Gets the joint limits.",
+    "descriptionMoreURL": "https://love2d.org/wiki/WheelJoint:getLimits",
+    "snippet": "WheelJoint:getLimits()"
+  },
+  {
+    "displayText": "WheelJoint:getMaxMotorTorque",
+    "type": "function",
+    "description": "Returns the maximum motor torque.",
+    "descriptionMoreURL": "https://love2d.org/wiki/WheelJoint:getMaxMotorTorque",
+    "snippet": "WheelJoint:getMaxMotorTorque()"
+  },
+  {
+    "displayText": "WheelJoint:getMotorSpeed",
+    "type": "function",
+    "description": "Returns the speed of the motor.",
+    "descriptionMoreURL": "https://love2d.org/wiki/WheelJoint:getMotorSpeed",
+    "snippet": "WheelJoint:getMotorSpeed()"
+  },
+  {
+    "displayText": "WheelJoint:getMotorTorque",
+    "type": "function",
+    "description": "Returns the current torque on the motor.",
+    "descriptionMoreURL": "https://love2d.org/wiki/WheelJoint:getMotorTorque",
+    "snippet": "WheelJoint:getMotorTorque(${1:invdt (number)})"
+  },
+  {
+    "displayText": "WheelJoint:getSpringDampingRatio",
+    "type": "function",
+    "description": "Returns the damping ratio.",
+    "descriptionMoreURL": "https://love2d.org/wiki/WheelJoint:getSpringDampingRatio",
+    "snippet": "WheelJoint:getSpringDampingRatio()"
+  },
+  {
+    "displayText": "WheelJoint:getSpringFrequency",
+    "type": "function",
+    "description": "Returns the spring frequency.",
+    "descriptionMoreURL": "https://love2d.org/wiki/WheelJoint:getSpringFrequency",
+    "snippet": "WheelJoint:getSpringFrequency()"
+  },
+  {
+    "displayText": "WheelJoint:setMaxMotorTorque",
+    "type": "function",
+    "description": "Sets a new maximum motor torque.",
+    "descriptionMoreURL": "https://love2d.org/wiki/WheelJoint:setMaxMotorTorque",
+    "snippet": "WheelJoint:setMaxMotorTorque(${1:maxTorque (number)})"
+  },
+  {
+    "displayText": "WheelJoint:setMotorEnabled",
+    "type": "function",
+    "description": "Starts and stops the joint motor.",
+    "descriptionMoreURL": "https://love2d.org/wiki/WheelJoint:setMotorEnabled",
+    "snippet": "WheelJoint:setMotorEnabled(${1:enable (boolean)})"
+  },
+  {
+    "displayText": "WheelJoint:setMotorSpeed",
+    "type": "function",
+    "description": "Sets a new speed for the motor.",
+    "descriptionMoreURL": "https://love2d.org/wiki/WheelJoint:setMotorSpeed",
+    "snippet": "WheelJoint:setMotorSpeed(${1:speed (number)})"
+  },
+  {
+    "displayText": "WheelJoint:setSpringDampingRatio",
+    "type": "function",
+    "description": "Sets a new damping ratio.",
+    "descriptionMoreURL": "https://love2d.org/wiki/WheelJoint:setSpringDampingRatio",
+    "snippet": "WheelJoint:setSpringDampingRatio(${1:ratio (number)})"
+  },
+  {
+    "displayText": "WheelJoint:setSpringFrequency",
+    "type": "function",
+    "description": "Sets a new spring frequency.",
+    "descriptionMoreURL": "https://love2d.org/wiki/WheelJoint:setSpringFrequency",
+    "snippet": "WheelJoint:setSpringFrequency(${1:freq (number)})"
+  },
+  {
+    "displayText": "World:destroy",
+    "type": "function",
+    "description": "Destroys the world, taking all bodies, joints, fixtures and their shapes with it. An error will occur if you attempt to use any of the destroyed objects after calling this function.",
+    "descriptionMoreURL": "https://love2d.org/wiki/World:destroy",
+    "snippet": "World:destroy()"
+  },
+  {
+    "displayText": "World:getBodyCount",
+    "type": "function",
+    "description": "Get the number of bodies in the world.",
+    "descriptionMoreURL": "https://love2d.org/wiki/World:getBodyCount",
+    "snippet": "World:getBodyCount()"
+  },
+  {
+    "displayText": "World:getBodyList",
+    "type": "function",
+    "description": "Returns a table with all bodies.",
+    "descriptionMoreURL": "https://love2d.org/wiki/World:getBodyList",
+    "snippet": "World:getBodyList()"
+  },
+  {
+    "displayText": "World:getCallbacks",
+    "type": "function",
+    "description": "Returns functions for the callbacks during the world update.",
+    "descriptionMoreURL": "https://love2d.org/wiki/World:getCallbacks",
+    "snippet": "World:getCallbacks()"
+  },
+  {
+    "displayText": "World:getContactCount",
+    "type": "function",
+    "description": "Returns the number of contacts in the world.",
+    "descriptionMoreURL": "https://love2d.org/wiki/World:getContactCount",
+    "snippet": "World:getContactCount()"
+  },
+  {
+    "displayText": "World:getContactFilter",
+    "type": "function",
+    "description": "Returns the function for collision filtering.",
+    "descriptionMoreURL": "https://love2d.org/wiki/World:getContactFilter",
+    "snippet": "World:getContactFilter()"
+  },
+  {
+    "displayText": "World:getContactList",
+    "type": "function",
+    "description": "Returns a table with all contacts.",
+    "descriptionMoreURL": "https://love2d.org/wiki/World:getContactList",
+    "snippet": "World:getContactList()"
+  },
+  {
+    "displayText": "World:getGravity",
+    "type": "function",
+    "description": "Get the gravity of the world.",
+    "descriptionMoreURL": "https://love2d.org/wiki/World:getGravity",
+    "snippet": "World:getGravity()"
+  },
+  {
+    "displayText": "World:getJointCount",
+    "type": "function",
+    "description": "Get the number of joints in the world.",
+    "descriptionMoreURL": "https://love2d.org/wiki/World:getJointCount",
+    "snippet": "World:getJointCount()"
+  },
+  {
+    "displayText": "World:getJointList",
+    "type": "function",
+    "description": "Returns a table with all joints.",
+    "descriptionMoreURL": "https://love2d.org/wiki/World:getJointList",
+    "snippet": "World:getJointList()"
+  },
+  {
+    "displayText": "World:isDestroyed",
+    "type": "function",
+    "description": "Gets whether the World is destroyed. Destroyed worlds cannot be used.",
+    "descriptionMoreURL": "https://love2d.org/wiki/World:isDestroyed",
+    "snippet": "World:isDestroyed()"
+  },
+  {
+    "displayText": "World:isLocked",
+    "type": "function",
+    "description": "Returns if the world is updating its state. This will return true inside the callbacks from World:setCallbacks.",
+    "descriptionMoreURL": "https://love2d.org/wiki/World:isLocked",
+    "snippet": "World:isLocked()"
+  },
+  {
+    "displayText": "World:isSleepingAllowed",
+    "type": "function",
+    "description": "Returns the sleep behaviour of the world.",
+    "descriptionMoreURL": "https://love2d.org/wiki/World:isSleepingAllowed",
+    "snippet": "World:isSleepingAllowed()"
+  },
+  {
+    "displayText": "World:queryBoundingBox",
+    "type": "function",
+    "description": "Calls a function for each fixture inside the specified area.",
+    "descriptionMoreURL": "https://love2d.org/wiki/World:queryBoundingBox",
+    "snippet": "World:queryBoundingBox(${1:topLeftX (number)}, ${2:topLeftY (number)}, ${3:bottomRightX (number)}, ${4:bottomRightY (number)}, ${5:callback (function)})"
+  },
+  {
+    "displayText": "World:rayCast",
+    "type": "function",
+    "description": "Casts a ray and calls a function with the fixtures that intersect it. You cannot make any assumptions about the order of the callbacks. Each time the function gets called, 6 arguments get passed to it. The first is the fixture intersecting the ray. The second and third are the coordinates of the intersection point. The fourth and fifth is the surface normal vector of the shape edge. The sixth argument is the position of the intersection on the ray as a number from 0 to 1 (or even higher if the ray length was changed with the return value). The ray can be controlled with the return value. A positive value sets a new ray length where 1 is the default value. A value of 0 terminates the ray. If the callback function returns -1, the intersection gets ignored as if it didn't happen. There is a bug in 0.8.0 where the normal vector passed to the callback function gets scaled by love.physics.getMeter.",
+    "descriptionMoreURL": "https://love2d.org/wiki/World:rayCast",
+    "snippet": "World:rayCast(${1:x1 (number)}, ${2:y1 (number)}, ${3:x2 (number)}, ${4:y2 (number)}, ${5:callback (function)})"
+  },
+  {
+    "displayText": "World:setCallbacks",
+    "type": "function",
+    "description": "Sets functions for the collision callbacks during the world update. Four Lua functions can be given as arguments. The value nil removes a function. When called, each function will be passed three arguments. The first two arguments are the colliding fixtures and the third argument is the Contact between them. The PostSolve callback additionally gets the normal and tangent impulse for each contact point.",
+    "descriptionMoreURL": "https://love2d.org/wiki/World:setCallbacks",
+    "snippet": "World:setCallbacks(${1:beginContact (function)}, ${2:endContact (function)}, ${3:preSolve (function)}, ${4:postSolve (function)})"
+  },
+  {
+    "displayText": "World:setContactFilter",
+    "type": "function",
+    "description": "Sets a function for collision filtering. If the group and category filtering doesn't generate a collision decision, this function gets called with the two fixtures as arguments. The function should return a boolean value where true means the fixtures will collide and false means they will pass through each other.",
+    "descriptionMoreURL": "https://love2d.org/wiki/World:setContactFilter",
+    "snippet": "World:setContactFilter(${1:filter (function)})"
+  },
+  {
+    "displayText": "World:setGravity",
+    "type": "function",
+    "description": "Set the gravity of the world.",
+    "descriptionMoreURL": "https://love2d.org/wiki/World:setGravity",
+    "snippet": "World:setGravity(${1:x (number)}, ${2:y (number)})"
+  },
+  {
+    "displayText": "World:setSleepingAllowed",
+    "type": "function",
+    "description": "Set the sleep behaviour of the world. A sleeping body is much more efficient to simulate than when awake. If sleeping is allowed, any body that has come to rest will sleep.",
+    "descriptionMoreURL": "https://love2d.org/wiki/World:setSleepingAllowed",
+    "snippet": "World:setSleepingAllowed(${1:allowSleep (boolean)})"
+  },
+  {
+    "displayText": "World:translateOrigin",
+    "type": "function",
+    "description": "Translates the World's origin. Useful in large worlds where floating point precision issues become noticeable at far distances from the origin.",
+    "descriptionMoreURL": "https://love2d.org/wiki/World:translateOrigin",
+    "snippet": "World:translateOrigin(${1:x (number)}, ${2:y (number)})"
+  },
+  {
+    "displayText": "World:update",
+    "type": "function",
+    "description": "Update the state of the world.",
+    "descriptionMoreURL": "https://love2d.org/wiki/World:update",
+    "snippet": "World:update(${1:dt (number)})"
   },
   {
     "displayText": "love.physics.getDistance",
@@ -1680,6 +4991,83 @@
     "snippet": "love.physics.setMeter(${1:scale (number)})"
   },
   {
+    "displayText": "Decoder:getBitDepth",
+    "type": "function",
+    "description": "Returns the number of bits per sample.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Decoder:getBitDepth",
+    "snippet": "Decoder:getBitDepth()"
+  },
+  {
+    "displayText": "Decoder:getChannels",
+    "type": "function",
+    "description": "Returns the number of channels in the stream.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Decoder:getChannels",
+    "snippet": "Decoder:getChannels()"
+  },
+  {
+    "displayText": "Decoder:getDuration",
+    "type": "function",
+    "description": "Gets the duration of the sound file. It may not always be sample-accurate, and it may return -1 if the duration cannot be determined at all.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Decoder:getDuration",
+    "snippet": "Decoder:getDuration()"
+  },
+  {
+    "displayText": "Decoder:getSampleRate",
+    "type": "function",
+    "description": "Returns the sample rate of the Decoder.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Decoder:getSampleRate",
+    "snippet": "Decoder:getSampleRate()"
+  },
+  {
+    "displayText": "SoundData:getBitDepth",
+    "type": "function",
+    "description": "Returns the number of bits per sample.",
+    "descriptionMoreURL": "https://love2d.org/wiki/SoundData:getBitDepth",
+    "snippet": "SoundData:getBitDepth()"
+  },
+  {
+    "displayText": "SoundData:getChannels",
+    "type": "function",
+    "description": "Returns the number of channels in the stream.",
+    "descriptionMoreURL": "https://love2d.org/wiki/SoundData:getChannels",
+    "snippet": "SoundData:getChannels()"
+  },
+  {
+    "displayText": "SoundData:getDuration",
+    "type": "function",
+    "description": "Returns the number of channels in the stream.",
+    "descriptionMoreURL": "https://love2d.org/wiki/SoundData:getDuration",
+    "snippet": "SoundData:getDuration()"
+  },
+  {
+    "displayText": "SoundData:getSample",
+    "type": "function",
+    "description": "Gets the sample at the specified position.",
+    "descriptionMoreURL": "https://love2d.org/wiki/SoundData:getSample",
+    "snippet": "SoundData:getSample(${1:i (number)})"
+  },
+  {
+    "displayText": "SoundData:getSampleCount",
+    "type": "function",
+    "description": "Returns the sample count of the SoundData.",
+    "descriptionMoreURL": "https://love2d.org/wiki/SoundData:getSampleCount",
+    "snippet": "SoundData:getSampleCount()"
+  },
+  {
+    "displayText": "SoundData:getSampleRate",
+    "type": "function",
+    "description": "Returns the sample rate of the SoundData.",
+    "descriptionMoreURL": "https://love2d.org/wiki/SoundData:getSampleRate",
+    "snippet": "SoundData:getSampleRate()"
+  },
+  {
+    "displayText": "SoundData:setSample",
+    "type": "function",
+    "description": "Sets the sample at the specified position.",
+    "descriptionMoreURL": "https://love2d.org/wiki/SoundData:setSample",
+    "snippet": "SoundData:setSample(${1:i (number)}, ${2:sample (number)})"
+  },
+  {
     "displayText": "love.sound.newDecoder",
     "type": "function",
     "description": "Attempts to find a decoder for the encoded sound data in the specified file.",
@@ -1741,6 +5129,90 @@
     "description": "Causes the device to vibrate, if possible. Currently this will only work on Android and iOS devices that have a built-in vibration motor.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.system.vibrate",
     "snippet": "love.system.vibrate(${1:seconds (number)})"
+  },
+  {
+    "displayText": "Thread:getError",
+    "type": "function",
+    "description": "Retrieves the error string from the thread if it produced an error.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Thread:getError",
+    "snippet": "Thread:getError()"
+  },
+  {
+    "displayText": "Thread:start",
+    "type": "function",
+    "description": "Starts the thread. Threads can be restarted after they have completed their execution.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Thread:start",
+    "snippet": "Thread:start()"
+  },
+  {
+    "displayText": "Thread:wait",
+    "type": "function",
+    "description": "Wait for a thread to finish. This call will block until the thread finishes.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Thread:wait",
+    "snippet": "Thread:wait()"
+  },
+  {
+    "displayText": "Thread:isRunning",
+    "type": "function",
+    "description": "Returns whether the thread is currently running. Threads which are not running can be (re)started with Thread:start.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Thread:isRunning",
+    "snippet": "Thread:isRunning()"
+  },
+  {
+    "displayText": "Channel:clear",
+    "type": "function",
+    "description": "Clears all the messages in the Channel queue.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Channel:clear",
+    "snippet": "Channel:clear()"
+  },
+  {
+    "displayText": "Channel:demand",
+    "type": "function",
+    "description": "Retrieves the value of a Channel message and removes it from the message queue. The value of the message can be a boolean, string, number, LÖVE userdata, or a simple flat table. It waits until a message is in the queue then returns the message value.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Channel:demand",
+    "snippet": "Channel:demand()"
+  },
+  {
+    "displayText": "Channel:getCount",
+    "type": "function",
+    "description": "Retrieves the number of messages in the thread Channel queue.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Channel:getCount",
+    "snippet": "Channel:getCount()"
+  },
+  {
+    "displayText": "Channel:peek",
+    "type": "function",
+    "description": "Retrieves the value of a Channel message, but leaves it in the queue. The value of the message can be a boolean, string, number or a LÖVE userdata. It returns nil if there's no message in the queue.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Channel:peek",
+    "snippet": "Channel:peek()"
+  },
+  {
+    "displayText": "Channel:performAtomic",
+    "type": "function",
+    "description": "Executes the specified function atomically with respect to this Channel. Calling multiple methods in a row on the same Channel is often useful. However if multiple Threads are calling this Channel's methods at the same time, the different calls on each Thread might end up interleaved (e.g. one or more of the second thread's calls may happen in between the first thread's calls.) This method avoids that issue by making sure the Thread calling the method has exclusive access to the Channel until the specified function has returned.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Channel:performAtomic",
+    "snippet": "Channel:performAtomic(${1:func (function)}, ${2:arg1 (any)}, ${3:... (any)})"
+  },
+  {
+    "displayText": "Channel:pop",
+    "type": "function",
+    "description": "Retrieves the value of a Channel message and removes it from the message queue. The value of the message can be a boolean, string, number, LÖVE userdata, or a simple flat table. It returns nil if there are no messages in the queue.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Channel:pop",
+    "snippet": "Channel:pop()"
+  },
+  {
+    "displayText": "Channel:push",
+    "type": "function",
+    "description": "Send a message to the thread Channel. The value of the message can be a boolean, string, number, LÖVE userdata, or a simple flat table. Foreign userdata (Lua's files, LuaSocket, ENet, ...), functions, and tables inside tables are not supported.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Channel:push",
+    "snippet": "Channel:push(${1:value (value)})"
+  },
+  {
+    "displayText": "Channel:supply",
+    "type": "function",
+    "description": "Send a message to the thread Channel and wait for a thread to accept it. The value of the message can be a boolean, string, number, LÖVE userdata, or a simple flat table. Foreign userdata (Lua's files, LuaSocket, ENet, ...), functions, and tables inside tables are not supported.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Channel:supply",
+    "snippet": "Channel:supply(${1:value (value)})"
   },
   {
     "displayText": "love.thread.getChannel",
@@ -1825,6 +5297,104 @@
     "description": "Gets a list of all active touch-presses.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.touch.getTouches",
     "snippet": "love.touch.getTouches()"
+  },
+  {
+    "displayText": "Video:getDimensions",
+    "type": "function",
+    "description": "Gets the width and height of the Video in pixels.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Video:getDimensions",
+    "snippet": "Video:getDimensions()"
+  },
+  {
+    "displayText": "Video:getFilter",
+    "type": "function",
+    "description": "Gets the scaling filters used when drawing the Video.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Video:getFilter",
+    "snippet": "Video:getFilter()"
+  },
+  {
+    "displayText": "Video:getHeight",
+    "type": "function",
+    "description": "Gets the height of the Video in pixels.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Video:getHeight",
+    "snippet": "Video:getHeight()"
+  },
+  {
+    "displayText": "Video:getSource",
+    "type": "function",
+    "description": "Gets the audio Source used for playing back the video's audio. May return nil if the video has no audio, or if Video:setSource is called with a nil argument.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Video:getSource",
+    "snippet": "Video:getSource()"
+  },
+  {
+    "displayText": "Video:getStream",
+    "type": "function",
+    "description": "Gets the VideoStream object used for decoding and controlling the video.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Video:getStream",
+    "snippet": "Video:getStream()"
+  },
+  {
+    "displayText": "Video:getWidth",
+    "type": "function",
+    "description": "Gets the width of the Video in pixels.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Video:getWidth",
+    "snippet": "Video:getWidth()"
+  },
+  {
+    "displayText": "Video:isPlaying",
+    "type": "function",
+    "description": "Gets whether the Video is currently playing.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Video:isPlaying",
+    "snippet": "Video:isPlaying()"
+  },
+  {
+    "displayText": "Video:pause",
+    "type": "function",
+    "description": "Pauses the Video.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Video:pause",
+    "snippet": "Video:pause()"
+  },
+  {
+    "displayText": "Video:play",
+    "type": "function",
+    "description": "Starts playing the Video. In order for the video to appear onscreen it must be drawn with love.graphics.draw.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Video:play",
+    "snippet": "Video:play()"
+  },
+  {
+    "displayText": "Video:rewind",
+    "type": "function",
+    "description": "Rewinds the Video to the beginning.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Video:rewind",
+    "snippet": "Video:rewind()"
+  },
+  {
+    "displayText": "Video:seek",
+    "type": "function",
+    "description": "Sets the current playback position of the Video.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Video:seek",
+    "snippet": "Video:seek(${1:offset (number)})"
+  },
+  {
+    "displayText": "Video:setFilter",
+    "type": "function",
+    "description": "Sets the scaling filters used when drawing the Video.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Video:setFilter",
+    "snippet": "Video:setFilter(${1:min (FilterMode)}, ${2:mag (FilterMode)}, ${3:anisotropy (number)})"
+  },
+  {
+    "displayText": "Video:setSource",
+    "type": "function",
+    "description": "Sets the audio Source used for playing back the video's audio. The audio Source also controls playback speed and synchronization.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Video:setSource",
+    "snippet": "Video:setSource(${1:source (Source)})"
+  },
+  {
+    "displayText": "Video:tell",
+    "type": "function",
+    "description": "Gets the current playback position of the Video.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Video:tell",
+    "snippet": "Video:tell(${1:seconds (number)})"
   },
   {
     "displayText": "love.video.newVideoStream",
