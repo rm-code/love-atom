@@ -1,5 +1,8 @@
 _Please note: LÖVE-Atom uses the latest development version of [the LÖVE-API](https://github.com/rm-code/love-api)_
 
+## 2.2.1
+- Update LÖVE api
+
 ## 2.2.0
 - Added snippets for submodules (e.g. File:close, SpriteBatch:add, etc.)
 
