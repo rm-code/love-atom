@@ -949,7 +949,7 @@
     "type": "function",
     "description": "Sets the write directory for your game. Note that you can only set the name of the folder to store your files in, not the location.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.filesystem.setIdentity",
-    "snippet": "love.filesystem.setIdentity(${1:name (string)}, ${2:searchorder (SearchOrder)})"
+    "snippet": "love.filesystem.setIdentity(${1:name (string)}, ${2:appendToPath (boolean)})"
   },
   {
     "displayText": "love.filesystem.setRequirePath",
@@ -968,7 +968,7 @@
   {
     "displayText": "love.filesystem.setSymlinksEnabled",
     "type": "function",
-    "description": "Sets whether love.filesystem follows symbolic links. Sets whether love.filesystem follows symbolic links. It is enabled by default in version 0.10.0 and newer, and disabled by default in 0.9.2.",
+    "description": "Sets whether love.filesystem follows symbolic links. It is enabled by default in version 0.10.0 and newer, and disabled by default in 0.9.2.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.filesystem.setSymlinksEnabled",
     "snippet": "love.filesystem.setSymlinksEnabled(${1:enable (boolean)})"
   },
@@ -2434,13 +2434,6 @@
     "description": "Set an already-loaded Font as the current font or create and load a new one from the file and size. It's recommended that Font objects are created with love.graphics.newFont in the loading stage and then passed to this function in the drawing stage.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.graphics.setFont",
     "snippet": "love.graphics.setFont(${1:font (Font)})"
-  },
-  {
-    "displayText": "love.graphics.setInvertedStencil",
-    "type": "function",
-    "description": "Defines an inverted stencil for the drawing operations or releases the active one. It's the same as love.graphics.setStencil with the mask inverted. Calling the function without arguments releases the active stencil.",
-    "descriptionMoreURL": "https://love2d.org/wiki/love.graphics.setInvertedStencil",
-    "snippet": "love.graphics.setInvertedStencil()"
   },
   {
     "displayText": "love.graphics.setLineJoin",
