@@ -641,7 +641,7 @@
     "type": "function",
     "description": "Adds the quit event to the queue. The quit event is a signal for the event handler to close LÖVE. It's possible to abort the exit process with the love.quit callback.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.event.quit",
-    "snippet": "love.event.quit()"
+    "snippet": "love.event.quit(${1:exitstatus (number)})"
   },
   {
     "displayText": "love.event.wait",
@@ -1285,7 +1285,7 @@
     "type": "function",
     "description": "Replaces a range of vertices in the Mesh with new ones. The total number of vertices in a Mesh cannot be changed after it has been created.",
     "descriptionMoreURL": "https://love2d.org/wiki/Mesh:setVertices",
-    "snippet": "Mesh:setVertices(${1:vertices (table)}, ${2:startvertex (number)})"
+    "snippet": "Mesh:setVertices(${1:vertices (table)})"
   },
   {
     "displayText": "Image:getData",
@@ -1974,6 +1974,104 @@
     "snippet": "Text:setFont(${1:font (Font)})"
   },
   {
+    "displayText": "Video:getDimensions",
+    "type": "function",
+    "description": "Gets the width and height of the Video in pixels.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Video:getDimensions",
+    "snippet": "Video:getDimensions()"
+  },
+  {
+    "displayText": "Video:getFilter",
+    "type": "function",
+    "description": "Gets the scaling filters used when drawing the Video.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Video:getFilter",
+    "snippet": "Video:getFilter()"
+  },
+  {
+    "displayText": "Video:getHeight",
+    "type": "function",
+    "description": "Gets the height of the Video in pixels.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Video:getHeight",
+    "snippet": "Video:getHeight()"
+  },
+  {
+    "displayText": "Video:getSource",
+    "type": "function",
+    "description": "Gets the audio Source used for playing back the video's audio. May return nil if the video has no audio, or if Video:setSource is called with a nil argument.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Video:getSource",
+    "snippet": "Video:getSource()"
+  },
+  {
+    "displayText": "Video:getStream",
+    "type": "function",
+    "description": "Gets the VideoStream object used for decoding and controlling the video.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Video:getStream",
+    "snippet": "Video:getStream()"
+  },
+  {
+    "displayText": "Video:getWidth",
+    "type": "function",
+    "description": "Gets the width of the Video in pixels.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Video:getWidth",
+    "snippet": "Video:getWidth()"
+  },
+  {
+    "displayText": "Video:isPlaying",
+    "type": "function",
+    "description": "Gets whether the Video is currently playing.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Video:isPlaying",
+    "snippet": "Video:isPlaying()"
+  },
+  {
+    "displayText": "Video:pause",
+    "type": "function",
+    "description": "Pauses the Video.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Video:pause",
+    "snippet": "Video:pause()"
+  },
+  {
+    "displayText": "Video:play",
+    "type": "function",
+    "description": "Starts playing the Video. In order for the video to appear onscreen it must be drawn with love.graphics.draw.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Video:play",
+    "snippet": "Video:play()"
+  },
+  {
+    "displayText": "Video:rewind",
+    "type": "function",
+    "description": "Rewinds the Video to the beginning.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Video:rewind",
+    "snippet": "Video:rewind()"
+  },
+  {
+    "displayText": "Video:seek",
+    "type": "function",
+    "description": "Sets the current playback position of the Video.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Video:seek",
+    "snippet": "Video:seek(${1:offset (number)})"
+  },
+  {
+    "displayText": "Video:setFilter",
+    "type": "function",
+    "description": "Sets the scaling filters used when drawing the Video.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Video:setFilter",
+    "snippet": "Video:setFilter(${1:min (FilterMode)}, ${2:mag (FilterMode)}, ${3:anisotropy (number)})"
+  },
+  {
+    "displayText": "Video:setSource",
+    "type": "function",
+    "description": "Sets the audio Source used for playing back the video's audio. The audio Source also controls playback speed and synchronization.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Video:setSource",
+    "snippet": "Video:setSource(${1:source (Source)})"
+  },
+  {
+    "displayText": "Video:tell",
+    "type": "function",
+    "description": "Gets the current playback position of the Video.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Video:tell",
+    "snippet": "Video:tell(${1:seconds (number)})"
+  },
+  {
     "displayText": "love.graphics.arc",
     "type": "function",
     "description": "Draws an arc.",
@@ -2079,13 +2177,6 @@
     "snippet": "love.graphics.getDimensions()"
   },
   {
-    "displayText": "love.graphics.getFSAA",
-    "type": "function",
-    "description": "Gets the number of antialiasing samples used when drawing to the Canvas. This may be different than the number used as an argument to love.graphics.newCanvas if the system running LÖVE doesn't support that number.",
-    "descriptionMoreURL": "https://love2d.org/wiki/love.graphics.getFSAA",
-    "snippet": "love.graphics.getFSAA()"
-  },
-  {
     "displayText": "love.graphics.getFont",
     "type": "function",
     "description": "Gets the current Font object.",
@@ -2119,13 +2210,6 @@
     "description": "Gets the current line width.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.graphics.getLineWidth",
     "snippet": "love.graphics.getLineWidth()"
-  },
-  {
-    "displayText": "love.graphics.getFullscreenModes",
-    "type": "function",
-    "description": "Gets a list of supported fullscreen modes.",
-    "descriptionMoreURL": "https://love2d.org/wiki/love.graphics.getFullscreenModes",
-    "snippet": "love.graphics.getFullscreenModes()"
   },
   {
     "displayText": "love.graphics.getShader",
@@ -2221,9 +2305,9 @@
   {
     "displayText": "love.graphics.newCanvas",
     "type": "function",
-    "description": "Creates a new Canvas object for offscreen rendering. Antialiased Canvases have slightly higher system requirements than normal Canvases. Additionally, the supported maximum number of FSAA samples varies depending on the system. Use love.graphics.getSystemLimit to check. If the number of FSAA samples specified is greater than the maximum supported by the system, the Canvas will still be created but only using the maximum supported amount (this includes 0.)",
+    "description": "Creates a new Canvas object for offscreen rendering. Antialiased Canvases have slightly higher system requirements than normal Canvases. Additionally, the supported maximum number of MSAA samples varies depending on the system. Use love.graphics.getSystemLimit to check. If the number of MSAA samples specified is greater than the maximum supported by the system, the Canvas will still be created but only using the maximum supported amount (this includes 0.)",
     "descriptionMoreURL": "https://love2d.org/wiki/love.graphics.newCanvas",
-    "snippet": "love.graphics.newCanvas(${1:width (number)}, ${2:height (number)}, ${3:texture_type (TextureFormat)}, ${4:fsaa (number)})"
+    "snippet": "love.graphics.newCanvas(${1:width (number)}, ${2:height (number)}, ${3:format (CanvasFormat)}, ${4:msaa (number)})"
   },
   {
     "displayText": "love.graphics.newFont",
@@ -2251,7 +2335,7 @@
     "type": "function",
     "description": "Creates a new Font by loading a specifically formatted image. There can be up to 256 glyphs. In versions prior to 0.9.0, LÖVE expects ISO 8859-1 encoding for the glyphs string.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.graphics.newImageFont",
-    "snippet": "love.graphics.newImageFont(${1:filename (string)}, ${2:glyphs (string)})"
+    "snippet": "love.graphics.newImageFont(${1:filename (string)}, ${2:glyphs (string)}, ${3:extraspacing (number)})"
   },
   {
     "displayText": "love.graphics.newParticleSystem",
@@ -2286,14 +2370,14 @@
     "type": "function",
     "description": "Creates a screenshot and returns the image data.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.graphics.newScreenshot",
-    "snippet": "love.graphics.newScreenshot()"
+    "snippet": "love.graphics.newScreenshot(${1:copyAlpha (boolean)})"
   },
   {
     "displayText": "love.graphics.newSpriteBatch",
     "type": "function",
     "description": "Creates a new SpriteBatch object.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.graphics.newSpriteBatch",
-    "snippet": "love.graphics.newSpriteBatch(${1:image (Image)}, ${2:maxsprites (number)})"
+    "snippet": "love.graphics.newSpriteBatch(${1:texture (Texture)}, ${2:maxsprites (number)}, ${3:usage (SpriteBatchUsage)})"
   },
   {
     "displayText": "love.graphics.newVideo",
@@ -2461,7 +2545,7 @@
     "type": "function",
     "description": "Creates and sets a new font.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.graphics.setNewFont",
-    "snippet": "love.graphics.setNewFont(${1:size (number)})"
+    "snippet": "love.graphics.setNewFont(${1:filename (string)}, ${2:size (number)})"
   },
   {
     "displayText": "love.graphics.setShader",
@@ -3364,14 +3448,14 @@
     "type": "function",
     "description": "Transform a point from world coordinates to local coordinates.",
     "descriptionMoreURL": "https://love2d.org/wiki/Body:getLocalPoint",
-    "snippet": "Body:getLocalPoint(${1:world_x (number)}, ${2:world_y (number)})"
+    "snippet": "Body:getLocalPoint(${1:worldX (number)}, ${2:worldY (number)})"
   },
   {
     "displayText": "Body:getLocalVector",
     "type": "function",
     "description": "Transform a vector from world coordinates to local coordinates.",
     "descriptionMoreURL": "https://love2d.org/wiki/Body:getLocalVector",
-    "snippet": "Body:getLocalVector(${1:world_x (number)}, ${2:world_y (number)})"
+    "snippet": "Body:getLocalVector(${1:worldX (number)}, ${2:worldY (number)})"
   },
   {
     "displayText": "Body:getMass",
@@ -3427,7 +3511,7 @@
     "type": "function",
     "description": "Transform a point from local coordinates to world coordinates.",
     "descriptionMoreURL": "https://love2d.org/wiki/Body:getWorldPoint",
-    "snippet": "Body:getWorldPoint(${1:local_x (number)}, ${2:local_y (number)})"
+    "snippet": "Body:getWorldPoint(${1:localX (number)}, ${2:localY (number)})"
   },
   {
     "displayText": "Body:getWorldPoints",
@@ -3441,7 +3525,7 @@
     "type": "function",
     "description": "Transform a vector from local coordinates to world coordinates.",
     "descriptionMoreURL": "https://love2d.org/wiki/Body:getWorldVector",
-    "snippet": "Body:getWorldVector(${1:local_x (number)}, ${2:local_y (number)})"
+    "snippet": "Body:getWorldVector(${1:localX (number)}, ${2:localY (number)})"
   },
   {
     "displayText": "Body:getX",
@@ -5290,104 +5374,6 @@
     "description": "Gets a list of all active touch-presses.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.touch.getTouches",
     "snippet": "love.touch.getTouches()"
-  },
-  {
-    "displayText": "Video:getDimensions",
-    "type": "function",
-    "description": "Gets the width and height of the Video in pixels.",
-    "descriptionMoreURL": "https://love2d.org/wiki/Video:getDimensions",
-    "snippet": "Video:getDimensions()"
-  },
-  {
-    "displayText": "Video:getFilter",
-    "type": "function",
-    "description": "Gets the scaling filters used when drawing the Video.",
-    "descriptionMoreURL": "https://love2d.org/wiki/Video:getFilter",
-    "snippet": "Video:getFilter()"
-  },
-  {
-    "displayText": "Video:getHeight",
-    "type": "function",
-    "description": "Gets the height of the Video in pixels.",
-    "descriptionMoreURL": "https://love2d.org/wiki/Video:getHeight",
-    "snippet": "Video:getHeight()"
-  },
-  {
-    "displayText": "Video:getSource",
-    "type": "function",
-    "description": "Gets the audio Source used for playing back the video's audio. May return nil if the video has no audio, or if Video:setSource is called with a nil argument.",
-    "descriptionMoreURL": "https://love2d.org/wiki/Video:getSource",
-    "snippet": "Video:getSource()"
-  },
-  {
-    "displayText": "Video:getStream",
-    "type": "function",
-    "description": "Gets the VideoStream object used for decoding and controlling the video.",
-    "descriptionMoreURL": "https://love2d.org/wiki/Video:getStream",
-    "snippet": "Video:getStream()"
-  },
-  {
-    "displayText": "Video:getWidth",
-    "type": "function",
-    "description": "Gets the width of the Video in pixels.",
-    "descriptionMoreURL": "https://love2d.org/wiki/Video:getWidth",
-    "snippet": "Video:getWidth()"
-  },
-  {
-    "displayText": "Video:isPlaying",
-    "type": "function",
-    "description": "Gets whether the Video is currently playing.",
-    "descriptionMoreURL": "https://love2d.org/wiki/Video:isPlaying",
-    "snippet": "Video:isPlaying()"
-  },
-  {
-    "displayText": "Video:pause",
-    "type": "function",
-    "description": "Pauses the Video.",
-    "descriptionMoreURL": "https://love2d.org/wiki/Video:pause",
-    "snippet": "Video:pause()"
-  },
-  {
-    "displayText": "Video:play",
-    "type": "function",
-    "description": "Starts playing the Video. In order for the video to appear onscreen it must be drawn with love.graphics.draw.",
-    "descriptionMoreURL": "https://love2d.org/wiki/Video:play",
-    "snippet": "Video:play()"
-  },
-  {
-    "displayText": "Video:rewind",
-    "type": "function",
-    "description": "Rewinds the Video to the beginning.",
-    "descriptionMoreURL": "https://love2d.org/wiki/Video:rewind",
-    "snippet": "Video:rewind()"
-  },
-  {
-    "displayText": "Video:seek",
-    "type": "function",
-    "description": "Sets the current playback position of the Video.",
-    "descriptionMoreURL": "https://love2d.org/wiki/Video:seek",
-    "snippet": "Video:seek(${1:offset (number)})"
-  },
-  {
-    "displayText": "Video:setFilter",
-    "type": "function",
-    "description": "Sets the scaling filters used when drawing the Video.",
-    "descriptionMoreURL": "https://love2d.org/wiki/Video:setFilter",
-    "snippet": "Video:setFilter(${1:min (FilterMode)}, ${2:mag (FilterMode)}, ${3:anisotropy (number)})"
-  },
-  {
-    "displayText": "Video:setSource",
-    "type": "function",
-    "description": "Sets the audio Source used for playing back the video's audio. The audio Source also controls playback speed and synchronization.",
-    "descriptionMoreURL": "https://love2d.org/wiki/Video:setSource",
-    "snippet": "Video:setSource(${1:source (Source)})"
-  },
-  {
-    "displayText": "Video:tell",
-    "type": "function",
-    "description": "Gets the current playback position of the Video.",
-    "descriptionMoreURL": "https://love2d.org/wiki/Video:tell",
-    "snippet": "Video:tell(${1:seconds (number)})"
   },
   {
     "displayText": "love.video.newVideoStream",
