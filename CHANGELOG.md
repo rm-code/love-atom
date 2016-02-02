@@ -1,9 +1,6 @@
 _Please note: LÖVE-Atom uses the latest development version of [the LÖVE-API](https://github.com/rm-code/love-api)_
 
-## 2.2.2
-- Update LÖVE api
-
-## 2.2.1
+## 2.2.3 - 2.2.1
 - Update LÖVE api
 
 ## 2.2.0
@@ -16,16 +13,7 @@ _Please note: LÖVE-Atom uses the latest development version of [the LÖVE-API](
 - Enabled autocompletion for moonscript files
 - Update LÖVE api
 
-## 2.0.5
-- Update LÖVE api
-
-## 2.0.4
-- Update LÖVE api
-
-## 2.0.3
-- Update LÖVE api
-
-## 2.0.2
+## 2.0.5 - 2.0.2
 - Update LÖVE api
 
 ## 2.0.1
@@ -37,9 +25,7 @@ _Please note: LÖVE-Atom uses the latest development version of [the LÖVE-API](
 	- Added "more" link which points to the function's wiki page
 
 ## 1.1.0
-
 - Updated snippets for callbacks to produce a function body
 
 ## 1.0.0
-
 - Added snippets for LÖVE 0.9.2
