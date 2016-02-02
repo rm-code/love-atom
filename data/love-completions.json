@@ -32,7 +32,7 @@
     "type": "function",
     "description": "Callback function triggered when window receives or loses focus.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.focus",
-    "snippet": "love.focus(${1:f (boolean)})"
+    "snippet": "love.focus(${1:focus (boolean)})"
   },
   {
     "displayText": "love.gamepadaxis",
@@ -130,7 +130,7 @@
     "type": "function",
     "description": "Callback function triggered when window receives or loses mouse focus.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.mousefocus",
-    "snippet": "love.mousefocus(${1:f (boolean)})"
+    "snippet": "love.mousefocus(${1:focus (boolean)})"
   },
   {
     "displayText": "love.mousemoved",
@@ -228,7 +228,7 @@
     "type": "function",
     "description": "Callback function triggered when window is minimized/hidden or unminimized by the user.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.visible",
-    "snippet": "love.visible(${1:v (boolean)})"
+    "snippet": "love.visible(${1:visible (boolean)})"
   },
   {
     "displayText": "love.wheelmoved",
@@ -1276,9 +1276,9 @@
   {
     "displayText": "Mesh:setVertexMap",
     "type": "function",
-    "description": "Sets the vertex map for a Mesh. The vertex map describes the order in which the vertices are used when the Mesh is drawn. The vertex map allows you to re-order or reuse vertices when drawing without changing the actual vertex parameters or duplicating vertices. It is especially useful when combined with different Mesh draw modes.",
+    "description": "Sets the vertex map for the Mesh. The vertex map describes the order in which the vertices are used when the Mesh is drawn. The vertices, vertex map, and mesh draw mode work together to determine what exactly is displayed on the screen. The vertex map allows you to re-order or reuse vertices when drawing without changing the actual vertex parameters or duplicating vertices. It is especially useful when combined with different Mesh Draw Modes.",
     "descriptionMoreURL": "https://love2d.org/wiki/Mesh:setVertexMap",
-    "snippet": "Mesh:setVertexMap(${1:vertex_map (table)})"
+    "snippet": "Mesh:setVertexMap(${1:map (table)})"
   },
   {
     "displayText": "Mesh:setVertices",
@@ -4235,6 +4235,20 @@
     "snippet": "Joint:setUserData(${1:value (mixed)})"
   },
   {
+    "displayText": "MotorJoint:getLinearOffset",
+    "type": "function",
+    "description": "Gets the target linear offset between the two Bodies the Joint is attached to.",
+    "descriptionMoreURL": "https://love2d.org/wiki/MotorJoint:getLinearOffset",
+    "snippet": "MotorJoint:getLinearOffset()"
+  },
+  {
+    "displayText": "MotorJoint:setLinearOffset",
+    "type": "function",
+    "description": "Sets the target linear offset between the two Bodies the Joint is attached to.",
+    "descriptionMoreURL": "https://love2d.org/wiki/MotorJoint:setLinearOffset",
+    "snippet": "MotorJoint:setLinearOffset(${1:x (number)}, ${2:y (number)})"
+  },
+  {
     "displayText": "MouseJoint:getDampingRatio",
     "type": "function",
     "description": "Returns the damping ratio.",
@@ -4989,6 +5003,13 @@
     "description": "Create a gear joint connecting two joints. The gear joint connects two joints that must be either prismatic or revolute joints. Using this joint requires that the joints it uses connect their respective bodies to the ground and have the ground as the first body. When destroying the bodies and joints you must make sure you destroy the gear joint before the other joints. The gear joint has a ratio the determines how the angular or distance values of the connected joints relate to each other. The formula coordinate1 + ratio * coordinate2 always has a constant value that is set when the gear joint is created.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.physics.newGearJoint",
     "snippet": "love.physics.newGearJoint(${1:joint1 (Joint)}, ${2:joint2 (Joint)}, ${3:ratio (number)}, ${4:collideConnected (boolean)})"
+  },
+  {
+    "displayText": "love.physics.newMotorJoint",
+    "type": "function",
+    "description": "Creates a joint between two bodies which controls the relative motion between them. Position and rotation offsets can be specified once the MotorJoint has been created, as well as the maximum motor force and torque that will be be applied to reach the target offsets.",
+    "descriptionMoreURL": "https://love2d.org/wiki/love.physics.newMotorJoint",
+    "snippet": "love.physics.newMotorJoint(${1:body1 (Body)}, ${2:body2 (Body)}, ${3:correctionFactor (number)})"
   },
   {
     "displayText": "love.physics.newMouseJoint",
