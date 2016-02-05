@@ -4221,13 +4221,6 @@
     "snippet": "Joint:isDestroyed()"
   },
   {
-    "displayText": "Joint:setCollideConnected",
-    "type": "function",
-    "description": "Sets whether the connected Bodies should collide with eachother.",
-    "descriptionMoreURL": "https://love2d.org/wiki/Joint:setCollideConnected",
-    "snippet": "Joint:setCollideConnected(${1:collide (boolean)})"
-  },
-  {
     "displayText": "Joint:setUserData",
     "type": "function",
     "description": "Associates a Lua value with the Joint. To delete the reference, explicitly pass nil.",
