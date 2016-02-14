@@ -4,7 +4,7 @@ A lövely provider for [Atom](https://atom.io/)'s [autocomplete+](https://github
 
 ![example](https://raw.githubusercontent.com/rm-code/love-atom/master/screenshots/screengrab.gif)
 
-_Please note: The snippets in this package were automatically generated from the develop branch of [LÖVE API](https://github.com/rm-code/love-api) which is following Version [0.10.0](https://love2d.org/wiki/0.10.0) of the LÖVE framework._
+_Please note: The snippets in this package were automatically generated from the develop branch of [LÖVE API](https://github.com/love2d-community/love-api) which is following Version [0.10.0](https://love2d.org/wiki/0.10.0) of the LÖVE framework._
 
 ## Installation
 
