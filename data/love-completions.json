@@ -1932,6 +1932,13 @@
     "snippet": "Text:clear()"
   },
   {
+    "displayText": "Text:getDimensions",
+    "type": "function",
+    "description": "Gets the width and height of the text in pixels.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Text:getDimensions",
+    "snippet": "Text:getDimensions()"
+  },
+  {
     "displayText": "Text:getFont",
     "type": "function",
     "description": "Gets the Font used with the Text object.",
@@ -2074,9 +2081,9 @@
   {
     "displayText": "love.graphics.arc",
     "type": "function",
-    "description": "Draws an arc.",
+    "description": "Draws a filled or unfilled arc at position (x, y). The arc is drawn from angle1 to angle2 in radians. The segments parameter determines how many segments are used to draw the arc. The more segments, the smoother the edge.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.graphics.arc",
-    "snippet": "love.graphics.arc(${1:mode (DrawMode)}, ${2:x (number)}, ${3:y (number)}, ${4:radius (number)}, ${5:angle1 (number)}, ${6:angle2 (number)}, ${7:segments (number)})"
+    "snippet": "love.graphics.arc(${1:drawmode (DrawMode)}, ${2:x (number)}, ${3:y (number)}, ${4:radius (number)}, ${5:angle1 (number)}, ${6:angle2 (number)}, ${7:segments (number)})"
   },
   {
     "displayText": "love.graphics.circle",
@@ -4228,11 +4235,25 @@
     "snippet": "Joint:setUserData(${1:value (mixed)})"
   },
   {
+    "displayText": "MotorJoint:getAngularOffset",
+    "type": "function",
+    "description": "Gets the target angluar offset between the two Bodies the Joint is attached to.",
+    "descriptionMoreURL": "https://love2d.org/wiki/MotorJoint:getAngularOffset",
+    "snippet": "MotorJoint:getAngularOffset()"
+  },
+  {
     "displayText": "MotorJoint:getLinearOffset",
     "type": "function",
     "description": "Gets the target linear offset between the two Bodies the Joint is attached to.",
     "descriptionMoreURL": "https://love2d.org/wiki/MotorJoint:getLinearOffset",
     "snippet": "MotorJoint:getLinearOffset()"
+  },
+  {
+    "displayText": "MotorJoint:setAngularOffset",
+    "type": "function",
+    "description": "Sets the target angluar offset between the two Bodies the Joint is attached to.",
+    "descriptionMoreURL": "https://love2d.org/wiki/MotorJoint:setAngularOffset",
+    "snippet": "MotorJoint:setAngularOffset(${1:angularoffset (number)})"
   },
   {
     "displayText": "MotorJoint:setLinearOffset",
