@@ -3152,7 +3152,7 @@
   {
     "displayText": "love.math.noise",
     "type": "function",
-    "description": "Generates a Simplex or Perlin noise value in 1-4 dimensions. Simplex noise is closely related to Perlin noise. It is widely used for procedural content generation. There are many webpages which discuss Perlin and Simplex noise in detail.",
+    "description": "Generates a Simplex or Perlin noise value in 1-4 dimensions. The return value will always be the same, given the same arguments. Simplex noise is closely related to Perlin noise. It is widely used for procedural content generation. There are many webpages which discuss Perlin and Simplex noise in detail.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.math.noise",
     "snippet": "love.math.noise(${1:x (number)})"
   },
