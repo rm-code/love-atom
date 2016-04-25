@@ -1290,7 +1290,7 @@
   {
     "displayText": "Image:getData",
     "type": "function",
-    "description": "Gets the original ImageData or CompressedData used to create the Image. All Images keep a reference to the Data that was used to create the Image. The Data is used to refresh the Image when love.window.setMode or Image:refresh is called.",
+    "description": "Gets the original ImageData or CompressedImageData used to create the Image. All Images keep a reference to the Data that was used to create the Image. The Data is used to refresh the Image when love.window.setMode or Image:refresh is called.",
     "descriptionMoreURL": "https://love2d.org/wiki/Image:getData",
     "snippet": "Image:getData()"
   },
@@ -1346,7 +1346,7 @@
   {
     "displayText": "Image:refresh",
     "type": "function",
-    "description": "Reloads the Image's contents from the ImageData or CompressedData used to create the image.",
+    "description": "Reloads the Image's contents from the ImageData or CompressedImageData used to create the image.",
     "descriptionMoreURL": "https://love2d.org/wiki/Image:refresh",
     "snippet": "Image:refresh()"
   },
@@ -2447,7 +2447,7 @@
     "type": "function",
     "description": "Copies and pushes the current coordinate transformation to the transformation stack. This function is always used to prepare for a corresponding pop operation later. It stores the current coordinate transformation state into the transformation stack and keeps it active. Later changes to the transformation can be undone by using the pop operation, which returns the coordinate transform to the state it was in before calling push.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.graphics.push",
-    "snippet": "love.graphics.push()"
+    "snippet": "love.graphics.push(${1:stack (StackType)})"
   },
   {
     "displayText": "love.graphics.rectangle",
@@ -4209,7 +4209,7 @@
   {
     "displayText": "Joint:getType",
     "type": "function",
-    "description": "Gets an string representing the type.",
+    "description": "Gets a string representing the type.",
     "descriptionMoreURL": "https://love2d.org/wiki/Joint:getType",
     "snippet": "Joint:getType()"
   },
