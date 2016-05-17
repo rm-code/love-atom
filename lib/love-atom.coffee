@@ -3,7 +3,9 @@ loveprovider = require './love-provider'
 
 module.exports =
     activate: ->
-        console.log( "Activate LOVE-Provider. Baby don't hurt me!")
+        require( 'atom-package-deps' ).install()
+
+        console.log( "Activate LOVE-Provider. Baby don't hurt me!" )
         loveprovider.loadCompletions()
 
      provide: ->

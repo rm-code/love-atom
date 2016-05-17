@@ -22,5 +22,10 @@
       }
     }
   },
-  "dependencies": {}
+  "dependencies": {
+    "atom-package-deps": "latest"
+  },
+  "package-deps": [
+      "language-lua"
+  ]
 }
