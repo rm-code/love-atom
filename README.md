@@ -8,4 +8,10 @@ _The autocompletion suggestions are generated automatically using the [LÖVE API
 
 ## Installation
 
-You can install the package through Atom's package manager or just run ```apm install love-atom``` in your terminal.
+You can install the package through Atom's package manager or by running ```apm install love-atom``` in your terminal.
+
+## Dependencies
+
+_The following dependencies will be installed automatically if they are missing:_
+
+- [language-lua](https://github.com/FireZenk/language-lua)
