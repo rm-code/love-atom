@@ -1,5 +1,9 @@
 _Please note: LÖVE-Atom uses the latest development version of [the LÖVE-API](https://github.com/love2d-community/love-api)_
 
+## 2.3.0
+- Automatically install missing dependencies (Closes [#4](https://github.com/rm-code/love-atom/issues/4))
+- Update LÖVE api
+
 ## 2.2.8 - 2.2.1
 - Update LÖVE api
 
