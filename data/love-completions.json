@@ -436,7 +436,7 @@
   {
     "displayText": "Source:setRolloff",
     "type": "function",
-    "description": "Sets the rolloff factor.",
+    "description": "Sets the rolloff factor which affects the strength of the used distance attenuation. Extended information and detailed formulas can be found in the chapter \"3.4. Attenuation By Distance\" of OpenAL 1.1 specification.",
     "descriptionMoreURL": "https://love2d.org/wiki/Source:setRolloff",
     "snippet": "Source:setRolloff(${1:rolloff (number)})"
   },
@@ -534,7 +534,7 @@
   {
     "displayText": "love.audio.pause",
     "type": "function",
-    "description": "Pauses all audio",
+    "description": "Pauses currently played Sources.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.audio.pause",
     "snippet": "love.audio.pause()"
   },
@@ -604,7 +604,7 @@
   {
     "displayText": "love.audio.stop",
     "type": "function",
-    "description": "Stops all playing audio.",
+    "description": "Stops currently played sources.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.audio.stop",
     "snippet": "love.audio.stop()"
   },
@@ -1036,13 +1036,6 @@
     "snippet": "Canvas:getWrap()"
   },
   {
-    "displayText": "Canvas:isActive",
-    "type": "function",
-    "description": "Gets whether the graphics module is able to be used. If it is not active, love.graphics function and method calls will not work correctly and may cause the program to crash. The graphics module is inactive if a window is not open, or if the app is in the background on iOS. Typically the app's execution will be automatically paused by the system, in the latter case.",
-    "descriptionMoreURL": "https://love2d.org/wiki/Canvas:isActive",
-    "snippet": "Canvas:isActive()"
-  },
-  {
     "displayText": "Canvas:newImageData",
     "type": "function",
     "description": "Generates ImageData from the contents of the Canvas.",
@@ -1127,11 +1120,11 @@
     "snippet": "Font:getWrap(${1:text (string)}, ${2:wraplimit (number)})"
   },
   {
-    "displayText": "Font:hasGlyph",
+    "displayText": "Font:hasGlyphs",
     "type": "function",
     "description": "Gets whether the font can render a particular character.",
-    "descriptionMoreURL": "https://love2d.org/wiki/Font:hasGlyph",
-    "snippet": "Font:hasGlyph(${1:character (string)})"
+    "descriptionMoreURL": "https://love2d.org/wiki/Font:hasGlyphs",
+    "snippet": "Font:hasGlyphs(${1:character (string)})"
   },
   {
     "displayText": "Font:setFallbacks",
@@ -2431,7 +2424,7 @@
   {
     "displayText": "love.graphics.print",
     "type": "function",
-    "description": "Draws text on screen. If no Font is set, one will be created and set (once) if needed. When using translation and scaling functions while drawing text, this function assumes the scale occurs first. If you don't script with this in mind, the text won't be in the right position, or possibly even on screen. love.graphics.print stops at the first '' (null) character. This can bite you if you are appending keystrokes to form your string, as some of those are multi-byte unicode characters which will likely contain null bytes.",
+    "description": "Draws text on screen. If no Font is set, one will be created and set (once) if needed. When using translation and scaling functions while drawing text, this function assumes the scale occurs first. If you don't script with this in mind, the text won't be in the right position, or possibly even on screen. love.graphics.print stops at the first '\0' (null) character. This can bite you if you are appending keystrokes to form your string, as some of those are multi-byte unicode characters which will likely contain null bytes.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.graphics.print",
     "snippet": "love.graphics.print(${1:text (string)}, ${2:x (number)}, ${3:y (number)}, ${4:r (number)}, ${5:sx (number)}, ${6:sy (number)}, ${7:ox (number)}, ${8:oy (number)}, ${9:kx (number)}, ${10:ky (number)})"
   },
@@ -2655,28 +2648,28 @@
   {
     "displayText": "ImageData:getDimensions",
     "type": "function",
-    "description": "Gets the width and height of the ImageData.",
+    "description": "Gets the width and height of the ImageData in pixels.",
     "descriptionMoreURL": "https://love2d.org/wiki/ImageData:getDimensions",
     "snippet": "ImageData:getDimensions()"
   },
   {
     "displayText": "ImageData:getHeight",
     "type": "function",
-    "description": "Gets the height of the ImageData.",
+    "description": "Gets the height of the ImageData in pixels.",
     "descriptionMoreURL": "https://love2d.org/wiki/ImageData:getHeight",
     "snippet": "ImageData:getHeight()"
   },
   {
     "displayText": "ImageData:getPixel",
     "type": "function",
-    "description": "Gets the pixel at the specified position. Valid x and y values start at 0 and go up to image width and height minus 1.",
+    "description": "Gets the color of a pixel at a specific position in the image. Valid x and y values start at 0 and go up to image width and height minus 1.",
     "descriptionMoreURL": "https://love2d.org/wiki/ImageData:getPixel",
     "snippet": "ImageData:getPixel(${1:x (number)}, ${2:y (number)})"
   },
   {
     "displayText": "ImageData:getWidth",
     "type": "function",
-    "description": "Gets the width of the ImageData.",
+    "description": "Gets the width of the ImageData in pixels.",
     "descriptionMoreURL": "https://love2d.org/wiki/ImageData:getWidth",
     "snippet": "ImageData:getWidth()"
   },
