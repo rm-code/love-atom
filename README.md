@@ -1,7 +1,7 @@
 # LÖVE Atom
 
-[![Version](https://img.shields.io/badge/Version-2.3.2-blue.svg)](https://github.com/rm-code/love-atom/releases/latest)
-[![Atom](https://img.shields.io/badge/Atom-1.8.0--beta4-049158.svg)](https://atom.io/) [![License](http://img.shields.io/badge/Licence-MIT-brightgreen.svg)](LICENSE.md)
+[![Version](https://img.shields.io/badge/Version-2.3.3-blue.svg)](https://github.com/rm-code/love-atom/releases/latest)
+[![Atom](https://img.shields.io/badge/Atom-1.9.0--beta0-049158.svg)](https://atom.io/) [![License](http://img.shields.io/badge/Licence-MIT-brightgreen.svg)](LICENSE.md)
 
 A lövely provider for [Atom](https://atom.io/)'s [autocomplete+](https://github.com/atom/autocomplete-plus) package.
 
