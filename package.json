@@ -26,6 +26,7 @@
     "atom-package-deps": "latest"
   },
   "package-deps": [
-    "language-lua"
+    "language-lua",
+    "fuzzaldrin"
   ]
 }
