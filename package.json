@@ -23,10 +23,10 @@
     }
   },
   "dependencies": {
-    "atom-package-deps": "latest"
+    "atom-package-deps": "latest",
+    "fuzzaldrin": "^2.1.0"
   },
   "package-deps": [
-    "language-lua",
-    "fuzzaldrin"
+    "language-lua"
   ]
 }
