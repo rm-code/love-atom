@@ -648,7 +648,7 @@
     "type": "function",
     "description": "Adds the quit event to the queue. The quit event is a signal for the event handler to close LÖVE. It's possible to abort the exit process with the love.quit callback.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.event.quit",
-    "snippet": "love.event.quit(${1:exitstatus (number)})"
+    "snippet": "love.event.quit()"
   },
   {
     "displayText": "love.event.wait",
@@ -1799,6 +1799,13 @@
     "snippet": "ParticleSystem:update(${1:dt (number)})"
   },
   {
+    "displayText": "Quad:getTextureDimensions",
+    "type": "function",
+    "description": "Gets reference texture dimensions initially specified in love.graphics.newQuad.",
+    "descriptionMoreURL": "https://love2d.org/wiki/Quad:getTextureDimensions",
+    "snippet": "Quad:getTextureDimensions()"
+  },
+  {
     "displayText": "Quad:getViewport",
     "type": "function",
     "description": "Gets the current viewport of this Quad.",
@@ -2104,7 +2111,7 @@
     "type": "function",
     "description": "Draws a circle.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.graphics.circle",
-    "snippet": "love.graphics.circle(${1:mode (DrawMode)}, ${2:x (number)}, ${3:y (number)}, ${4:radius (number)}, ${5:segments (number)})"
+    "snippet": "love.graphics.circle(${1:mode (DrawMode)}, ${2:x (number)}, ${3:y (number)}, ${4:radius (number)})"
   },
   {
     "displayText": "love.graphics.clear",
@@ -3752,6 +3759,13 @@
     "snippet": "ChainShape:getChildEdge(${1:index (number)})"
   },
   {
+    "displayText": "ChainShape:getNextVertex",
+    "type": "function",
+    "description": "Gets the vertex that establishes a connection to the next shape. Setting next and previous ChainShape vertices can help prevent unwanted collisions when a flat shape slides along the edge and moves over to the new shape.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ChainShape:getNextVertex",
+    "snippet": "ChainShape:getNextVertex(${1:x (number)}, ${2:y (number)})"
+  },
+  {
     "displayText": "ChainShape:getPoint",
     "type": "function",
     "description": "Returns a point of the shape.",
@@ -3764,6 +3778,13 @@
     "description": "Returns all points of the shape.",
     "descriptionMoreURL": "https://love2d.org/wiki/ChainShape:getPoints",
     "snippet": "ChainShape:getPoints()"
+  },
+  {
+    "displayText": "ChainShape:getPreviousVertex",
+    "type": "function",
+    "description": "Gets the vertex that establishes a connection to the previous shape. Setting next and previous ChainShape vertices can help prevent unwanted collisions when a flat shape slides along the edge and moves over to the new shape.",
+    "descriptionMoreURL": "https://love2d.org/wiki/ChainShape:getPreviousVertex",
+    "snippet": "ChainShape:getPreviousVertex()"
   },
   {
     "displayText": "ChainShape:getVertexCount",
@@ -3904,6 +3925,34 @@
     "description": "Returns the local coordinates of the edge points.",
     "descriptionMoreURL": "https://love2d.org/wiki/EdgeShape:getPoints",
     "snippet": "EdgeShape:getPoints()"
+  },
+  {
+    "displayText": "EdgeShape:getNextVertex",
+    "type": "function",
+    "description": "Gets the vertex that establishes a connection to the next shape. Setting next and previous EdgeShape vertices can help prevent unwanted collisions when a flat shape slides along the edge and moves over to the new shape.",
+    "descriptionMoreURL": "https://love2d.org/wiki/EdgeShape:getNextVertex",
+    "snippet": "EdgeShape:getNextVertex()"
+  },
+  {
+    "displayText": "EdgeShape:getPreviousVertex",
+    "type": "function",
+    "description": "Gets the vertex that establishes a connection to the previous shape. Setting next and previous EdgeShape vertices can help prevent unwanted collisions when a flat shape slides along the edge and moves over to the new shape.",
+    "descriptionMoreURL": "https://love2d.org/wiki/EdgeShape:getPreviousVertex",
+    "snippet": "EdgeShape:getPreviousVertex()"
+  },
+  {
+    "displayText": "EdgeShape:setNextVertex",
+    "type": "function",
+    "description": "Sets a vertex that establishes a connection to the next shape. This can help prevent unwanted collisions when a flat shape slides along the edge and moves over to the new shape.",
+    "descriptionMoreURL": "https://love2d.org/wiki/EdgeShape:setNextVertex",
+    "snippet": "EdgeShape:setNextVertex(${1:x (number)}, ${2:y (number)})"
+  },
+  {
+    "displayText": "EdgeShape:setPreviousVertex",
+    "type": "function",
+    "description": "Sets a vertex that establishes a connection to the previous shape. This can help prevent unwanted collisions when a flat shape slides along the edge and moves over to the new shape.",
+    "descriptionMoreURL": "https://love2d.org/wiki/EdgeShape:setPreviousVertex",
+    "snippet": "EdgeShape:setPreviousVertex(${1:x (number)}, ${2:y (number)})"
   },
   {
     "displayText": "DistanceJoint:getDampingRatio",
@@ -4340,18 +4389,11 @@
     "snippet": "PolygonShape:getPoints()"
   },
   {
-    "displayText": "PrismaticJoint:setLimitsEnabled",
+    "displayText": "PrismaticJoint:getAxis",
     "type": "function",
-    "description": "Enables or disables the limits of the joint.",
-    "descriptionMoreURL": "https://love2d.org/wiki/PrismaticJoint:setLimitsEnabled",
-    "snippet": "PrismaticJoint:setLimitsEnabled(${1:enable (boolean)})"
-  },
-  {
-    "displayText": "PrismaticJoint:setMotorEnabled",
-    "type": "function",
-    "description": "Starts or stops the joint motor.",
-    "descriptionMoreURL": "https://love2d.org/wiki/PrismaticJoint:setMotorEnabled",
-    "snippet": "PrismaticJoint:setMotorEnabled(${1:enable (boolean)})"
+    "description": "Gets the world-space axis vector of the Prismatic Joint.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PrismaticJoint:getAxis",
+    "snippet": "PrismaticJoint:getAxis()"
   },
   {
     "displayText": "PrismaticJoint:getJointSpeed",
@@ -4431,6 +4473,13 @@
     "snippet": "PrismaticJoint:setLimits(${1:lower (number)}, ${2:upper (number)})"
   },
   {
+    "displayText": "PrismaticJoint:setLimitsEnabled",
+    "type": "function",
+    "description": "Enables or disables the limits of the joint.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PrismaticJoint:setLimitsEnabled",
+    "snippet": "PrismaticJoint:setLimitsEnabled(${1:enable (boolean)})"
+  },
+  {
     "displayText": "PrismaticJoint:setLowerLimit",
     "type": "function",
     "description": "Sets the lower limit.",
@@ -4443,6 +4492,13 @@
     "description": "Set the maximum motor force.",
     "descriptionMoreURL": "https://love2d.org/wiki/PrismaticJoint:setMaxMotorForce",
     "snippet": "PrismaticJoint:setMaxMotorForce(${1:f (number)})"
+  },
+  {
+    "displayText": "PrismaticJoint:setMotorEnabled",
+    "type": "function",
+    "description": "Starts or stops the joint motor.",
+    "descriptionMoreURL": "https://love2d.org/wiki/PrismaticJoint:setMotorEnabled",
+    "snippet": "PrismaticJoint:setMotorEnabled(${1:enable (boolean)})"
   },
   {
     "displayText": "PrismaticJoint:setMotorSpeed",
@@ -4723,6 +4779,13 @@
     "description": "Sets a new frequency.",
     "descriptionMoreURL": "https://love2d.org/wiki/WeldJoint:setFrequency",
     "snippet": "WeldJoint:setFrequency(${1:freq (number)})"
+  },
+  {
+    "displayText": "WheelJoint:getAxis",
+    "type": "function",
+    "description": "Gets the world-space axis vector of the Wheel Joint.",
+    "descriptionMoreURL": "https://love2d.org/wiki/WheelJoint:getAxis",
+    "snippet": "WheelJoint:getAxis()"
   },
   {
     "displayText": "WheelJoint:getJointSpeed",
@@ -5079,7 +5142,7 @@
     "type": "function",
     "description": "Creates a pivot joint between two bodies. This joint connects two bodies to a point around which they can pivot.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.physics.newRevoluteJoint",
-    "snippet": "love.physics.newRevoluteJoint(${1:body1 (Body)}, ${2:body2 (Body)}, ${3:x (number)}, ${4:y (number)}, ${5:collideConnected (number)})"
+    "snippet": "love.physics.newRevoluteJoint(${1:body1 (Body)}, ${2:body2 (Body)}, ${3:x (number)}, ${4:y (number)}, ${5:collideConnected (boolean)})"
   },
   {
     "displayText": "love.physics.newRopeJoint",
@@ -5091,7 +5154,7 @@
   {
     "displayText": "love.physics.newWeldJoint",
     "type": "function",
-    "description": "Create a friction joint between two bodies. A WeldJoint essentially glues two bodies together.",
+    "description": "Creates a constraint joint between two bodies. A WeldJoint essentially glues two bodies together. The constraint is a bit soft, however, due to Box2D's iterative solver.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.physics.newWeldJoint",
     "snippet": "love.physics.newWeldJoint(${1:body1 (Body)}, ${2:body2 (Body)}, ${3:x (number)}, ${4:y (number)}, ${5:collideConnected (boolean)})"
   },
@@ -5521,6 +5584,13 @@
     "description": "Gets whether the display is allowed to sleep while the program is running. Display sleep is disabled by default. Some types of input (e.g. joystick button presses) might not prevent the display from sleeping, if display sleep is allowed.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.window.isDisplaySleepEnabled",
     "snippet": "love.window.isDisplaySleepEnabled()"
+  },
+  {
+    "displayText": "love.window.isMaximized",
+    "type": "function",
+    "description": "Gets whether the Window is currently maximized. The window can be maximized if it is not fullscreen and is resizable, and either the user has pressed the window's Maximize button or love.window.maximize has been called.",
+    "descriptionMoreURL": "https://love2d.org/wiki/love.window.isMaximized",
+    "snippet": "love.window.isMaximized()"
   },
   {
     "displayText": "love.window.isOpen",
