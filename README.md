@@ -1,6 +1,6 @@
 # LÖVE Atom
 
-[![Version](https://img.shields.io/badge/Version-2.4.1-blue.svg)](https://github.com/rm-code/love-atom/releases/latest)
+[![Version](https://img.shields.io/badge/Version-2.4.2-blue.svg)](https://github.com/rm-code/love-atom/releases/latest)
 [![Atom](https://img.shields.io/badge/Atom-1.12.0--beta5-049158.svg)](https://atom.io/)
 [![License](http://img.shields.io/badge/Licence-MIT-brightgreen.svg)](LICENSE.md)
 
