@@ -226,7 +226,7 @@
   {
     "displayText": "love.update",
     "type": "function",
-    "description": "Callback function triggered when a key is pressed.",
+    "description": "Callback function used to update the state of the game every frame.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.update",
     "snippet": "love.update(${1:dt (number)})"
   },
@@ -1836,7 +1836,7 @@
   {
     "displayText": "Shader:send",
     "type": "function",
-    "description": "Sends one or more values to a special (extern) variable inside the shader.",
+    "description": "Sends one or more values to a special (uniform) variable inside the shader. Uniform variables have to be marked using the uniform or extern keyword.",
     "descriptionMoreURL": "https://love2d.org/wiki/Shader:send",
     "snippet": "Shader:send(${1:name (string)}, ${2:number (number)}, ${3:... (number)})"
   },

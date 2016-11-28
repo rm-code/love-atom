@@ -1,13 +1,11 @@
 #!/bin/bash
-rm -rf api
-
 ## Use a shallow clone
 git clone --depth=1 https://github.com/rm-code/love-api api
 
 ## Create definitions
 lua json-generator.lua
 mv love-completions.json ../data/love-completions.json
-rm -rf api
+rm -r api
 
 ## Commit and push
 cd ..
