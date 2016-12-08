@@ -13,7 +13,7 @@ module.exports =
         @findSuggestions( @completions, prefix )
 
     getPrefix: (editor, bufferPosition) ->
-        regex = /[a-zA-Z\_\-\.\:]+$/ #
+        regex = /[a-zA-Z\_\-\.\:]+$/
         line = editor.getTextInRange( [[bufferPosition.row, 0], bufferPosition] )
         line.match(regex)?[0] or ''
 
