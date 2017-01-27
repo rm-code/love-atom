@@ -5133,7 +5133,7 @@
   {
     "displayText": "love.physics.newRectangleShape",
     "type": "function",
-    "description": "Shorthand for creating rectangluar PolygonShapes. By default, the local origin is located at the center of the rectangle as opposed to the top left for graphics.",
+    "description": "Shorthand for creating rectangular PolygonShapes. By default, the local origin is located at the center of the rectangle as opposed to the top left for graphics.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.physics.newRectangleShape",
     "snippet": "love.physics.newRectangleShape(${1:width (number)}, ${2:height (number)})"
   },
