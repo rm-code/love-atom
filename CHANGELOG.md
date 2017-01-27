@@ -1,6 +1,6 @@
 _Please note: LÖVE-Atom uses the latest development version of [the LÖVE-API](https://github.com/love2d-community/love-api)_
 
-## 2.4.2 - 2.4.3
+## 2.4.2 - 2.4.4
 - Update LÖVE api
 
 ## 2.4.1
