@@ -641,7 +641,7 @@
     "type": "function",
     "description": "Adds an event to the event queue.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.event.push",
-    "snippet": "love.event.push(${1:e (Event)}, ${2:a (mixed)}, ${3:b (mixed)}, ${4:c (mixed)}, ${5:d (mixed)})"
+    "snippet": "love.event.push(${1:e (Event)}, ${2:a (Variant)}, ${3:b (Variant)}, ${4:c (Variant)}, ${5:d (Variant)})"
   },
   {
     "displayText": "love.event.quit",
@@ -2690,7 +2690,7 @@
   {
     "displayText": "ImageData:getPixel",
     "type": "function",
-    "description": "Gets the color of a pixel at a specific position in the image. Valid x and y values start at 0 and go up to image width and height minus 1.",
+    "description": "Gets the color of a pixel at a specific position in the image. Valid x and y values start at 0 and go up to image width and height minus 1. Non-integer values are floored.",
     "descriptionMoreURL": "https://love2d.org/wiki/ImageData:getPixel",
     "snippet": "ImageData:getPixel(${1:x (number)}, ${2:y (number)})"
   },
@@ -3313,7 +3313,7 @@
   {
     "displayText": "love.mouse.setPosition",
     "type": "function",
-    "description": "Sets the position of the mouse.",
+    "description": "Sets the current position of the mouse. Non-integer values are floored.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.mouse.setPosition",
     "snippet": "love.mouse.setPosition(${1:x (number)}, ${2:y (number)})"
   },
@@ -3334,14 +3334,14 @@
   {
     "displayText": "love.mouse.setX",
     "type": "function",
-    "description": "Sets the current X position of the mouse.",
+    "description": "Sets the current X position of the mouse. Non-integer values are floored.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.mouse.setX",
     "snippet": "love.mouse.setX(${1:x (number)})"
   },
   {
     "displayText": "love.mouse.setY",
     "type": "function",
-    "description": "Sets the current Y position of the mouse.",
+    "description": "Sets the current Y position of the mouse. Non-integer values are floored.",
     "descriptionMoreURL": "https://love2d.org/wiki/love.mouse.setY",
     "snippet": "love.mouse.setY(${1:y (number)})"
   },
@@ -3516,7 +3516,7 @@
   {
     "displayText": "Body:getUserData",
     "type": "function",
-    "description": "Returns the Lua value associated with this Body. Use this function in one thread only.",
+    "description": "Returns the Lua value associated with this Body.",
     "descriptionMoreURL": "https://love2d.org/wiki/Body:getUserData",
     "snippet": "Body:getUserData()"
   },
@@ -3733,9 +3733,9 @@
   {
     "displayText": "Body:setUserData",
     "type": "function",
-    "description": "Associates a Lua value with the Body. To delete the reference, explicitly pass nil. Use this function in one thread only.",
+    "description": "Associates a Lua value with the Body. To delete the reference, explicitly pass nil.",
     "descriptionMoreURL": "https://love2d.org/wiki/Body:setUserData",
-    "snippet": "Body:setUserData(${1:value (value)})"
+    "snippet": "Body:setUserData(${1:value (any)})"
   },
   {
     "displayText": "Body:setX",
@@ -4169,7 +4169,7 @@
     "type": "function",
     "description": "Associates a Lua value with the fixture. Use this function in one thread only.",
     "descriptionMoreURL": "https://love2d.org/wiki/Fixture:setUserData",
-    "snippet": "Fixture:setUserData(${1:value (mixed)})"
+    "snippet": "Fixture:setUserData(${1:value (any)})"
   },
   {
     "displayText": "Fixture:testPoint",
@@ -4295,7 +4295,7 @@
     "type": "function",
     "description": "Associates a Lua value with the Joint. To delete the reference, explicitly pass nil.",
     "descriptionMoreURL": "https://love2d.org/wiki/Joint:setUserData",
-    "snippet": "Joint:setUserData(${1:value (mixed)})"
+    "snippet": "Joint:setUserData(${1:value (any)})"
   },
   {
     "displayText": "MotorJoint:getAngularOffset",
@@ -5357,7 +5357,7 @@
   {
     "displayText": "Channel:demand",
     "type": "function",
-    "description": "Retrieves the value of a Channel message and removes it from the message queue. The value of the message can be a boolean, string, number, LÖVE userdata, or a simple flat table. It waits until a message is in the queue then returns the message value.",
+    "description": "Retrieves the value of a Channel message and removes it from the message queue. It waits until a message is in the queue then returns the message value.",
     "descriptionMoreURL": "https://love2d.org/wiki/Channel:demand",
     "snippet": "Channel:demand()"
   },
@@ -5371,7 +5371,7 @@
   {
     "displayText": "Channel:peek",
     "type": "function",
-    "description": "Retrieves the value of a Channel message, but leaves it in the queue. The value of the message can be a boolean, string, number or a LÖVE userdata. It returns nil if there's no message in the queue.",
+    "description": "Retrieves the value of a Channel message, but leaves it in the queue. It returns nil if there's no message in the queue.",
     "descriptionMoreURL": "https://love2d.org/wiki/Channel:peek",
     "snippet": "Channel:peek()"
   },
@@ -5385,23 +5385,23 @@
   {
     "displayText": "Channel:pop",
     "type": "function",
-    "description": "Retrieves the value of a Channel message and removes it from the message queue. The value of the message can be a boolean, string, number, LÖVE userdata, or a simple flat table. It returns nil if there are no messages in the queue.",
+    "description": "Retrieves the value of a Channel message and removes it from the message queue. It returns nil if there are no messages in the queue.",
     "descriptionMoreURL": "https://love2d.org/wiki/Channel:pop",
     "snippet": "Channel:pop()"
   },
   {
     "displayText": "Channel:push",
     "type": "function",
-    "description": "Send a message to the thread Channel. The value of the message can be a boolean, string, number, LÖVE userdata, or a simple flat table. Foreign userdata (Lua's files, LuaSocket, ENet, ...), functions, and tables inside tables are not supported.",
+    "description": "Send a message to the thread Channel. See Variant for the list of supported types.",
     "descriptionMoreURL": "https://love2d.org/wiki/Channel:push",
-    "snippet": "Channel:push(${1:value (value)})"
+    "snippet": "Channel:push(${1:value (Variant)})"
   },
   {
     "displayText": "Channel:supply",
     "type": "function",
-    "description": "Send a message to the thread Channel and wait for a thread to accept it. The value of the message can be a boolean, string, number, LÖVE userdata, or a simple flat table. Foreign userdata (Lua's files, LuaSocket, ENet, ...), functions, and tables inside tables are not supported.",
+    "description": "Send a message to the thread Channel and wait for a thread to accept it. See Variant for the list of supported types.",
     "descriptionMoreURL": "https://love2d.org/wiki/Channel:supply",
-    "snippet": "Channel:supply(${1:value (value)})"
+    "snippet": "Channel:supply(${1:value (Variant)})"
   },
   {
     "displayText": "love.thread.getChannel",
