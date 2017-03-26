@@ -1,5 +1,11 @@
 _Please note: LÖVE-Atom uses the latest development version of [the LÖVE-API](https://github.com/love2d-community/love-api)_
 
+## 2.5.1
+- Documentation update
+
+## 2.5.0
+- Added new snippets for Type functios (e.g. Text:addf( ... )) which make the type name a variable
+
 ## 2.4.2 - 2.4.5
 - Update LÖVE api
 
