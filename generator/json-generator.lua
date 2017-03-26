@@ -69,7 +69,7 @@ local function buildModuleFunctionCompletion( f, module, closing )
 end
 
 local function buildTypeFunctionCompletion( f, type, closing )
-    local arguments = generateArguments( f.variants[1].arguments );
+    local index, arguments = generateArguments( f.variants[1].arguments );
     return {
         TAB .. '{' .. LINE_BREAK,
         TAB .. TAB .. '"displayText": "' .. type.name .. ':' .. f.name .. APOSTROPHE .. COMMA .. LINE_BREAK,
@@ -78,8 +78,8 @@ local function buildTypeFunctionCompletion( f, type, closing )
         TAB .. TAB .. '"descriptionMoreURL": ' .. APOSTROPHE .. WIKI_URL .. string.format( '%s:%s', type.name, f.name ) .. APOSTROPHE .. COMMA .. LINE_BREAK,
         TAB .. TAB .. '"snippet": ',
         -- TODO: Wait for fix of https://github.com/atom/autocomplete-plus/issues/635
-        -- APOSTROPHE .. string.format( '${%d:%s}:%s(%s)', index, type.name, f.name, arguments ) .. APOSTROPHE .. LINE_BREAK,
-        APOSTROPHE .. string.format( '%s:%s(%s)', type.name, f.name, arguments ) .. APOSTROPHE .. LINE_BREAK,
+        APOSTROPHE .. string.format( '${%d:%s}:%s(%s)', index + 1, type.name, f.name, arguments ) .. APOSTROPHE .. LINE_BREAK,
+        -- APOSTROPHE .. string.format( '%s:%s(%s)', type.name, f.name, arguments ) .. APOSTROPHE .. LINE_BREAK,
         TAB .. (  closing and '}' or '},'  ) .. LINE_BREAK
     };
 end
