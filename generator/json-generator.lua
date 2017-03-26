@@ -19,7 +19,7 @@ local WIKI_URL = 'https://love2d.org/wiki/';
 
 local function generateArguments( arguments, start )
     local params = '';
-    start = start or 1
+    start = start or 0
 
     if arguments then
         for i, args in ipairs( arguments ) do
