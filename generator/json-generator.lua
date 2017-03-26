@@ -17,23 +17,22 @@ local WIKI_URL = 'https://love2d.org/wiki/';
 -- Local Functions
 -- ------------------------------------------------
 
-local function generateArguments( arguments )
+local function generateArguments( arguments, start )
     local params = '';
-    local index = 0;
+    start = start or 1
 
     if arguments then
         for i, args in ipairs( arguments ) do
-            params = params .. string.format( PARAM, i, args.name, args.type );
+            params = params .. string.format( PARAM, start + i, args.name, args.type );
 
             -- Add a separator unless we are dealing with the last argument of the function.
             if i ~= #arguments then
                 params = params .. ', ';
             end
         end
-        index = #arguments;
     end
 
-    return params, index;
+    return params
 end
 
 local function cleanUpString( str )
@@ -41,7 +40,7 @@ local function cleanUpString( str )
 end
 
 local function buildCallbackCompletion( f )
-    local arguments, _ = generateArguments( f.variants[1].arguments );
+    local arguments = generateArguments( f.variants[1].arguments );
     return {
         TAB .. '{' .. LINE_BREAK,
         TAB .. TAB .. '"displayText": "love.' .. f.name .. APOSTROPHE .. COMMA .. LINE_BREAK,
@@ -69,7 +68,7 @@ local function buildModuleFunctionCompletion( f, module, closing )
 end
 
 local function buildTypeFunctionCompletion( f, type, closing )
-    local arguments, index = generateArguments( f.variants[1].arguments );
+    local arguments = generateArguments( f.variants[1].arguments, 2 )
     return {
         TAB .. '{' .. LINE_BREAK,
         TAB .. TAB .. '"displayText": "' .. type.name .. ':' .. f.name .. APOSTROPHE .. COMMA .. LINE_BREAK,
@@ -77,9 +76,7 @@ local function buildTypeFunctionCompletion( f, type, closing )
         TAB .. TAB .. '"description": ' .. APOSTROPHE .. cleanUpString( f.description ) .. APOSTROPHE .. COMMA .. LINE_BREAK,
         TAB .. TAB .. '"descriptionMoreURL": ' .. APOSTROPHE .. WIKI_URL .. string.format( '%s:%s', type.name, f.name ) .. APOSTROPHE .. COMMA .. LINE_BREAK,
         TAB .. TAB .. '"snippet": ',
-        -- TODO: Wait for fix of https://github.com/atom/autocomplete-plus/issues/635
-        APOSTROPHE .. string.format( '${%d:%s}:%s(%s)', index + 1, type.name, f.name, arguments ) .. APOSTROPHE .. LINE_BREAK,
-        -- APOSTROPHE .. string.format( '%s:%s(%s)', type.name, f.name, arguments ) .. APOSTROPHE .. LINE_BREAK,
+        APOSTROPHE .. string.format( '${%d:%s}:%s(%s)', 1, type.name, f.name, arguments ) .. APOSTROPHE .. LINE_BREAK,
         TAB .. (  closing and '}' or '},'  ) .. LINE_BREAK
     };
 end
