@@ -69,7 +69,7 @@ local function buildModuleFunctionCompletion( f, module, closing )
 end
 
 local function buildTypeFunctionCompletion( f, type, closing )
-    local index, arguments = generateArguments( f.variants[1].arguments );
+    local arguments, index = generateArguments( f.variants[1].arguments );
     return {
         TAB .. '{' .. LINE_BREAK,
         TAB .. TAB .. '"displayText": "' .. type.name .. ':' .. f.name .. APOSTROPHE .. COMMA .. LINE_BREAK,
