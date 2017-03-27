@@ -1,6 +1,5 @@
 #!/bin/bash
 ## Use a shallow clone
-
 git clone --depth=1 https://github.com/rm-code/love-api api
 
 ## Create definitions
@@ -10,7 +9,7 @@ rm -rf api
 
 ## Commit and push
 # Stop if no version flag is provided.
-if [[ $1 == "push" ]] ; then
+if [[ $1 == "--push" ]] ; then
     cd ..
     git add .
     git commit -m "Update love-completions.json"
