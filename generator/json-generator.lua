@@ -12,6 +12,10 @@ local LOVE_MODULE_STRING = 'love.'
 -- JSON Output control
 local DEBUG = false
 local KEY_ORDER = {
+    'luaVersion',
+    'packagePath',
+    'global',
+    'namedTypes',
     'type',
     'description',
     'fields',
