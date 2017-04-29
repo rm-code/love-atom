@@ -194,6 +194,8 @@ local function createJSON()
     local output = {
         global = {},
         namedTypes = {},
+        luaVersion = "luajit-2.0",
+        packagePath = "./?.lua,./?/init.lua"
     }
 
     print( 'Generating functions ...' )
