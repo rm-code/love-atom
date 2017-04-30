@@ -1,19 +1,22 @@
-# LÖVE Atom
+# Love-Atom
 
 [![Version](https://img.shields.io/badge/Version-2.5.1-blue.svg)](https://github.com/rm-code/love-atom/releases/latest)
 [![Atom](https://img.shields.io/badge/Atom-1.15.0-049158.svg)](https://atom.io/)
 [![License](http://img.shields.io/badge/Licence-MIT-brightgreen.svg)](LICENSE.md)
 
-A lövely provider for [Atom](https://atom.io/)'s [autocomplete+](https://github.com/atom/autocomplete-plus) package.
+Love-Atom adds smart autocompletion for the [LÖVE](https://love2d.org) framework in [Atom](https://atom.io/).
+
+![gif](https://raw.githubusercontent.com/rm-code/love-atom/master/screenshots/anim.gif)
 
 ## Usage
 
-LÖVE Atom is integrated into Atom's default autocompletion package and will suggest functions based on your input.
-![example1](https://raw.githubusercontent.com/rm-code/love-atom/master/screenshots/example1.gif)
+Love-Atom adds a custom provider on top of [autocomplete-lua](https://github.com/dapetcu21/atom-autocomplete-lua) and will suggest autocompletion based on your input.
 
-Since version `2.5.0` types also start with a variable which can be replaced. You can use `tab` to jump to the arguments afterwards.
-![example2](https://raw.githubusercontent.com/rm-code/love-atom/master/screenshots/example2.gif)
+_Love-Atom will provide suggestions for function with multiple variants._
+![example1](https://raw.githubusercontent.com/rm-code/love-atom/master/screenshots/function_variants.png)
 
+_Love-Atom even offers type-aware autocompletion for variables returned by the LÖVE framework._
+![example2](https://raw.githubusercontent.com/rm-code/love-atom/master/screenshots/type_completion.png)
 
 _The autocompletion suggestions are generated automatically using the [LÖVE API](https://github.com/love2d-community/love-api) which is following the official [LÖVE wiki](https://love2d.org/wiki/Main_Page)_.
 
@@ -26,3 +29,4 @@ You can install the package through Atom's package manager or by running ```apm 
 _The following dependencies will be installed automatically if they are missing:_
 
 - [language-lua](https://github.com/FireZenk/language-lua)
+- [autocomplete-lua](https://github.com/dapetcu21/atom-autocomplete-lua)
