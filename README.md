@@ -12,7 +12,7 @@ Love-Atom adds smart autocompletion for the [LÖVE](https://love2d.org) framewor
 
 Love-Atom adds a custom provider on top of [autocomplete-lua](https://github.com/dapetcu21/atom-autocomplete-lua) and will suggest autocompletion based on your input.
 
-_Love-Atom will provide suggestions for function with multiple variants._
+_Love-Atom will provide suggestions for functions with multiple variants._
 ![example1](https://raw.githubusercontent.com/rm-code/love-atom/master/screenshots/function_variants.png)
 
 _Love-Atom even offers type-aware autocompletion for variables returned by the LÖVE framework._
