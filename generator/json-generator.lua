@@ -70,10 +70,6 @@ local function createVariant( vdef )
     if vdef.arguments then
         variant.args = createArguments( vdef.arguments )
     end
-
-    if vdef.returns then
-        variant.returnTypes = createReturnTypes( vdef.returns )
-    end
     return variant
 end
 
@@ -85,11 +81,18 @@ local function createFunction( f, parent, moduleString )
     parent[name].description = f.description
     parent[name].link = string.format( "%s%s%s", WIKI_URL, moduleString, name )
 
+    -- NOTE Currently atom-autocomplete-lua doesn't support return types which
+    --      have been defined inside of variants. So for now we only use the
+    --      return types of the first variant.
+    -- @see https://github.com/dapetcu21/atom-autocomplete-lua/issues/15
+    if f.variants[1].returns then
+        parent[name].returnTypes = createReturnTypes( f.variants[1].returns )
+    end
+
     -- Create normal function if there is just one variant.
     if #f.variants == 1 then
         local v = createVariant( f.variants[1] )
         parent[name].args = v.args
-        parent[name].returnTypes = v.returnTypes
         return
     end
 
