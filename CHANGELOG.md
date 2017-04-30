@@ -1,4 +1,8 @@
-_Please note: LÖVE-Atom uses the latest development version of [the LÖVE-API](https://github.com/love2d-community/love-api)_
+## 3.0.0 :tada:
+- Love-Atom is now a custom provider for [autocomplete-lua](https://github.com/dapetcu21/atom-autocomplete-lua)
+    - Offers smart autocompletion for all functions of the LÖVE framework
+    - Handles function variants
+    - Offers smart autocompletion for object's like Text, Image and so on
 
 ## 2.5.1
 - Documentation update
