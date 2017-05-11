@@ -1,6 +1,6 @@
 # Love-Atom
 
-[![Version](https://img.shields.io/badge/Version-3.0.0-blue.svg)](https://github.com/rm-code/love-atom/releases/latest)
+[![Version](https://img.shields.io/badge/Version-3.1.0-blue.svg)](https://github.com/rm-code/love-atom/releases/latest)
 [![License](http://img.shields.io/badge/Licence-MIT-brightgreen.svg)](LICENSE.md)
 
 Love-Atom adds smart autocompletion for the [LÖVE](https://love2d.org) framework in [Atom](https://atom.io/).
