@@ -1,3 +1,6 @@
+## 3.1.1
+- Fixed issue with functions where some variants have a description and some have not
+
 ## 3.1.0
 - Variants now use their own description if possible
 
