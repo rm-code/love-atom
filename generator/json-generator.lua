@@ -80,8 +80,6 @@ local function createFunction( f, parent, moduleString )
     local name = f.name
     parent[name] = {}
     parent[name].type = 'function'
-
-    parent[name].description = f.description
     parent[name].link = string.format( "%s%s%s", WIKI_URL, moduleString, name )
 
     -- NOTE Currently atom-autocomplete-lua doesn't support return types which
@@ -95,6 +93,7 @@ local function createFunction( f, parent, moduleString )
     -- Create normal function if there is just one variant.
     if #f.variants == 1 then
         local v = createVariant( f.variants[1] )
+        parent[name].description = f.description
         parent[name].args = v.args
         return
     end
@@ -102,7 +101,14 @@ local function createFunction( f, parent, moduleString )
     -- Generate multiple variants.
     parent[name].variants = {}
     for i, v in ipairs( f.variants ) do
-        parent[name].variants[i] = createVariant( v )
+        local variant = createVariant( v )
+
+        -- Use default description if there is no specific variant description.
+        if not variant.description then
+            variant.description = f.description
+        end
+
+        parent[name].variants[i] = variant
     end
 end
 
