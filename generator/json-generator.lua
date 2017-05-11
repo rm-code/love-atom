@@ -67,6 +67,9 @@ end
 -- TODO handle functions with neither args nor return variables.
 local function createVariant( vdef )
     local variant = {}
+    if vdef.description then
+        variant.description = vdef.description
+    end
     if vdef.arguments then
         variant.args = createArguments( vdef.arguments )
     end
