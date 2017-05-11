@@ -1,3 +1,6 @@
+## 3.1.0
+- Variants now use their own description if possible
+
 ## 3.0.0 :tada:
 - Love-Atom is now a custom provider for [autocomplete-lua](https://github.com/dapetcu21/atom-autocomplete-lua)
     - Offers smart autocompletion for all functions of the LÖVE framework
