@@ -1,3 +1,9 @@
+## 3.1.2
+_by courtesy of [Pablo Ariel Mayobre](https://github.com/Positive07)_
+- Sped up activation time by loading dependencies in an idle callback
+- Fixed some linting issues
+- Dropped Lua version from the completion file
+
 ## 3.1.1
 - Fixed issue with functions where some variants have a description and some have not
 
