@@ -1,3 +1,7 @@
+## 3.1.3
+_by courtesy of [Pablo Ariel Mayobre](https://github.com/Positive07)_
+- Fixed usage of cached / revived options
+
 ## 3.1.2
 _by courtesy of [Pablo Ariel Mayobre](https://github.com/Positive07)_
 - Sped up activation time by loading dependencies in an idle callback
