@@ -1,3 +1,7 @@
+## 3.1.5
+- Fix issue where first argument of type methods would be omitted by atom-autocomplete-lua
+- Updated LÖVE api
+
 ## 3.1.4
 - Update LÖVE api
 
