@@ -31,15 +31,23 @@ local KEY_ORDER = {
 ---
 -- Generates a sequence containing subtables of all the arguments
 --
-local function createArguments( args )
+local function createArguments( args, includeDummy )
     local arguments = {}
-    for i, v in ipairs( args ) do
-        arguments[i] = {}
-        arguments[i].name = v.name
+
+    -- Includes a dummy "self" variant, because apparently love-autocomplete-lua
+    -- automatically omits the first argument of methods preceeded by the : operator.
+    if includeDummy then
+        arguments[#arguments + 1] = {}
+        arguments[#arguments].name = 'self'
+    end
+
+    for _, v in ipairs( args ) do
+        arguments[#arguments + 1] = {}
+        arguments[#arguments].name = v.name
 
         -- Use [foo] notation as display name for optional arguments.
         if v.default then
-            arguments[i].displayName = string.format( '[%s]', v.name )
+            arguments[#arguments].displayName = string.format( '[%s]', v.name )
         end
     end
     return arguments
@@ -65,18 +73,18 @@ local function createReturnTypes( returns )
 end
 
 -- TODO handle functions with neither args nor return variables.
-local function createVariant( vdef )
+local function createVariant( vdef, includeDummy )
     local variant = {}
     if vdef.description then
         variant.description = vdef.description
     end
     if vdef.arguments then
-        variant.args = createArguments( vdef.arguments )
+        variant.args = createArguments( vdef.arguments, includeDummy )
     end
     return variant
 end
 
-local function createFunction( f, parent, moduleString )
+local function createFunction( f, parent, moduleString, includeDummy )
     local name = f.name
     parent[name] = {}
     parent[name].type = 'function'
@@ -92,7 +100,7 @@ local function createFunction( f, parent, moduleString )
 
     -- Create normal function if there is just one variant.
     if #f.variants == 1 then
-        local v = createVariant( f.variants[1] )
+        local v = createVariant( f.variants[1], includeDummy )
         parent[name].description = f.description
         parent[name].args = v.args
         return
@@ -101,7 +109,7 @@ local function createFunction( f, parent, moduleString )
     -- Generate multiple variants.
     parent[name].variants = {}
     for i, v in ipairs( f.variants ) do
-        local variant = createVariant( v )
+        local variant = createVariant( v, includeDummy )
 
         -- Use default description if there is no specific variant description.
         if not variant.description then
@@ -181,7 +189,7 @@ local function createTypes( types, namedTypes )
 
         if type.functions then
             for _, f in pairs( type.functions ) do
-                createFunction( f, namedTypes[name].fields, name .. ':' )
+                createFunction( f, namedTypes[name].fields, name .. ':', true )
             end
         end
 
