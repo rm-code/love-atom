@@ -29,3 +29,20 @@ _The following dependencies will be installed automatically if they are missing:
 
 - [language-lua](https://github.com/FireZenk/language-lua)
 - [autocomplete-lua](https://github.com/dapetcu21/atom-autocomplete-lua)
+
+## Using a custom language package
+
+If you want to use a different language package you can simply remove the `language-lua` dependency from love-atom. Open the love-atom package by heading to your settings and clicking on "View Code":
+
+![view-code](https://raw.githubusercontent.com/rm-code/love-atom/master/screenshots/view-code.png)
+
+Open the `package.json` and look for the `"package-deps"` entry at the bottom.
+
+```json
+"package-deps": [
+  "language-lua",
+  "autocomplete-lua"
+]
+```
+
+Remove the `"language-lua",` line and save. Atom will no longer try to install the `language-lua` from now on.
