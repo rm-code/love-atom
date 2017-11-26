@@ -1,3 +1,6 @@
+## 3.1.6
+- Add "self" argument for all methods
+
 ## 3.1.5
 - Fix issue where first argument of type methods would be omitted by atom-autocomplete-lua
 - Updated LÖVE api
