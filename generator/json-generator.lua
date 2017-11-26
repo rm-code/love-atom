@@ -24,6 +24,8 @@ local KEY_ORDER = {
     'link'
 }
 
+local NOARGS = {}
+
 -- ------------------------------------------------
 -- Local Functions
 -- ------------------------------------------------
@@ -31,17 +33,17 @@ local KEY_ORDER = {
 ---
 -- Generates a sequence containing subtables of all the arguments
 --
-local function createArguments( args, includeDummy )
+local function createArguments( args, isMethod )
     local arguments = {}
 
-    -- Includes a dummy "self" variant, because apparently love-autocomplete-lua
-    -- automatically omits the first argument of methods preceeded by the : operator.
-    if includeDummy then
+    -- Include a "self" argument for methods, since autocomplete-lua and Lua itself
+    -- omits the first argument of methods preceeded by the : operator
+    if isMethod then
         arguments[#arguments + 1] = {}
         arguments[#arguments].name = 'self'
     end
 
-    for _, v in ipairs( args ) do
+    for _, v in ipairs( args or NOARGS ) do
         arguments[#arguments + 1] = {}
         arguments[#arguments].name = v.name
 
@@ -73,18 +75,18 @@ local function createReturnTypes( returns )
 end
 
 -- TODO handle functions with neither args nor return variables.
-local function createVariant( vdef, includeDummy )
+local function createVariant( vdef, isMethod )
     local variant = {}
     if vdef.description then
         variant.description = vdef.description
     end
-    if vdef.arguments then
-        variant.args = createArguments( vdef.arguments, includeDummy )
+    if vdef.arguments or isMethod then
+        variant.args = createArguments( vdef.arguments, isMethod )
     end
     return variant
 end
 
-local function createFunction( f, parent, moduleString, includeDummy )
+local function createFunction( f, parent, moduleString, isMethod )
     local name = f.name
     parent[name] = {}
     parent[name].type = 'function'
@@ -100,7 +102,7 @@ local function createFunction( f, parent, moduleString, includeDummy )
 
     -- Create normal function if there is just one variant.
     if #f.variants == 1 then
-        local v = createVariant( f.variants[1], includeDummy )
+        local v = createVariant( f.variants[1], isMethod )
         parent[name].description = f.description
         parent[name].args = v.args
         return
@@ -109,7 +111,7 @@ local function createFunction( f, parent, moduleString, includeDummy )
     -- Generate multiple variants.
     parent[name].variants = {}
     for i, v in ipairs( f.variants ) do
-        local variant = createVariant( v, includeDummy )
+        local variant = createVariant( v, isMethod )
 
         -- Use default description if there is no specific variant description.
         if not variant.description then
