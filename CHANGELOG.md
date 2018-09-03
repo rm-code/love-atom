@@ -1,3 +1,6 @@
+## 3.1.7
+- Updated LÖVE api
+
 ## 3.1.6
 - Add "self" argument for all methods
 
