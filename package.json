@@ -1,7 +1,7 @@
 {
   "name": "love-atom",
   "main": "./lib/love-atom",
-  "version": "3.1.6",
+  "version": "3.1.7",
   "description": "Adds snippets for the LÖVE game development framework.",
   "keywords": [
     "lua",
