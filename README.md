@@ -1,4 +1,5 @@
 # Love-Atom
+## (Looking for a new maintainer! Interested? Open an issue!)
 
 [![Version](https://img.shields.io/badge/Version-3.1.8-blue.svg)](https://github.com/rm-code/love-atom/releases/latest)
 [![License](http://img.shields.io/badge/Licence-MIT-brightgreen.svg)](LICENSE.md)
